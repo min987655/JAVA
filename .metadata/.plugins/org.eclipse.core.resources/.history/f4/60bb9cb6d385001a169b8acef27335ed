@@ -1,0 +1,42 @@
+package dateex;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+// (구버전 자바 1.7 이하)날짜 패키지들
+// java.sql.Date 
+// java.sql.Time (X) 
+// java.sql.Timestamp
+// java.util.Calender (X)
+// java.util.Date
+
+// 신버전 자바 1.8 이상
+// java.time.LocalDate
+// java.time.LocalDateTime
+// java.time.LocalTime
+
+public class TimeEx01 {
+
+	public static void main(String[] args) {
+		// 1. Calendar 안씀
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+		String today = formater.format(cal.getTime());
+		System.out.println("cal.getTime() : "+cal.getTime());
+		System.out.println("today : "+today);
+		
+		// 2. java.util.Date 안씀
+		// Date는 1970.01.01 기준으로 경과된 밀리초를 계산
+		Date time2 = new Date();
+		System.out.println("time2 : "+time2);
+		System.out.println("time2.getTime() : "+time2.getTime());
+//		System.out.println("time2.getDay() : "+time2.getDay()); // 안씀
+		
+		// 3. java.sql.Date 안씀
+		java.sql.Date time3 = new java.sql.Date(24*3600*1000);
+		System.out.println("time3 : "+time3);
+		
+	}
+
+}

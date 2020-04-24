@@ -1,0 +1,24 @@
+package ch09;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class SwingEx01 extends JFrame {
+
+	public SwingEx01() {
+		Container contentPane = getContentPane();
+		contentPane.setLayout(new FlowLayout());
+		contentPane.add(new JButton("첫번째 버튼"));
+		setTitle("300x300 스윙 프레임 만들기");
+		setSize(300, 300);
+		setVisible(true); // painting(이때 그림이 그려짐)
+	}
+	
+	public static void main(String[] args) {
+		new SwingEx01();
+	}
+
+}

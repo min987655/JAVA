@@ -1,0 +1,45 @@
+package ch14;
+
+import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class EventEx06 extends JFrame {
+	
+	int imgX = 350;
+	int imgY = 90;
+		
+	public EventEx06() {
+		setTitle("장풍 예제");
+		setSize(700, 300);
+		setLocationRelativeTo(null); // 프레임이 화면 가운데 배치
+		setContentPane(new MyPanel());
+		setVisible(true);
+	}
+
+	// paintComponent 함수는 Frame 안에서 작동안함.
+	class MyPanel extends JPanel {
+		@Override
+		protected void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			
+			ImageIcon imgIce = new ImageIcon("img/1.png");
+			ImageIcon imgPa = new ImageIcon("img/2.png");
+			
+			Image ice = imgIce.getImage();
+			Image pa = imgPa.getImage();
+			
+			g.drawImage(ice, 0, 0, null);
+			g.drawImage(pa, imgX, imgY, null);
+		}
+	}
+	
+	public static void main(String[] args) {
+		new EventEx06();
+	}
+
+}

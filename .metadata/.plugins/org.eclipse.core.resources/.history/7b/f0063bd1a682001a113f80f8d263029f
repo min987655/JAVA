@@ -1,0 +1,16 @@
+package ch09;
+
+import javax.swing.JFrame;
+
+public class SwingEx01 extends JFrame {
+
+	public SwingEx01() {
+		setSize(300, 300);
+		setVisible(true); // painting(이때 그림이 그려짐)
+	}
+	
+	public static void main(String[] args) {
+		new SwingEx01();
+	}
+
+}

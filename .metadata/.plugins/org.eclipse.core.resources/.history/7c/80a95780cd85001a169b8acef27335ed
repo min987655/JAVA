@@ -1,0 +1,10 @@
+package dateex;
+
+
+public class TimeEx01 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

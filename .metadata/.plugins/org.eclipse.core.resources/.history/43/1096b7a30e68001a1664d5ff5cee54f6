@@ -1,0 +1,22 @@
+package ch02;
+
+class Person{
+	String name = "∞≠πŒ¡§";
+	int age = 34;
+	char gender = 'ø©';
+	String email = "min987655@naver.com";
+	String phone = "010-5501-0844";
+}
+
+public class VarEx06 {
+
+	public static void main(String[] args) {
+		Person a = new Person();
+		System.out.println(a.name);
+		System.out.println(a.age);
+		System.out.println(a.gender);
+		System.out.println(a.email);
+		System.out.println(a.phone);
+	}
+
+}

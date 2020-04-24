@@ -1,0 +1,35 @@
+package ch14;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class paintJPanelEx extends JFrame {
+	private MyPanel pane1 = new MyPanel();
+	
+	public paintJPanelEx() {
+		setTitle("Jpanel의 paintComponent() 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setContentPane(pane1); // 생성한 pane1 패널을 컨텐트팬으로 사용
+		setSize(250, 200);
+		setVisible(true);
+	}
+	
+	public class MyPanel extends JPanel {
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			g.setColor(Color.blue);
+			g.drawRect(10, 10, 50, 50);
+			g.drawRect(50, 50, 50, 50);
+			g.setColor(Color.MAGENTA);
+			g.drawRect(90, 90, 50, 50);
+		}
+		
+	}		
+	public static void main(String[] args) {
+		new paintJPanelEx();
+	}
+
+}

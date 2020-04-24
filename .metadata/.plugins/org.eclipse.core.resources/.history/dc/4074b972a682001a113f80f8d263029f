@@ -1,0 +1,15 @@
+package ch09;
+
+import javax.swing.JFrame;
+
+public class SwingEx01 extends JFrame {
+
+	public SwingEx01() {
+		setSize(300, 300);
+	}
+	
+	public static void main(String[] args) {
+
+	}
+
+}

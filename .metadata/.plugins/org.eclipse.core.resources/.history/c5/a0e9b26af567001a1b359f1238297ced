@@ -1,0 +1,11 @@
+package ch02;
+
+public class VarFx02 {
+
+	public static void main(String[] args) {
+		double myNum = 10.5;//8Byte
+		System.out.println(myNum);
+		
+	}
+
+}

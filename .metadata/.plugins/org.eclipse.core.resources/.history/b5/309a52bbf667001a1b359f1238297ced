@@ -1,0 +1,11 @@
+package ch02;
+
+public class VarEx03 {
+
+	public static void main(String[] args) {
+		char s1 = '°¡';//2Byte
+		System.out.println(s1);
+
+	}
+
+}

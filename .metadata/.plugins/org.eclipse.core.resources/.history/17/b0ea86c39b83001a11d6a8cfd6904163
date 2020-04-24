@@ -1,0 +1,18 @@
+package ch12;
+
+import javax.swing.JFrame;
+
+public class Trade extends JFrame{
+	
+	public Trade() {
+
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+
+	}
+
+}

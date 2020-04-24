@@ -1,0 +1,20 @@
+package ch02;
+
+class 동물 {
+	static String name = "사자";
+	static String colcr = "노랑";
+	static int speed = 100;
+	static char gender = '여';
+}
+
+public class VarEx05 {
+
+	public static void main(String[] args) {
+		System.out.println("동물 생성 준비");
+		System.out.println(동물.name);
+		System.out.println(동물.colcr);
+		System.out.println(동물.speed);
+		System.out.println(동물.gender);
+	}
+
+}

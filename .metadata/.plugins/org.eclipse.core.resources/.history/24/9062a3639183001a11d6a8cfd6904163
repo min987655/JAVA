@@ -1,0 +1,10 @@
+package ch14;
+
+import javax.swing.JFrame;
+
+public class GraphicsDrawLineEx extends JFrame {
+	private void name() {
+		
+	}
+	
+}

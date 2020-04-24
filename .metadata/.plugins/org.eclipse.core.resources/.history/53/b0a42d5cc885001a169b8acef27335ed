@@ -1,0 +1,11 @@
+package dateex;
+
+import java.util.Calendar;
+
+public class CalenderEx {
+
+	public static void main(String[] args) {
+		Calendar now = Calendar.getInstance();
+	}
+
+}

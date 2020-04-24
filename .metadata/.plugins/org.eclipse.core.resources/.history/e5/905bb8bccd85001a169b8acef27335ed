@@ -1,0 +1,16 @@
+package dateex;
+
+// (구버전 자바 1.7 이하)날짜 패키지들
+// java.sql.Date 
+// java.sql.Time (X) 
+// java.sql.Timestamp
+// java.util.Calender (X)
+// java.util.date
+
+public class TimeEx01 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package ch14;
+
+import javax.swing.JFrame;
+
+public class EventEx01 extends JFrame {
+
+	public EventEx01() {
+		setTitle("Action 이벤트 리스너 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args) {
+
+	}
+
+}
