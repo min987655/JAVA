@@ -1,7 +1,6 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class FristApp {
 
@@ -35,12 +34,8 @@ public class FristApp {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300); // 프레임의 크기와 위치
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Java");
-		lblNewLabel.setBounds(199, 169, 117, 43);
-		frame.getContentPane().add(lblNewLabel);
 	}
+
 }
