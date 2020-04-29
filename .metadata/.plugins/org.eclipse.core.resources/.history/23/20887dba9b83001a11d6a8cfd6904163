@@ -1,9 +1,0 @@
-package ch12;
-
-public class Trade {
-
-	public static void main(String[] args) {
-
-	}
-
-}

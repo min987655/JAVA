@@ -1,3 +1,7 @@
 INDEX VERSION 1.131
+C:\src\javawork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1775761586.index
+\Customerlist_web\src
 C:\src\javawork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\745929957.index
+\booklist_web\src
+C:\src\javawork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\387521650.index
 \booklist_web\src
