@@ -2,7 +2,7 @@ package ch13;
 
 class Car {
 	void run() {
-		System.out.println("ÀÚµ¿Â÷´Â ´Ş¸°´Ù.");
+		System.out.println("ìë™ì°¨ëŠ” ë‹¬ë¦°ë‹¤.");
 	}
 }
 

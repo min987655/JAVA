@@ -1,9 +1,9 @@
 package quiz;
 
-// String Å¸ÀÔ ¸Ş¼­µå Áß toLowerCase() , toUpperCase() °¡ ÀÖ´Ù
-// "a".toUpperCase() ¸¦ ÀÌ¿ëÇÏ¸é a¸¦ A·Î ¸¸µé ¼ö ÀÖ´Ù
-// "A".toLowerCase() ¸¦ ÀÌ¿ëÇÏ¸é A¸¦ a·Î ¸¸µé ¼ö ÀÖ´Ù
-// ¾Æ·¡ÀÇ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© ABCD¸¦ Ãâ·ÂÇÏ¼¼¿ä
+// String íƒ€ì… ë©”ì„œë“œ ì¤‘ toLowerCase() , toUpperCase() ê°€ ìˆë‹¤
+// "a".toUpperCase() ë¥¼ ì´ìš©í•˜ë©´ aë¥¼ Aë¡œ ë§Œë“¤ ìˆ˜ ìˆë‹¤
+// "A".toLowerCase() ë¥¼ ì´ìš©í•˜ë©´ Aë¥¼ aë¡œ ë§Œë“¤ ìˆ˜ ìˆë‹¤
+// ì•„ë˜ì˜ ë¬¸ìì—´ì„ ì´ìš©í•˜ì—¬ ABCDë¥¼ ì¶œë ¥í•˜ì„¸ìš”
 
 public class Quiz004 {
 

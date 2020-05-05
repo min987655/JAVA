@@ -1,9 +1,9 @@
 package coffeeshop;
 
-// 氓烙 : 目乔积己
+// 毂呾瀯 : 旎ろ敿靸濎劚
 public class Barista {
 	
-	public Coffee 目乔积己(MenuItem menuItem) {
+	public Coffee 旎ろ敿靸濎劚(MenuItem menuItem) {
 		return new Coffee(menuItem);
 	}
 }

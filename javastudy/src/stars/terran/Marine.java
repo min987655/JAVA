@@ -14,6 +14,6 @@ public class Marine extends Terran {
 
 	@Override
 	public void attack(Behavior unit) {
-		System.out.println("±Ù°Å¸® °ø°Ý");
+		System.out.println("ê·¼ê±°ë¦¬ ê³µê²©");
 	}
 }

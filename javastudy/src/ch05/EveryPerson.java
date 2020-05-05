@@ -1,39 +1,39 @@
 package ch05;
 
 
-class »ç¶÷ {
+class ì‚¬ëŒ {
 	int num = 10;
 }
 
-class ¾Æ½Ã¾ÆÀÎ extends »ç¶÷ {
+class ì•„ì‹œì•„ì¸ extends ì‚¬ëŒ {
 	int num = 30;
 }
 
-class ÇÑ±¹ÀÎ extends ¾Æ½Ã¾ÆÀÎ {
+class í•œêµ­ì¸ extends ì•„ì‹œì•„ì¸ {
 	
 }
 
-class ¹Ú¼­ÁØ extends ÇÑ±¹ÀÎ {
+class ë°•ì„œì¤€ extends í•œêµ­ì¸ {
 	int num = 20;
 }
 
 public class EveryPerson {
 
 	public static void main(String[] args) {
-		¹Ú¼­ÁØ b1 = new ¹Ú¼­ÁØ();
+		ë°•ì„œì¤€ b1 = new ë°•ì„œì¤€();
 		System.out.println(b1.num);
 		
-		ÇÑ±¹ÀÎ b2 = new ¹Ú¼­ÁØ();
+		í•œêµ­ì¸ b2 = new ë°•ì„œì¤€();
 		System.out.println(b2.num);
 		
-		¹Ú¼­ÁØ downB2 = (¹Ú¼­ÁØ)b2;
+		ë°•ì„œì¤€ downB2 = (ë°•ì„œì¤€)b2;
 		System.out.println(downB2.num);
 		
-		»ç¶÷ b3 = new ÇÑ±¹ÀÎ();
+		ì‚¬ëŒ b3 = new í•œêµ­ì¸();
 		System.out.println(b3.num);
 		
 		
-		// ¹Ú¼­ÁØ b4 = new ÇÑ±¹ÀÎ(); // ¿À·ù
+		// ë°•ì„œì¤€ b4 = new í•œêµ­ì¸(); // ì˜¤ë¥˜
 	}
 
 }

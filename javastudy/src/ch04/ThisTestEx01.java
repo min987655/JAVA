@@ -14,9 +14,9 @@ class AirPlane {
 public class ThisTestEx01 {
 
 	public static void main(String[] args) {
-		AirPlane a1 = new AirPlane("Á¦Æ®±â", "ÇÏ¾á»ö");
+		AirPlane a1 = new AirPlane("ì œíŠ¸ê¸°", "í•˜ì–€ìƒ‰");
 
-		AirPlane a2 = new AirPlane("Ç×°ø±â", "³ë¶õ»ö");
+		AirPlane a2 = new AirPlane("í•­ê³µê¸°", "ë…¸ëž€ìƒ‰");
 		
 	}
 

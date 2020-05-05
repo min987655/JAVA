@@ -3,25 +3,25 @@ package ch04;
 public class PersonApp {
 
 	public static void main(String[] args) {
-		Person p1 = new Person();//ÀÎ½ºÅÏ½ºÈ­
-		p1.name = "ÃÖ½ÂÈñ";
-		p1.job = "ÀÇ»ç";
-		p1.gender = '¿©';
+		Person p1 = new Person();//ì¸ìŠ¤í„´ìŠ¤í™”
+		p1.name = "ìµœìŠ¹í¬";
+		p1.job = "ì˜ì‚¬";
+		p1.gender = 'ì—¬';
 		p1.bloodType = "A";
 		p1.age = 45;
 		
 		Person p2 = new Person();
-		p2.name = "ÀÌ¹Ì³à";
-		p2.job = "°ñÇÁ ¼±¼ö";
+		p2.name = "ì´ë¯¸ë…€";
+		p2.job = "ê³¨í”„ ì„ ìˆ˜";
 		p2.age = 28;
-		p2.gender = '¿©';
+		p2.gender = 'ì—¬';
 		p2.bloodType = "O";
 		
 		Person p3 = new Person();
-		p3.name = "±è¹Ì³²";
-		p3.job = "±³¼ö";
+		p3.name = "ê¹€ë¯¸ë‚¨";
+		p3.job = "êµìˆ˜";
 		p3.age = 47;
-		p3.gender = '³²';
+		p3.gender = 'ë‚¨';
 		p3.bloodType = "AB";
 		
 		System.out.println(p3.name);
@@ -32,10 +32,10 @@ public class PersonApp {
 		System.out.println();
 		
 		Person p4 = new Person(
-				"°­¹ÎÁ¤",
-				"ÇĞ»ı",
+				"ê°•ë¯¼ì •",
+				"í•™ìƒ",
 				34,
-				'¿©',
+				'ì—¬',
 				"A"
 		);
 		System.out.println(p4.name);

@@ -1,22 +1,22 @@
 package ch03;
 
-// ¸Ş¼­µå(ÇÔ¼ö)´Â ¸Ş¼­µå(ÇÔ¼ö)¾È¿¡ ÀÛ¼ºÇÒ ¼ö ¾ø´Ù.
-// ¸Ş¼­µå(ÇÔ¼ö)´Â Å¬·¡½º¾È¿¡ ÀÛ¼ºÇÒ ¼ö ÀÖ´Ù.
+// ë©”ì„œë“œ(í•¨ìˆ˜)ëŠ” ë©”ì„œë“œ(í•¨ìˆ˜)ì•ˆì— ì‘ì„±í•  ìˆ˜ ì—†ë‹¤.
+// ë©”ì„œë“œ(í•¨ìˆ˜)ëŠ” í´ë˜ìŠ¤ì•ˆì— ì‘ì„±í•  ìˆ˜ ìˆë‹¤.
 public class MethodEx01 {
 	
 	
 	public static void main(String[] args) {
 		int num = Cal.add(3, 5);
-		System.out.println("´õÇÏ±â:"+num);
+		System.out.println("ë”í•˜ê¸°:"+num);
 		
 		int num1 = Cal.minus(3, 5);
-		System.out.println("»©±â:"+num1);
+		System.out.println("ë¹¼ê¸°:"+num1);
 		
 		int num2 = Cal.multi(3, 5);
-		System.out.println("°öÇÏ±â:"+num2);
+		System.out.println("ê³±í•˜ê¸°:"+num2);
 		
 		int num3 = Cal.divibe(5, 3);
-		System.out.println("³ª´©±â:"+num3);
+		System.out.println("ë‚˜ëˆ„ê¸°:"+num3);
 	}
 	
 }

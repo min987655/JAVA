@@ -15,8 +15,8 @@ public class StarEx01 {
 	}
 	
 	public static void main(String[] args) {
-//		for (int i = 1; i < 5; i++) { //ÇàÀÇ °³¼ö
-//			printStars(i); //¿­ÀÇ °³¼ö
+//		for (int i = 1; i < 5; i++) { //í–‰ì˜ ê°œìˆ˜
+//			printStars(i); //ì—´ì˜ ê°œìˆ˜
 //		}
 		
 		for (int i = 4; i > 0; i--) {

@@ -10,8 +10,8 @@ public class VarEx07 {
 
 	public static void main(String[] args) {
 		Object n1 = 1; 
-		Object n2 = '°¡'; 
-		Object n3 = "¹®ÀÚ¿­"; 
+		Object n2 = 'ê°€'; 
+		Object n3 = "ë¬¸ìì—´"; 
 		Object n4 = 10.5;
 		
 		System.out.println(n1);

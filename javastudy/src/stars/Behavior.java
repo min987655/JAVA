@@ -1,7 +1,7 @@
 package stars;
 
-// Ãß»óÅ¬·¡½º¿Í À¯»çÇÏÁö¸¸ 
-// Ãß»ó ¸Ş¼­µå¸¸ Á¸Àç °¡´É
+// ì¶”ìƒí´ë˜ìŠ¤ì™€ ìœ ì‚¬í•˜ì§€ë§Œ 
+// ì¶”ìƒ ë©”ì„œë“œë§Œ ì¡´ì¬ ê°€ëŠ¥
 public interface Behavior {
 
 	public abstract void move();

@@ -1,10 +1,10 @@
 package ch13;
 
 class DownloadThread implements Runnable {
-	// ºñµ¿±â ÇÁ·Î±×·¥ 
-	// ÀÏÀÌ ¼ø¼­´ë·Î ÁøÇàµÇÁö ¾ÊÀ½
-	// ¸ŞÀÎÀÌ ¸ğµÎ ½ÇÇàÇÏÁö ¾Ê°í os¿¡°Ô ¾²·¹µå¸¦ ÇÏ³ª ´õ ¸¸µé¾î ½ÇÇàÇÏ¶ó°í ÇÔ.
-	// ±İ¾× 30000¿øÀÌ ¾È³ª¿È(Å¸ÀÌ¹ÖÀÇ ¹®Á¦)
+	// ë¹„ë™ê¸° í”„ë¡œê·¸ë¨ 
+	// ì¼ì´ ìˆœì„œëŒ€ë¡œ ì§„í–‰ë˜ì§€ ì•ŠìŒ
+	// ë©”ì¸ì´ ëª¨ë‘ ì‹¤í–‰í•˜ì§€ ì•Šê³  osì—ê²Œ ì“°ë ˆë“œë¥¼ í•˜ë‚˜ ë” ë§Œë“¤ì–´ ì‹¤í–‰í•˜ë¼ê³  í•¨.
+	// ê¸ˆì•¡ 30000ì›ì´ ì•ˆë‚˜ì˜´(íƒ€ì´ë°ì˜ ë¬¸ì œ)
 	int data = 10000;
 	
 	@Override
@@ -15,19 +15,19 @@ class DownloadThread implements Runnable {
 			e.printStackTrace();
 		}
 		data = data + 20000;
-		System.out.println("±İ¾× ´Ù¿î·Îµå Á¾·á");
+		System.out.println("ê¸ˆì•¡ ë‹¤ìš´ë¡œë“œ ì¢…ë£Œ");
 	}
 }
 
 public class ThreadEx02 {
 	public static void main(String[] args) {
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
+		System.out.println("í”„ë¡œê·¸ë¨ ì‹œì‘");
 		System.out.println("-------------");
 		
 		DownloadThread dt = new DownloadThread();
 		Thread t1 = new Thread(dt);
 		t1.start();
 		
-		System.out.println("±İ¾×Àº : "+dt.data);
+		System.out.println("ê¸ˆì•¡ì€ : "+dt.data);
 	}
 }

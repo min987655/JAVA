@@ -11,7 +11,7 @@ public class GraphicsFillEx extends JFrame {
 	private MyPanel panel = new MyPanel();
 		
 	public GraphicsFillEx() {
-		setTitle("fillXXX »ç¿ë ¿¹Á¦");
+		setTitle("fillXXX ì‚¬ìš© ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(panel);
 		
@@ -24,17 +24,17 @@ public class GraphicsFillEx extends JFrame {
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.fillRect(10, 10, 50, 50); // »¡°£»ö »ç°¢Çü Ä¥ÇÏ±â
+			g.fillRect(10, 10, 50, 50); // ë¹¨ê°„ìƒ‰ ì‚¬ê°í˜• ì¹ í•˜ê¸°
 			g.setColor(Color.BLUE);
-			g.fillOval(10, 70, 50, 50); // ÆÄ¶õ»ö Å¸¿ø Ä¥ÇÏ±â
+			g.fillOval(10, 70, 50, 50); // íŒŒë€ìƒ‰ íƒ€ì› ì¹ í•˜ê¸°
 			g.setColor(Color.GREEN);
-			g.fillRoundRect(10, 130, 50, 50, 20, 20); // ÃÊ·Ï»ö µÕ±Ù»ç°¢Çü Ä¥ÇÏ±â
+			g.fillRoundRect(10, 130, 50, 50, 20, 20); // ì´ˆë¡ìƒ‰ ë‘¥ê·¼ì‚¬ê°í˜• ì¹ í•˜ê¸°
 			g.setColor(Color.MAGENTA);
-			g.fillArc(10, 190, 50, 50, 0, 270); // ¸¶Á¨Å¸»ö ¿øÈ£ Ä¥ÇÏ±â
+			g.fillArc(10, 190, 50, 50, 0, 270); // ë§ˆì  íƒ€ìƒ‰ ì›í˜¸ ì¹ í•˜ê¸°
 			g.setColor(Color.ORANGE);
 			int [] x = {30,10,30,60};
 			int [] y = {250,275,300,275};
-			g.fillPolygon(x, y, 4); // ¿À·»Áö»ö ´Ù°¢Çü Ä¥ÇÏ±â
+			g.fillPolygon(x, y, 4); // ì˜¤ë Œì§€ìƒ‰ ë‹¤ê°í˜• ì¹ í•˜ê¸°
 			
 			
 		}

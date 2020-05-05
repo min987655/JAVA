@@ -14,15 +14,15 @@ public class SocketServer {
 
 	public SocketServer() {
 		try {
-			// ¼­¹ö ¼ÒÄÏ »ı¼º 65536¹ø Áß¿¡ well known port Á¦¿Ü
+			// ì„œë²„ ì†Œì¼“ ìƒì„± 65536ë²ˆ ì¤‘ì— well known port ì œì™¸
 			serverSocket = new ServerSocket(20000);
 			vc = new Vector<>();
 
-			// ¸ŞÀÎ¾²·¹µå´Â ¼ÒÄÏÀ» accept()ÇÏ°í vector¿¡ ´ã´Â ¿ªÇÒÀ» ÇÔ.
+			// ë©”ì¸ì“°ë ˆë“œëŠ” ì†Œì¼“ì„ accept()í•˜ê³  vectorì— ë‹´ëŠ” ì—­í• ì„ í•¨.
 			while (true) {
-				System.out.println("¿äÃ» ´ë±â");
-				Socket socket = serverSocket.accept(); // Å¬¶óÀÌ¾ğÆ® ¿äÃ» ¹ŞÀ½.
-				System.out.println("¿äÃ» ¹ŞÀ½");
+				System.out.println("ìš”ì²­ ëŒ€ê¸°");
+				Socket socket = serverSocket.accept(); // í´ë¼ì´ì–¸íŠ¸ ìš”ì²­ ë°›ìŒ.
+				System.out.println("ìš”ì²­ ë°›ìŒ");
 				SocketThread st = new SocketThread(socket);
 				st.start();
 				vc.add(st);
@@ -34,7 +34,7 @@ public class SocketServer {
 
 	}
 
-	// ¼ÒÄÏÁ¤º¸ + Å¸°Ù(run) + ½Äº°ÀÚ(id)
+	// ì†Œì¼“ì •ë³´ + íƒ€ê²Ÿ(run) + ì‹ë³„ì(id)
 	class SocketThread extends Thread {
 
 		Socket socket;
@@ -56,7 +56,7 @@ public class SocketServer {
 
 				writer.println("Please Sign in");
 				id = reader.readLine();
-				System.out.println("¿ä°Å ½ÇÇà µÊ");
+				System.out.println("ìš”ê±° ì‹¤í–‰ ë¨");
 				System.out.println(id);
 				String line = null;
 				while ((line = reader.readLine()) != null) {
@@ -70,7 +70,7 @@ public class SocketServer {
 
 		public void router(String line) {
 
-			String[] gubun = line.split(":"); // All:¾È³ç, MSG:white:¾È³ç -> :À¸·Î ²÷À½
+			String[] gubun = line.split(":"); // All:ì•ˆë…•, MSG:white:ì•ˆë…• -> :ìœ¼ë¡œ ëŠìŒ
 			String protocol = gubun[0];
 			if (protocol.equals(ChatProtocol.ALL)) {
 				String msg = gubun[1];
@@ -96,7 +96,7 @@ public class SocketServer {
 				if (socketThread.id.equals(otherId)) {
 					socketThread.writer.println(id + " : " + msg);
 				} else {
-					writer.println("¾ÆÀÌµğ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+					writer.println("ì•„ì´ë””ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			}
 		}

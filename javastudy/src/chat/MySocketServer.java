@@ -19,17 +19,17 @@ public class MySocketServer {
 		serverSocket = new ServerSocket(3000);
 		
 		while(true) {
-			Socket socket =serverSocket.accept(); // whileÀÌ µ¹ ¶§¸¶´Ù socketÀ» µ¤¾î ¾²±â ¶§¹®¿¡ socketÀ» ÄÃ·¢¼Ç¿¡ º¸°üÇÏ¿©¾ß ÇÔ.
-			System.out.println("¿äÃ»ÀÌ µé¾î¿È");
+			Socket socket =serverSocket.accept(); // whileì´ ëŒ ë•Œë§ˆë‹¤ socketì„ ë®ì–´ ì“°ê¸° ë•Œë¬¸ì— socketì„ ì»¬ë™ì…˜ì— ë³´ê´€í•˜ì—¬ì•¼ í•¨.
+			System.out.println("ìš”ì²­ì´ ë“¤ì–´ì˜´");
 			NewSocketThread nt = new NewSocketThread(socket);
 			Thread newWorker = new Thread(nt);
 			newWorker.start();
-			vt.add(nt); // ÄÃ·¢¼Ç¿¡ socket º¸°ü.
+			vt.add(nt); // ì»¬ë™ì…˜ì— socket ë³´ê´€.
 		}
 	
 	}
-	// »õ·Î¿î ¾²·¹µå¿¡°Ô ¹öÆÛ¸¦ ¿¬°áÇÒ ¼ö ÀÖ°Ô socketÀ» Àü´Ş !
-	// ³»ºÎÅ¬·¡½º
+	// ìƒˆë¡œìš´ ì“°ë ˆë“œì—ê²Œ ë²„í¼ë¥¼ ì—°ê²°í•  ìˆ˜ ìˆê²Œ socketì„ ì „ë‹¬ !
+	// ë‚´ë¶€í´ë˜ìŠ¤
 	class NewSocketThread implements Runnable {
 		
 		Socket socket;
@@ -49,8 +49,8 @@ public class MySocketServer {
 				String msg = "";
 				while((msg = br.readLine()) != null) {
 					for (NewSocketThread newSocketThread : vt) {
-						System.out.println("Å¬¶óÀÌ¾ğÆ® : "+msg);
-						if(newSocketThread != this) { // this´Â ÀÚ±âÀÚ½ÅÀÌ´Ï±î ÀÚ±â ÀÚ½Å°ú °°Áö ¾ÊÀ» ¶§¸¸ »Ñ·ÁÁÜ
+						System.out.println("í´ë¼ì´ì–¸íŠ¸ : "+msg);
+						if(newSocketThread != this) { // thisëŠ” ìê¸°ìì‹ ì´ë‹ˆê¹Œ ìê¸° ìì‹ ê³¼ ê°™ì§€ ì•Šì„ ë•Œë§Œ ë¿Œë ¤ì¤Œ
 							newSocketThread.bw.write(msg+"\n");
 							newSocketThread.bw.flush();
 						}

@@ -14,14 +14,14 @@ public class MySocketServer {
 
 	public MySocketServer() throws Exception {
 
-		serverSocket = new ServerSocket(15000); // ¼­¹ö ¼ÒÄÏ »ı¼º(¿¬°áÀ» ¹Ş´Â)
-		socket = serverSocket.accept(); // ¿äÃ»À» ´ë±âÇÔ(³»ºÎÀûÀ¸·Î whileÀ» µ¹¸é¼­ ¿¬°áÀ» Ã¼Å© Áß)
-		System.out.println("¿äÃ»ÀÌ µé¾î¿È");
+		serverSocket = new ServerSocket(15000); // ì„œë²„ ì†Œì¼“ ìƒì„±(ì—°ê²°ì„ ë°›ëŠ”)
+		socket = serverSocket.accept(); // ìš”ì²­ì„ ëŒ€ê¸°í•¨(ë‚´ë¶€ì ìœ¼ë¡œ whileì„ ëŒë©´ì„œ ì—°ê²°ì„ ì²´í¬ ì¤‘)
+		System.out.println("ìš”ì²­ì´ ë“¤ì–´ì˜´");
 		br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
 		String msg = "";
 		while ((msg = br.readLine()) != null) {
-			System.out.println("»ó´ë¹æ : " + msg);
+			System.out.println("ìƒëŒ€ë°© : " + msg);
 		}
 
 		br.close();

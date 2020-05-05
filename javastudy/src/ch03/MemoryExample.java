@@ -1,13 +1,13 @@
 package ch03;
 
-class ÀÚÆÇ±â {
+class ìíŒê¸° {
 
-	static String cola = "ÄÚÄ«Äİ¶ó";
-	static String water = "¹°";
+	static String cola = "ì½”ì¹´ì½œë¼";
+	static String water = "ë¬¼";
 
-	static String ÀÛµ¿(int money) {
-		System.out.println("ÀÚÆÇ±â°¡ ÀÛµ¿ÇÕ´Ï´Ù.");
-		System.out.println(money + "¿øÀ» ¹Ş¾Ò½À´Ï´Ù.");
+	static String ì‘ë™(int money) {
+		System.out.println("ìíŒê¸°ê°€ ì‘ë™í•©ë‹ˆë‹¤.");
+		System.out.println(money + "ì›ì„ ë°›ì•˜ìŠµë‹ˆë‹¤.");
 		return cola;
 	}
 }
@@ -16,16 +16,16 @@ class MemoryExample {
 
 	int money = 500;
 
-	int ¿ëµ·¹Ş±â(String msg) {
+	int ìš©ëˆë°›ê¸°(String msg) {
 		System.out.println(msg);
-		System.out.println("¿ëµ·À» ¹Ş¾Ò½À´Ï´Ù.");
+		System.out.println("ìš©ëˆì„ ë°›ì•˜ìŠµë‹ˆë‹¤.");
 		return money;
 	}
 
 	public static void main(String[] args) {
 		MemoryExample me = new MemoryExample();
-		int money = me.¿ëµ·¹Ş±â("¾Æºü ¸¸¼ö¹«°­ÇÏ¼¼¿ä.");
-		String output = ÀÚÆÇ±â.ÀÛµ¿(money);
-		System.out.println(output + "À» ¹Ş¾Ò½À´Ï´Ù. Àß ¸¶½Ç²²¿ä!!");
+		int money = me.ìš©ëˆë°›ê¸°("ì•„ë¹  ë§Œìˆ˜ë¬´ê°•í•˜ì„¸ìš”.");
+		String output = ìíŒê¸°.ì‘ë™(money);
+		System.out.println(output + "ì„ ë°›ì•˜ìŠµë‹ˆë‹¤. ì˜ ë§ˆì‹¤ê»˜ìš”!!");
 	}
 }

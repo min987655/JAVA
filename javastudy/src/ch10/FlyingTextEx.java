@@ -11,32 +11,32 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 public class FlyingTextEx extends JFrame {
-	private final int FLYING_UNIT = 10; // ·¹ÀÌºíÀÌ ÇÑ¹ø ¿òÁ÷ÀÌ´Â ´ÜÀ§´Â 10ÇÈ¼¿
-	private JLabel la = new JLabel("HELLO"); // Å° ÀÔ·Â¿¡ µû¶ó ¿òÁ÷ÀÏ ·¹ÀÌºí ÄÄÆ÷³ÍÆ®
+	private final int FLYING_UNIT = 10; // ë ˆì´ë¸”ì´ í•œë²ˆ ì›€ì§ì´ëŠ” ë‹¨ìœ„ëŠ” 10í”½ì…€
+	private JLabel la = new JLabel("HELLO"); // í‚¤ ì…ë ¥ì— ë”°ë¼ ì›€ì§ì¼ ë ˆì´ë¸” ì»´í¬ë„ŒíŠ¸
 	
 	public FlyingTextEx() {
-		setTitle("»ó,ÇÏ,ÁÂ,¿ì Å°¸¦ ÀÌ¿ëÇÏ¿© ÅØ½ºÆ® ¿òÁ÷ÀÌ±â");
+		setTitle("ìƒ,í•˜,ì¢Œ,ìš° í‚¤ë¥¼ ì´ìš©í•˜ì—¬ í…ìŠ¤íŠ¸ ì›€ì§ì´ê¸°");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container c = getContentPane();
-		c.setLayout(null); // ÄÁÅÙÆ®ÆÒÀÇ ¹èÄ¡°ü¸®ÀÚ »èÁ¦
+		c.setLayout(null); // ì»¨í…íŠ¸íŒ¬ì˜ ë°°ì¹˜ê´€ë¦¬ì ì‚­ì œ
 		c.addKeyListener(new MyKeyListener());
-		la.setLocation(50, 50); // la ÃÊ±âÀ§Ä¡
+		la.setLocation(50, 50); // la ì´ˆê¸°ìœ„ì¹˜
 		la.setSize(100, 20);
 		c.add(la);
 		
 		setSize(300, 300);
 		setVisible(true);
 		c.setFocusable(true);
-		c.requestFocus(); // ÄÁÅÙÆ®ÆÒÀÌ Å° ÀÔ·Â ¹ŞÀ» ¼ö ÀÖµµ·Ï Æ÷Ä¿½º °­Á¦ ÁöÁ¤
+		c.requestFocus(); // ì»¨í…íŠ¸íŒ¬ì´ í‚¤ ì…ë ¥ ë°›ì„ ìˆ˜ ìˆë„ë¡ í¬ì»¤ìŠ¤ ê°•ì œ ì§€ì •
 		
-		// ´ÙÀ½ ÄÚµå´Â ÄÁÅÙÆ®ÆÒ¿¡ Æ÷Ä¿½º¸¦ ÀÒÀº °æ¿ì ¸¶¿ì½º¸¦ Å¬¸¯ÇÏ¸é ´Ù½Ã Æ÷Ä¿½º ¾ò°Ô ÇÔ
+		// ë‹¤ìŒ ì½”ë“œëŠ” ì»¨í…íŠ¸íŒ¬ì— í¬ì»¤ìŠ¤ë¥¼ ìƒì€ ê²½ìš° ë§ˆìš°ìŠ¤ë¥¼ í´ë¦­í•˜ë©´ ë‹¤ì‹œ í¬ì»¤ìŠ¤ ì–»ê²Œ í•¨
 		c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Component com = (Component)e.getSource(); // ¸¶¿ì½º°¡ Å¬¸¯µÈ ÄÄÆ÷³ÍÆ®
+				Component com = (Component)e.getSource(); // ë§ˆìš°ìŠ¤ê°€ í´ë¦­ëœ ì»´í¬ë„ŒíŠ¸
 				com.setFocusable(true);
-				com.requestFocus(); // ¸¶¿ì½º°¡ Å¬¸¯µÈ ÄÄÆ÷³ÍÆ®¿¡°Ô Æ÷Ä¿½º ¼³Á¤
+				com.requestFocus(); // ë§ˆìš°ìŠ¤ê°€ í´ë¦­ëœ ì»´í¬ë„ŒíŠ¸ì—ê²Œ í¬ì»¤ìŠ¤ ì„¤ì •
 			}
 		});
 	}
@@ -46,7 +46,7 @@ public class FlyingTextEx extends JFrame {
 		public void keyPressed(KeyEvent e) {
 			int keyCode = e.getKeyCode();
 			
-			// Å° ÄÚµå °ª(keyCode)¿¡ µû¶ó »ó,ÇÏ,ÁÂ,¿ì Å°¸¦ ÆÇº°ÇÏ°í laÀÇ À§Ä¡¸¦ ÀÌµ¿½ÃÅ²´Ù.
+			// í‚¤ ì½”ë“œ ê°’(keyCode)ì— ë”°ë¼ ìƒ,í•˜,ì¢Œ,ìš° í‚¤ë¥¼ íŒë³„í•˜ê³  laì˜ ìœ„ì¹˜ë¥¼ ì´ë™ì‹œí‚¨ë‹¤.
 			switch (keyCode) {
 			case KeyEvent.VK_UP:
 				la.setLocation(la.getX(), la.getY()-FLYING_UNIT);

@@ -10,19 +10,19 @@ import javax.swing.JFrame;
 public class SwingEx02 extends JFrame {
 
 	public SwingEx02() {
-		setTitle("ContentPane°ú JFrame"); // ÇÁ·¹ÀÓ Å¸ÀÌÆ² ´Ş±â
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // ÇÁ·¹ÀÓ À©µµ¿ì¸¦ ´İÀ¸¸é ¸ŞÀÎ ÇÁ·Î±×·¥ÀÌ Á¾·á
+		setTitle("ContentPaneê³¼ JFrame"); // í”„ë ˆì„ íƒ€ì´í‹€ ë‹¬ê¸°
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // í”„ë ˆì„ ìœˆë„ìš°ë¥¼ ë‹«ìœ¼ë©´ ë©”ì¸ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œ
 
-		Container contentPane = getContentPane(); // ÄÁÅÙÆ® ÆÒÀ» ¾Ë¾Æ³½´Ù.
-		contentPane.setBackground(Color.BLACK); // ÄÁÅÙÆ®ÆÒ ¹é±×¶ó¿îµå ÄÃ·¯ ¼³Á¤.
-		contentPane.setLayout(new FlowLayout()); // ÄÁÅÙÆ®ÆÒ ±âº» ÇÁ·¹ÀÓÀ» FlowLayoutÀ¸·Î
+		Container contentPane = getContentPane(); // ì»¨í…íŠ¸ íŒ¬ì„ ì•Œì•„ë‚¸ë‹¤.
+		contentPane.setBackground(Color.BLACK); // ì»¨í…íŠ¸íŒ¬ ë°±ê·¸ë¼ìš´ë“œ ì»¬ëŸ¬ ì„¤ì •.
+		contentPane.setLayout(new FlowLayout()); // ì»¨í…íŠ¸íŒ¬ ê¸°ë³¸ í”„ë ˆì„ì„ FlowLayoutìœ¼ë¡œ
 
 		contentPane.add(new JButton("OK"));
 		contentPane.add(new JButton("Cancel"));
 		contentPane.add(new JButton("Ignore"));
 
 		setSize(300, 150);
-		setVisible(true); // È­¸é¿¡ ÇÁ·¹ÀÓ Ãâ·Â
+		setVisible(true); // í™”ë©´ì— í”„ë ˆì„ ì¶œë ¥
 	}
 
 	public static void main(String[] args) {

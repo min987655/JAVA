@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 import lombok.Data;
 
-// Ã¥ÀÓ : ¸Ş´º ¼±ÅÃ
+// ì±…ì„ : ë©”ë‰´ ì„ íƒ
 @Data
 public class Menu {
 	
-	// ¸Ş´º ¾ÆÀÌÅÛµé(ÄÃ·º¼Ç)
+	// ë©”ë‰´ ì•„ì´í…œë“¤(ì»¬ë ‰ì…˜)
 	private ArrayList<MenuItem> menuItems;
 		
 	public Menu(ArrayList<MenuItem> menuItems) {
 		this.menuItems = menuItems;
 	}
 
-	public MenuItem ¸Ş´º¼±ÅÃ(String menuName) {
+	public MenuItem ë©”ë‰´ì„ íƒ(String menuName) {
 		for (MenuItem menuItem : menuItems) {
 			if(menuItem.getName().equals(menuName)) {
 				return menuItem;

@@ -24,8 +24,8 @@ public class SocketClient {
 			sc = new Scanner(System.in);
 			while (true) {
 				String line = sc.nextLine();
-				// ALL : ¾È³ç
-				// MSG:white:¾È³ç
+				// ALL : ì•ˆë…•
+				// MSG:white:ì•ˆë…•
 				writer.println(line);
 			}
 

@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-// ¹®ÀÚ·Î ÀĞ°í ½ÍÀ½.
-// ÇÑ°³ ÀÌ»óÀ» ¹Ş°í ½ÍÀ½.
+// ë¬¸ìë¡œ ì½ê³  ì‹¶ìŒ.
+// í•œê°œ ì´ìƒì„ ë°›ê³  ì‹¶ìŒ.
 public class InputEx02 {
 
 	public static void main(String[] args) {

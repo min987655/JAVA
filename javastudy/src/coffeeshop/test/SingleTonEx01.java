@@ -1,18 +1,18 @@
 package coffeeshop.test;
 
-class ´ëÅë·É {
-	private static ´ëÅë·É instance = new ´ëÅë·É();
+class ëŒ€í†µë ¹ {
+	private static ëŒ€í†µë ¹ instance = new ëŒ€í†µë ¹();
 	
-	public static ´ëÅë·É getInstance() {
+	public static ëŒ€í†µë ¹ getInstance() {
 		return instance;
 	}
 	
-	private ´ëÅë·É() {}
+	private ëŒ€í†µë ¹() {}
 }
 
 public class SingleTonEx01 {
 	public static void main(String[] args) {
-		´ëÅë·É d1 = ´ëÅë·É.getInstance();
-		´ëÅë·É d2 = ´ëÅë·É.getInstance();
+		ëŒ€í†µë ¹ d1 = ëŒ€í†µë ¹.getInstance();
+		ëŒ€í†µë ¹ d2 = ëŒ€í†µë ¹.getInstance();
 	}
 }

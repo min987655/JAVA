@@ -13,11 +13,11 @@ import javax.swing.JPanel;
 public class SimpleSwingFrame extends JFrame {
 
 	public SimpleSwingFrame() {
-		setTitle("Open Challenge 9"); // Å¸ÀÌÆ²
+		setTitle("Open Challenge 9"); // íƒ€ì´í‹€
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		
-		// µÎ °³ÀÇ ÆĞ³ÎÀ» ºÙÀÎ´Ù.
+		// ë‘ ê°œì˜ íŒ¨ë„ì„ ë¶™ì¸ë‹¤.
 		c.add(new NorthPanel(), BorderLayout.NORTH);
 		c.add(new CenterPanel(), BorderLayout.CENTER);
 		setSize(300, 300);
@@ -36,7 +36,7 @@ public class SimpleSwingFrame extends JFrame {
 	
 	class CenterPanel extends JPanel {
 		public CenterPanel() {
-			setLayout(null); // ¹èÄ¡°ü¸®ÀÚ »èÁ¦, Àı´ë À§Ä¡¿¡ ÄÄÆ÷³ÍÆ® »ğÀÔ
+			setLayout(null); // ë°°ì¹˜ê´€ë¦¬ì ì‚­ì œ, ì ˆëŒ€ ìœ„ì¹˜ì— ì»´í¬ë„ŒíŠ¸ ì‚½ì…
 			
 			JLabel a = new JLabel("Hello");
 			a.setSize(100, 20);

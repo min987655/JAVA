@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class CoffeeApp {
 
 	public static void main(String[] args) {
-		// ¸Ş´º, ¹Ù¸®½ºÅ¸, ¼Õ´Ô
+		// ë©”ë‰´, ë°”ë¦¬ìŠ¤íƒ€, ì†ë‹˜
 		Consumer consumer = new Consumer();
 		Barista barista = new Barista();
 		
-		MenuItem m1 = new MenuItem("¾Æ¸Ş¸®Ä«³ë", 1500);
-		MenuItem m2 = new MenuItem("Ä«Æä¶ó¶¼", 1500);
-		MenuItem m3 = new MenuItem("Ä«ÇªÄ¡³ë", 1500);
+		MenuItem m1 = new MenuItem("ì•„ë©”ë¦¬ì¹´ë…¸", 1500);
+		MenuItem m2 = new MenuItem("ì¹´í˜ë¼ë–¼", 1500);
+		MenuItem m3 = new MenuItem("ì¹´í‘¸ì¹˜ë…¸", 1500);
 
 		ArrayList<MenuItem> menuItems = new ArrayList<>();
 		
@@ -22,6 +22,6 @@ public class CoffeeApp {
 		Menu menu = new Menu(menuItems);
 		//System.out.println(menuItems.get(1).getName());
 		
-		consumer.ÁÖ¹®("Äİµåºê·ç", menu, barista);
+		consumer.ì£¼ë¬¸("ì½œë“œë¸Œë£¨", menu, barista);
 	}
 }

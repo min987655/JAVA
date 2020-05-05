@@ -5,10 +5,10 @@ public class Cal {
 	static int add(int n1, int n2) {
 		int result = n1 + n2;
 		// System.out.println("result : " + result);
-		return result;// return °¡Àå ¸¶Áö¸·¿¡ !
+		return result;// return ê°€ì¥ ë§ˆì§€ë§‰ì— !
 	}
 
-	// minus (¸Å°³º¯¼ö´Â intÇü µÎ°³)(returnÀº intÇü)
+	// minus (ë§¤ê°œë³€ìˆ˜ëŠ” intí˜• ë‘ê°œ)(returnì€ intí˜•)
 	static int minus(int n3, int n4) {
 		int result = n3 - n4;
 		return result;

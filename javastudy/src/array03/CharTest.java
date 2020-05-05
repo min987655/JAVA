@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CharTest {		
 	public static void main(String[] args) {
-		System.out.println("¼ö¸¦ °áÁ¤ÇÏ¿´½À´Ï´Ù. ¸ÂÃß¾î º¸¼¼¿ä.");
+		System.out.println("ìˆ˜ë¥¼ ê²°ì •í•˜ì˜€ìŠµë‹ˆë‹¤. ë§žì¶”ì–´ ë³´ì„¸ìš”.");
 		System.out.println("0-99");
 		
 		Random r = new Random();
@@ -17,12 +17,12 @@ public class CharTest {
 			int num = sc.nextInt();
 			
 			if(k<num) {
-				System.out.println("´õ ³·°Ô");
+				System.out.println("ë” ë‚®ê²Œ");
 			} else if(k>num) {
-				System.out.println("´õ ³ô°Ô");
+				System.out.println("ë” ë†’ê²Œ");
 			} else {
-				System.out.println("¸Â¾Ò½À´Ï´Ù.");
-				System.out.println("´Ù½ÃÇÏ½Ã°Ú½À´Ï±î(y/n)>>");
+				System.out.println("ë§žì•˜ìŠµë‹ˆë‹¤.");
+				System.out.println("ë‹¤ì‹œí•˜ì‹œê² ìŠµë‹ˆê¹Œ(y/n)>>");
 				String check = sc.next();
 				if (check.equals("n")) {
 					break;

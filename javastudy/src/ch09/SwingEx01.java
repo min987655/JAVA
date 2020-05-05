@@ -10,19 +10,19 @@ import javax.swing.JFrame;
 public class SwingEx01 extends JFrame {
 
 	public SwingEx01() {
-		// JFrameÀÇ ±âº» ÆĞ³Î¿¡ Á¢±ÙÇÏ±â
+		// JFrameì˜ ê¸°ë³¸ íŒ¨ë„ì— ì ‘ê·¼í•˜ê¸°
 		Container contentPane = getContentPane();
-		// JFrameÀÇ ±âº» ÆĞ³ÎÀº BorderLayout -> FlowLayout º¯°æ
+		// JFrameì˜ ê¸°ë³¸ íŒ¨ë„ì€ BorderLayout -> FlowLayout ë³€ê²½
 		contentPane.setLayout(new FlowLayout());
-		// ±âº» ÆĞ³Î¿¡ ¹öÆ° ±×¸®±â
-		contentPane.add(new JButton("Ã¹¹øÂ° ¹öÆ°"));
+		// ê¸°ë³¸ íŒ¨ë„ì— ë²„íŠ¼ ê·¸ë¦¬ê¸°
+		contentPane.add(new JButton("ì²«ë²ˆì§¸ ë²„íŠ¼"));
 		contentPane.add(new TextArea(3, 30));
-		// Á¦¸ñ ±×¸®±â
-		setTitle("300x300 ½ºÀ® ÇÁ·¹ÀÓ ¸¸µé±â");
-		// Å©±â 300, 300À¸·Î ±×¸®±â
+		// ì œëª© ê·¸ë¦¬ê¸°
+		setTitle("300x300 ìŠ¤ìœ™ í”„ë ˆì„ ë§Œë“¤ê¸°");
+		// í¬ê¸° 300, 300ìœ¼ë¡œ ê·¸ë¦¬ê¸°
 		setSize(300, 300);
-		// È­¸é¿¡ º¸ÀÌ°Ô ÇÏ±â
-		setVisible(true); // painting(ÀÌ¶§ ±×¸²ÀÌ ±×·ÁÁü)
+		// í™”ë©´ì— ë³´ì´ê²Œ í•˜ê¸°
+		setVisible(true); // painting(ì´ë•Œ ê·¸ë¦¼ì´ ê·¸ë ¤ì§)
 	}
 
 	public static void main(String[] args) {

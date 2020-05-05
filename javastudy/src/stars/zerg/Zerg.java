@@ -4,15 +4,15 @@ import stars.Behavior;
 
 public abstract class Zerg implements Behavior {
 	public void move() {
-		System.out.println("ÀÌµ¿");
+		System.out.println("ì´ë™");
 	}
 	public void repair() {
-		System.out.println("ÀÚ¿¬ Ä¡·á");
+		System.out.println("ìì—° ì¹˜ë£Œ");
 	}
 	
 	public static void upgrade() {
 		Ultra.attack++;
 		Hydra.attack++;
-		System.out.println("Àú±× ¾÷±×·¹ÀÌµå ¿Ï·á");
+		System.out.println("ì €ê·¸ ì—…ê·¸ë ˆì´ë“œ ì™„ë£Œ");
 	}
 }

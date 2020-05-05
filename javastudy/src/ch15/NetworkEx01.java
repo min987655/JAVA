@@ -13,17 +13,17 @@ public class NetworkEx01 {
 	public static void main(String[] args) {
 
 		try {
-			// 1. ÁÖ¼Ò °´Ã¼ ¸¸µé±â - ÀÚµ¿À¸·Î ÆÄ½ÌÇØ ÁÜ
+			// 1. ì£¼ì†Œ ê°ì²´ ë§Œë“¤ê¸° - ìë™ìœ¼ë¡œ íŒŒì‹±í•´ ì¤Œ
 			URL url = new URL(
 					"http://openapi.tago.go.kr/openapi/service/DmstcFlightNvgInfoService/getFlightOpratInfoList?serviceKey=XiDeOhe%2FX427It5zoMfoELqSWyIrFm6LicOSj7n6vJBEiEMZq7tWzLt7Oc1f1WYh9KiwAmWZqrVvaEuS15TlFA%3D%3D&numOfRows=50&pageNo=1&depAirportId=NAARKJJ&arrAirportId=NAARKPC&depPlandTime=20200407&_type=json");
 
-			// 2. ½ºÆ®¸² ¿¬°á
+			// 2. ìŠ¤íŠ¸ë¦¼ ì—°ê²°
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-			// 3. ¹öÆÛ ¿¬°á(¹®ÀÚ¿­)
+			// 3. ë²„í¼ ì—°ê²°(ë¬¸ìì—´)
 			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 
-			// 4. ¹®ÀÚ ´õÇÏ±â
+			// 4. ë¬¸ì ë”í•˜ê¸°
 			StringBuilder sb = new StringBuilder();
 
 			String input = "";

@@ -1,13 +1,13 @@
 package ch05;
 
-// Ãß»óÅ¬·¡½º´Â ÀÏ¹İ ¸Ş¼­µå¸¦ °¡Áú ¼ö ÀÖ´Ù.
-// Ãß»óÅ¬·¡½º´Â ³»°¡ ±¸ÇöÇÒ ¼ö ¾ø´Â ¸Ş¼­µå¸¦ ¿ÀºêÁ§Æ®¿¡°Ô ¹Ì·ê ¼ö ÀÖ´Ù.
-// Ãß»óÅ¬·¡½º´Â abstract¸¦ ºÙÀÎ´Ù.
-// Ãß»óÅ¬·¡½º¸¦ ÅëÇØ¼­ ¼ø¼­¸¦ Á¤ÇÒ ¼ö ÀÖ´Ù.
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” ì¼ë°˜ ë©”ì„œë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìˆë‹¤.
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” ë‚´ê°€ êµ¬í˜„í•  ìˆ˜ ì—†ëŠ” ë©”ì„œë“œë¥¼ ì˜¤ë¸Œì íŠ¸ì—ê²Œ ë¯¸ë£° ìˆ˜ ìˆë‹¤.
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” abstractë¥¼ ë¶™ì¸ë‹¤.
+// ì¶”ìƒí´ë˜ìŠ¤ë¥¼ í†µí•´ì„œ ìˆœì„œë¥¼ ì •í•  ìˆ˜ ìˆë‹¤.
 abstract class Food {
 	abstract void standby();
 	void eat() {
-		System.out.println("À½½ÄÀ» ¸Ô½À´Ï´Ù.");
+		System.out.println("ìŒì‹ì„ ë¨¹ìŠµë‹ˆë‹¤.");
 	}
 	abstract void cook();
 	
@@ -18,30 +18,30 @@ abstract class Food {
 	}
 }
 
-class ¶ó¸é extends Food {
+class ë¼ë©´ extends Food {
 
 	@Override
 	void cook() {
-		System.out.println("³¿ºñ¿¡ ²úÀÎ´Ù.");
+		System.out.println("ëƒ„ë¹„ì— ë“ì¸ë‹¤.");
 	}
 
 	@Override
 	void standby() {
-		System.out.println("¶ó¸é°ú °¡½º¿Í ³¿ºñ¸¦ ÁØºñÇÕ´Ï´Ù.");
+		System.out.println("ë¼ë©´ê³¼ ê°€ìŠ¤ì™€ ëƒ„ë¹„ë¥¼ ì¤€ë¹„í•©ë‹ˆë‹¤.");
 	}
 	
 }
 
-class »ï°ã»ì extends Food {
+class ì‚¼ê²¹ì‚´ extends Food {
 
 	@Override
 	void cook() {
-		System.out.println("ºÒÆÇ¿¡ ±Á´Â´Ù.");
+		System.out.println("ë¶ˆíŒì— êµ½ëŠ”ë‹¤.");
 	}
 
 	@Override
 	void standby() {
-		System.out.println("ºÒÆÇ°ú °í±â¿Í ¹ö³Ê¸¦ ÁØºñÇÕ´Ï´Ù.");
+		System.out.println("ë¶ˆíŒê³¼ ê³ ê¸°ì™€ ë²„ë„ˆë¥¼ ì¤€ë¹„í•©ë‹ˆë‹¤.");
 	}
 	
 }
@@ -53,7 +53,7 @@ public class FoodEx02 {
 	}
 	
 	public static void main(String[] args) {
-		start(new ¶ó¸é());
+		start(new ë¼ë©´());
 	}
 
 }

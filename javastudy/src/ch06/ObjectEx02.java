@@ -1,9 +1,9 @@
 package ch06;
 
 class Person {
-	String name ="È«±æµ¿";
+	String name ="í™ê¸¸ë™";
 	int age = 15;
-	String job ="ÇĞ»ı";
+	String job ="í•™ìƒ";
 	
 	@Override
 	public String toString() {
@@ -16,16 +16,16 @@ public class ObjectEx02 {
 
 	public static void main(String[] args) {
 		Integer num = 10;
-		String s = num.toString(); // ¸ğµç ¿ÀºêÁ§Æ®´Â toString ÇÒ ¼ö ÀÖÀ½
+		String s = num.toString(); // ëª¨ë“  ì˜¤ë¸Œì íŠ¸ëŠ” toString í•  ìˆ˜ ìˆìŒ
 		System.out.println(s);
 
 		Person p = new Person();
-		System.out.println(p.toString()); // (toStringÀÇ ¿øÇüÀº : class @ ÇØ½¬ÄÚµå) ÀçÁ¤ÀÇÇØ¼­ ½ºÆ®¸µÅ¸ÀÔÀÌ ¸®ÅÏµÇ°Ô ÇÔ.
-		System.out.println(p); // °´Ã¼¸¦ È£ÃâÇÏ¸é ÀÚµ¿À¸·Î toString È£Ãâ µÊ.
+		System.out.println(p.toString()); // (toStringì˜ ì›í˜•ì€ : class @ í•´ì‰¬ì½”ë“œ) ì¬ì •ì˜í•´ì„œ ìŠ¤íŠ¸ë§íƒ€ì…ì´ ë¦¬í„´ë˜ê²Œ í•¨.
+		System.out.println(p); // ê°ì²´ë¥¼ í˜¸ì¶œí•˜ë©´ ìë™ìœ¼ë¡œ toString í˜¸ì¶œ ë¨.
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("¾È³ç");
-		sb.append("¹İ°¡¿ö");
+		sb.append("ì•ˆë…•");
+		sb.append("ë°˜ê°€ì›Œ");
 		
 		System.out.println(sb.toString());
 		                                                                                                                                      

@@ -6,7 +6,7 @@ public class ArrayEx07 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("6ÀÚ¸® ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("6ìë¦¬ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		int num = sc.nextInt();
 		
 		String strNum = num + "";
@@ -20,9 +20,9 @@ public class ArrayEx07 {
 		}
 		
 		if(check) {
-			System.out.println("3ÀÌ Á¸ÀçÇÕ´Ï´Ù.");
+			System.out.println("3ì´ ì¡´ì¬í•©ë‹ˆë‹¤.");
 		} else {
-			System.out.println("3ÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("3ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		}
 		
 		/*System.out.println(strNum.charAt(2));

@@ -62,13 +62,13 @@ public class MySms extends JFrame {
 	
 	
 	private void init() {
-		f1 = new Font("³ª´®¹Ù¸¥°íµñ", Font.BOLD, 15);
-		f2 = new Font("³ª´®¹Ù¸¥°íµñ", Font.PLAIN, 15);
-		jl1 = new JLabel("ÀüÈ­¹øÈ£");
+		f1 = new Font("ë‚˜ëˆ”ë°”ë¥¸ê³ ë”•", Font.BOLD, 15);
+		f2 = new Font("ë‚˜ëˆ”ë°”ë¥¸ê³ ë”•", Font.PLAIN, 15);
+		jl1 = new JLabel("ì „í™”ë²ˆí˜¸");
 		jt1 = new JTextField(12);
-		jl2 = new JLabel("¸Þ¼¼Áö");
+		jl2 = new JLabel("ë©”ì„¸ì§€");
 		jt2 = new JTextField(12);
-		jb = new JButton("Àü¼Û");
+		jb = new JButton("ì „ì†¡");
 	}
 	
 	public static void main(String[] args) {

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// ¸ğµ¨, Beans(Äá)
+//ëª¨ë¸, Beans(ì½©)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

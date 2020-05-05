@@ -10,22 +10,22 @@ public class paintJPanelEx extends JFrame {
 	private MyPanel pane1 = new MyPanel();
 
 	public paintJPanelEx() {
-		setTitle("JpanelÀÇ paintComponent() ¿¹Á¦");
+		setTitle("Jpanelì˜ paintComponent() ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setContentPane(pane1); // »ı¼ºÇÑ pane1 ÆĞ³ÎÀ» ÄÁÅÙÆ®ÆÒÀ¸·Î »ç¿ë
+		setContentPane(pane1); // ìƒì„±í•œ pane1 íŒ¨ë„ì„ ì»¨í…íŠ¸íŒ¬ìœ¼ë¡œ ì‚¬ìš©
 		setSize(250, 200);
 		setVisible(true);
 	}
 
-	// JPanelÀ» »ó¼Ó¹Ş´Â »õ ÆĞ³Î ±¸Çö
+	// JPanelì„ ìƒì†ë°›ëŠ” ìƒˆ íŒ¨ë„ êµ¬í˜„
 	public class MyPanel extends JPanel {
 		public void paintComponent(Graphics g) {
-			super.paintComponent(g); // JPanelÀÇ paintComponent() È£Ãâ
-			g.setColor(Color.blue); // ÆÄ¶õ»ö ¼±ÅÃ
-			g.drawRect(10, 10, 50, 50); // (10,10) À§Ä¡¿¡ 50X50 Å©±âÀÇ »ç°İÇü ±×¸®±â
-			g.drawRect(50, 50, 50, 50); // (50,50) À§Ä¡¿¡ 50X50 Å©±âÀÇ »ç°İÇü ±×¸®±â
-			g.setColor(Color.MAGENTA); // ¸¶Á¨Å¸»ö ¼±ÅÃ
-			g.drawRect(90, 90, 50, 50); // (90,90) À§Ä¡¿¡ 50X50 Å©±âÀÇ »ç°İÇü ±×¸®±â
+			super.paintComponent(g); // JPanelì˜ paintComponent() í˜¸ì¶œ
+			g.setColor(Color.blue); // íŒŒë€ìƒ‰ ì„ íƒ
+			g.drawRect(10, 10, 50, 50); // (10,10) ìœ„ì¹˜ì— 50X50 í¬ê¸°ì˜ ì‚¬ê²©í˜• ê·¸ë¦¬ê¸°
+			g.drawRect(50, 50, 50, 50); // (50,50) ìœ„ì¹˜ì— 50X50 í¬ê¸°ì˜ ì‚¬ê²©í˜• ê·¸ë¦¬ê¸°
+			g.setColor(Color.MAGENTA); // ë§ˆì  íƒ€ìƒ‰ ì„ íƒ
+			g.drawRect(90, 90, 50, 50); // (90,90) ìœ„ì¹˜ì— 50X50 í¬ê¸°ì˜ ì‚¬ê²©í˜• ê·¸ë¦¬ê¸°
 		}
 
 	}

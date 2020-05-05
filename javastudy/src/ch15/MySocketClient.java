@@ -16,8 +16,8 @@ public class MySocketClient {
 	BufferedReader br;
 
 	public MySocketClient() throws Exception {
-		// ·çÇÁ¹é : "localhost" "127.0.0.1" - ³» ¾ÆÀÌÇÇ·Î ´Ù½Ã µ¹¾Æ¿È.
-		socket = new Socket("localhost", 15000); // ¼­¹ö¼ÒÄÏÀÇ accept() ÇÔ¼ö¸¦ È£Ãâ
+		// ë£¨í”„ë°± : "localhost" "127.0.0.1" - ë‚´ ì•„ì´í”¼ë¡œ ë‹¤ì‹œ ëŒì•„ì˜´.
+		socket = new Socket("localhost", 15000); // ì„œë²„ì†Œì¼“ì˜ accept() í•¨ìˆ˜ë¥¼ í˜¸ì¶œ
 		bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 		br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -27,8 +27,8 @@ public class MySocketClient {
 			bw.flush();
 		}
 		
-//		PrintWriter pw = new PrintWriter(socket.getOutputStream(),true); // BufferedWriter+OutputStreamWriter. auto flush ¼±ÅÃ °¡´É
-//		pw.write("¾È³ç");
+//		PrintWriter pw = new PrintWriter(socket.getOutputStream(),true); // BufferedWriter+OutputStreamWriter. auto flush ì„ íƒ ê°€ëŠ¥
+//		pw.write("ì•ˆë…•");
 //		pw.close();
 		bw.close();
 		br.close();

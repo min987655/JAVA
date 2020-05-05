@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 public class EventEx01 extends JFrame {
 
 	public EventEx01() {
-		setTitle("Action ÀÌº¥Æ® ¸®½º³Ê ¿¹Á¦");
-		// X¹öÆ° Å¬¸¯½Ã ÀÌº¥Æ® ºĞ¹è ½º·¹µåµµ Á¾·á
+		setTitle("Action ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì˜ˆì œ");
+		// Xë²„íŠ¼ í´ë¦­ì‹œ ì´ë²¤íŠ¸ ë¶„ë°° ìŠ¤ë ˆë“œë„ ì¢…ë£Œ
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		JButton btn = new JButton("Action");
-		// ¸®½º³Ê »ı¼º
+		// ë¦¬ìŠ¤ë„ˆ ìƒì„±
 		btn.addActionListener(new MyActionListener());
 		c.add(btn);
 
@@ -31,13 +31,13 @@ public class EventEx01 extends JFrame {
 
 }
 
-//µ¶¸³µÈ Å¬·¡½º·Î ÀÌº¥Æ® ¸®½º³Ê¸¦ ÀÛ¼ºÇÑ´Ù.
+//ë…ë¦½ëœ í´ë˜ìŠ¤ë¡œ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆë¥¼ ì‘ì„±í•œë‹¤.
 class MyActionListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource(); // ÀÌº¥Æ® ¼Ò½º ¹öÆ° ¾Ë¾Æ³»±â
-		if (b.getText().equals("Action")) // ¹öÆ°ÀÇ ¹®ÀÚ¿­ÀÌ "Action"ÀÎÁö ºñ±³
-			b.setText("¾×¼Ç"); // ¹öÆ°ÀÇ ¹®ÀÚ¿­À» "¾×¼Ç"À¸·Î º¯°æ
+		JButton b = (JButton) e.getSource(); // ì´ë²¤íŠ¸ ì†ŒìŠ¤ ë²„íŠ¼ ì•Œì•„ë‚´ê¸°
+		if (b.getText().equals("Action")) // ë²„íŠ¼ì˜ ë¬¸ìì—´ì´ "Action"ì¸ì§€ ë¹„êµ
+			b.setText("ì•¡ì…˜"); // ë²„íŠ¼ì˜ ë¬¸ìì—´ì„ "ì•¡ì…˜"ìœ¼ë¡œ ë³€ê²½
 		else
-			b.setText("Action"); // ¹öÆ°ÀÇ ¹®ÀÚ¿­À» "Action"À¸·Î º¯°æ
+			b.setText("Action"); // ë²„íŠ¼ì˜ ë¬¸ìì—´ì„ "Action"ìœ¼ë¡œ ë³€ê²½
 	}
 }

@@ -1,19 +1,19 @@
 package coffeeshop;
 
-// Ã¥ÀÓ : ÁÖ¹®
+// ì±…ì„ : ì£¼ë¬¸
 public class Consumer {
 
-	public void ÁÖ¹®(String menuName, Menu menu, Barista barista) {
+	public void ì£¼ë¬¸(String menuName, Menu menu, Barista barista) {
 		
-		// ¼Õ´Ô -> ¸Ş´ºÆÇ ¸Ş½ÃÁö¸¦ º¸³½´Ù. (¸Ş´º ¼±ÅÃÇØÁà)
-		MenuItem menuItem = menu.¸Ş´º¼±ÅÃ(menuName);
+		// ì†ë‹˜ -> ë©”ë‰´íŒ ë©”ì‹œì§€ë¥¼ ë³´ë‚¸ë‹¤. (ë©”ë‰´ ì„ íƒí•´ì¤˜)
+		MenuItem menuItem = menu.ë©”ë‰´ì„ íƒ(menuName);
 	
 		if(menuItem == null) {
-			System.out.println(menuName+"Àº ¿ì¸® Ä¿ÇÇ¼ó¿¡ ¾ø½À´Ï´Ù.");
+			System.out.println(menuName+"ì€ ìš°ë¦¬ ì»¤í”¼ìˆì— ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			//¼Õ´Ô -> ¹Ù¸®½ºÅ¸ ¸Ş¼¼Áö¸¦ º¸³½´Ù.(Ä¿ÇÇ»ı¼ºÇØÁà)
-			Coffee coffee = barista.Ä¿ÇÇ»ı¼º(menuItem);
-			System.out.println("Ä¿ÇÇ ³ª¿Ô½À´Ï´Ù.");
+			//ì†ë‹˜ -> ë°”ë¦¬ìŠ¤íƒ€ ë©”ì„¸ì§€ë¥¼ ë³´ë‚¸ë‹¤.(ì»¤í”¼ìƒì„±í•´ì¤˜)
+			Coffee coffee = barista.ì»¤í”¼ìƒì„±(menuItem);
+			System.out.println("ì»¤í”¼ ë‚˜ì™”ìŠµë‹ˆë‹¤.");
 			System.out.println(coffee.getName());
 			System.out.println(coffee.getPrice());
 		}

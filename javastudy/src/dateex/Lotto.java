@@ -8,10 +8,10 @@ import java.util.TreeSet;
 public class Lotto {
 
 	public static void main(String[] args) {
-		// 6°³ÀÇ ¹øÈ£ - (1~45)
+		// 6ê°œì˜ ë²ˆí˜¸ - (1~45)
 
-		// HashSet ¼ø¼­°¡ ¾øÀ½(¾öÃ» ºü¸§)
-		// TreeSet ¼ø¼­´ë·Î Á¤·Ä(HashSetº¸´Ù ´À¸²)
+		// HashSet ìˆœì„œê°€ ì—†ìŒ(ì—„ì²­ ë¹ ë¦„)
+		// TreeSet ìˆœì„œëŒ€ë¡œ ì •ë ¬(HashSetë³´ë‹¤ ëŠë¦¼)
 //		Set<Integer> lottoSet = new HashSet<>();
 		Set<Integer> lottoSet = new TreeSet<>();
 		Random r = new Random();

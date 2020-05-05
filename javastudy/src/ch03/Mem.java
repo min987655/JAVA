@@ -3,7 +3,7 @@ package ch03;
 public class Mem {
 
 	int num = 10;
-	static String name = "È«±æµ¿";
+	static String name = "í™ê¸¸ë™";
 
 	void test() {
 		int num = 5;
@@ -14,10 +14,10 @@ public class Mem {
 		System.out.println("sum:" + sum);
 		Mem m = new Mem();
 		m.test();
-		System.out.println("¹øÈ£:" + m.num);
+		System.out.println("ë²ˆí˜¸:" + m.num);
 		System.out.println(1);
 		System.out.println(2);
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	}
 
 }

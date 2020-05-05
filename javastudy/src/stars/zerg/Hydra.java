@@ -14,6 +14,6 @@ public class Hydra extends Zerg {
 
 	@Override
 	public void attack(Behavior unit) {
-		System.out.println("¿ø°Å¸® °ø°İ");
+		System.out.println("ì›ê±°ë¦¬ ê³µê²©");
 	}
 }

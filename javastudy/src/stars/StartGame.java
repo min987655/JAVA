@@ -24,16 +24,16 @@ public class StartGame {
 	
 	public static void main(String[] args) {
 		Protoss.upgrade();
-		Zealot z1 = new Zealot("Áú·µ1");
-		Dragoon d1 = new Dragoon("µå¶ó±º1");
+		Zealot z1 = new Zealot("ì§ˆëŸ¿1");
+		Dragoon d1 = new Dragoon("ë“œë¼êµ°1");
 		
 		Terran.upgrade();
-		Marine m1 = new Marine("¸¶¸°1");
-		Tank t1 = new Tank("ÅÊÅ©1");
+		Marine m1 = new Marine("ë§ˆë¦°1");
+		Tank t1 = new Tank("íƒ±í¬1");
 		
 		Zerg.upgrade();
-		Hydra h1 = new Hydra("È÷µå¶ó1");
-		Ultra u1 = new Ultra("¿ïÆ®¶ó1");
+		Hydra h1 = new Hydra("íˆë“œë¼1");
+		Ultra u1 = new Ultra("ìš¸íŠ¸ë¼1");
 		
 		
 		move(z1);

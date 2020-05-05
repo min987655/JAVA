@@ -11,25 +11,25 @@ import javax.swing.JFrame;
 public class EventEx03_1 extends JFrame {
 
 	public EventEx03_1() {
-		setTitle("Action ÀÌº¥Æ® ¸®½º³Ê ¿¹Á¦");
+		setTitle("Action ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		JButton btn = new JButton("Action");
 		c.add(btn);
 
-		// ÀÍ¸íÅ¬·¡½º·Î Action ¸®½º³Ê »ı¼º
+		// ìµëª…í´ë˜ìŠ¤ë¡œ Action ë¦¬ìŠ¤ë„ˆ ìƒì„±
 		btn.addActionListener(new ActionListener() {			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JButton b = (JButton)e.getSource();
 				if (b.getText().equals("Action")) {
-					b.setText("¾×¼Ç");
+					b.setText("ì•¡ì…˜");
 				} else {
 					b.setText("Ation");
 				}
 				
-				// EventEx04ÀÇ ¸â¹ö³ª JFrameÀÇ ¸â¹ö¸¦ È£ÃâÇÒ ¼ö ÀÖÀ½.
+				// EventEx04ì˜ ë©¤ë²„ë‚˜ JFrameì˜ ë©¤ë²„ë¥¼ í˜¸ì¶œí•  ìˆ˜ ìˆìŒ.
 				setTitle(b.getText());
 			}
 		});

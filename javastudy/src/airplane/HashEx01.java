@@ -7,11 +7,11 @@ public class HashEx01 {
 	public static void main(String[] args) {
 		HashMap<String, String> auth = 
 				new HashMap<>();
-		// °ªÀÌ ÀÖ´Â ÁÖ¼Ò¸¦ ÇØ½¬ÇÔ
-		auth.put("¾ÆÀÌµğ", "ssarmango");
-		auth.put("ºñ¹Ğ¹øÈ£", "1234");
+		// ê°’ì´ ìˆëŠ” ì£¼ì†Œë¥¼ í•´ì‰¬í•¨
+		auth.put("ì•„ì´ë””", "ssarmango");
+		auth.put("ë¹„ë°€ë²ˆí˜¸", "1234");
 		
-		System.out.println(auth.get("¾ÆÀÌµğ"));
+		System.out.println(auth.get("ì•„ì´ë””"));
 	}
 
 }

@@ -15,7 +15,7 @@ public class JComponentEx extends JFrame {
 	private JButton b1,b2,b3;	
 	
 	public JComponentEx() {
-		setTitle("JComponentÀÇ °øÅë ¸Ş¼Òµå ¿¹Á¦");
+		setTitle("JComponentì˜ ê³µí†µ ë©”ì†Œë“œ ì˜ˆì œ");
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		
@@ -23,17 +23,17 @@ public class JComponentEx extends JFrame {
 		b2 = new JButton("   Disable Button   ");
 		b3 = new JButton("getX(), getY()");
 		
-		b1.setBackground(Color.YELLOW); // ¹è°æ»ö ¼³Á¤
-		b1.setForeground(Color.MAGENTA); // ±ÛÀÚ»ö ¼³Á¤
-		b1.setFont(new Font("Arial", Font.ITALIC, 20)); // Arial, 20ÇÈ¼¿ ÆùÆ® ¼³Á¤
-		b2.setEnabled(false); // ¹öÆ° ºñÈ°¼ºÈ­
+		b1.setBackground(Color.YELLOW); // ë°°ê²½ìƒ‰ ì„¤ì •
+		b1.setForeground(Color.MAGENTA); // ê¸€ììƒ‰ ì„¤ì •
+		b1.setFont(new Font("Arial", Font.ITALIC, 20)); // Arial, 20í”½ì…€ í°íŠ¸ ì„¤ì •
+		b2.setEnabled(false); // ë²„íŠ¼ ë¹„í™œì„±í™”
 		b3.addActionListener(new ActionListener() {
 			
-			// Å¸°Ù(Äİ¹éµÇ´Â)
+			// íƒ€ê²Ÿ(ì½œë°±ë˜ëŠ”)
 			@Override
-			public void actionPerformed(ActionEvent e) { // ¹¹°¡ µé¾î¿ÃÁö ¸ğ¸£±â ¶§¹®¿¡
-				//JButton b = (JButton)e.getSource(); // Object¸¦ ¸®ÅÏ. ³»°¡ Á÷Á¢ ´Ù¿îÄ³½ºÆÃÇÏ¿© ÁÜ
-				b3.setText("Hello"); // b3¸¸ ÀÌº¥Æ® È°¼ºÈ­½ÃÄ×±â ¶§¹®¿¡ ÀÌ·¸°Ô ½ÇÇà °¡´É.
+			public void actionPerformed(ActionEvent e) { // ë­ê°€ ë“¤ì–´ì˜¬ì§€ ëª¨ë¥´ê¸° ë•Œë¬¸ì—
+				//JButton b = (JButton)e.getSource(); // Objectë¥¼ ë¦¬í„´. ë‚´ê°€ ì§ì ‘ ë‹¤ìš´ìºìŠ¤íŒ…í•˜ì—¬ ì¤Œ
+				b3.setText("Hello"); // b3ë§Œ ì´ë²¤íŠ¸ í™œì„±í™”ì‹œì¼°ê¸° ë•Œë¬¸ì— ì´ë ‡ê²Œ ì‹¤í–‰ ê°€ëŠ¥.
 			}
 		});
 		

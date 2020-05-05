@@ -5,24 +5,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BookList {
-	Connection con; // ¸â¹öº¯¼ö
+	Connection con; // ë©¤ë²„ë³€ìˆ˜
 	Statement stmt;
 	ResultSet rs;
 
-	// ¸â¹öº¯¼ö
-	// 1. º¯¼ö
+	// ë©¤ë²„ë³€ìˆ˜
+	// 1. ë³€ìˆ˜
 //	int bookid;
 //	String bookname;
 //	String publisher;
 //	int price;
 
-	// 2. ¹è¿­
+	// 2. ë°°ì—´
 //	int bookid_arr[] = new int[10];
 //	String bookname_arr[] = new String[10];
 //	String publisher_arr[] = new String[10];
 //	int price_arr[] = new int[10];
 
-	// 3. °´Ã¼ (³»ºÎ inner Å¬·¡½º)
+	// 3. ê°ì²´ (ë‚´ë¶€ inner í´ë˜ìŠ¤)
 //	class Book {
 //		int bookid;
 //		String bookname;
@@ -30,16 +30,16 @@ public class BookList {
 //		int price;
 //	}
 
-	// 3. °´Ã¼
+	// 3. ê°ì²´
 	Book b1;
-	// 4. °´Ã¼ ¹è¿­
+	// 4. ê°ì²´ ë°°ì—´
 	Book[] b_array;
 
 	public BookList() {
-		// 3. °´Ã¼ ¹æ½Ä
+		// 3. ê°ì²´ ë°©ì‹
 //		b1 = new Book();
-		// 4. °´Ã¼ ¹è¿­ ÃÊ±âÈ­
-		b_array = new Book[12]; // ¹è¿­ Ä­ÀÌ ¸î °³ 
+		// 4. ê°ì²´ ë°°ì—´ ì´ˆê¸°í™”
+		b_array = new Book[12]; // ë°°ì—´ ì¹¸ì´ ëª‡ ê°œ 
 
 		for (int i = 0; i < b_array.length; ++i)
 			b_array[i] = new Book();
@@ -53,23 +53,23 @@ public class BookList {
 
 	void getConnection() {
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		// 11g express edition Àº orcl ´ë½Å XE ¸¦ ÀÔ·ÂÇÑ´Ù.
-		String userid = "c##madang"; // c## Ãß°¡
-		String pwd = "c##madang"; // c## Ãß°¡
+		// 11g express edition ì€ orcl ëŒ€ì‹  XE ë¥¼ ì…ë ¥í•œë‹¤.
+		String userid = "c##madang"; // c## ì¶”ê°€
+		String pwd = "c##madang"; // c## ì¶”ê°€
 
-		// µå¶óÀÌ¹ö¸¦ Ã£´Â °úÁ¤
+		// ë“œë¼ì´ë²„ë¥¼ ì°¾ëŠ” ê³¼ì •
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("µå¶óÀÌ¹ö ·Îµå ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ë¡œë“œ ì„±ê³µ");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		// µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¿¬°áÇÏ´Â °úÁ¤
+		// ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ì—°ê²°í•˜ëŠ” ê³¼ì •
 		try {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ÁØºñ");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì¤€ë¹„");
 			con = DriverManager.getConnection(url, userid, pwd);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -77,7 +77,7 @@ public class BookList {
 
 	void getBookDB() {
 
-		String query = "SELECT bookid, bookname, publisher, price FROM book"; // SQL¹®
+		String query = "SELECT bookid, bookname, publisher, price FROM book"; // SQLë¬¸
 
 		try {
 			stmt = con.createStatement();
@@ -86,7 +86,7 @@ public class BookList {
 
 			int index = 0;
 			while (rs.next()) {
-				// 1. º¯¼ö
+				// 1. ë³€ìˆ˜
 //				bookid = rs.getInt(1);
 //				bookname = rs.getString(2);
 //				publisher = rs.getString(3);
@@ -95,7 +95,7 @@ public class BookList {
 //				printBook(bookid, bookname, publisher, price);
 //				printBook2();
 
-				// 2. ¹è¿­
+				// 2. ë°°ì—´
 //				bookid_arr[index] = rs.getInt(1));
 //				bookname_arr[index] = rs.getString(2));
 //				publisher_arr[index] = rs.getString(3));
@@ -106,13 +106,13 @@ public class BookList {
 //				++index;
 //				printBook(bookid_arr[0], bookname_arr[0], price_arr[0]);
 
-				// 3. °´Ã¼
+				// 3. ê°ì²´
 //				b1.bookid = rs.getInt(1);
 //				b1.bookname = rs.getString(2);
 //				b1.publisher = rs.getString(3);
 //				b1.price = rs.getInt(4);
 
-				// 4. °´Ã¼ ¹è¿­ - index ¹øÁö ¼ö!!!
+				// 4. ê°ì²´ ë°°ì—´ - index ë²ˆì§€ ìˆ˜!!!
 				b_array[index].bookid = rs.getInt(1);
 				b_array[index].bookname = rs.getString(2);
 				b_array[index].publisher = rs.getString(3);
@@ -128,17 +128,17 @@ public class BookList {
 
 	}
 
-	// 1. º¯¼ö
+	// 1. ë³€ìˆ˜
 //	void printBook(int bookid, String bookname, String publisher, int price) {
 //		System.out.println(bookid + "," + bookname + "," + publisher + "," + price);
 //	}
 
-	// 1-1. º¯¼ö 2¹æ½Ä
+	// 1-1. ë³€ìˆ˜ 2ë°©ì‹
 //	void printBook2() {
 //		System.out.println(bookid + "," + bookname + "," + publisher + "," + price);
 //	}
 
-	// 2. ¹è¿­
+	// 2. ë°°ì—´
 //	void printBookArr() {
 //		for (int i = 0; i < 10; i++) {
 //			System.out.print(bookid_arr[i] + "\t");
@@ -148,7 +148,7 @@ public class BookList {
 //		}
 //	}
 
-	// 4. °´Ã¼ ¹è¿­
+	// 4. ê°ì²´ ë°°ì—´
 	void printBook_Obj_array() {
 		for (int i = 0; i < 12; ++i) {
 			System.out.print(b_array[i].bookid + "\t");
@@ -158,7 +158,7 @@ public class BookList {
 		}
 	}
 
-	// 3. °´Ã¼
+	// 3. ê°ì²´
 	void printBook_Object() {
 		System.out.print(b1.bookid + "\t");
 		System.out.print(b1.bookname + "\t");

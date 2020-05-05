@@ -10,11 +10,11 @@ class MyJDBC extends MyConnection {
 	
 	public MyJDBC() {
 				
-		System.out.println("»ı¼ºÀÚ È£Ãâ");
+		System.out.println("ìƒì„±ì í˜¸ì¶œ");
 	}
 
-	static { // °´Ã¼ »ı¼º Àü¿¡ ÃÊ±âÈ­ ÇÒ ¶§ »ç¿ë. new ÇÒ ¶§ static ³»ºÎ È£Ãâ!
-		//System.out.println("static ÃÊ±âÈ­ È£Ãâ"); //static ÇÔ¼ö¸íÀ» ¾ÈÀûÀ¸¸é ½ºÅÃ ³»ºÎ°¡ ¸Ş¸ğ¸®¿¡ ¶ä.
+	static { // ê°ì²´ ìƒì„± ì „ì— ì´ˆê¸°í™” í•  ë•Œ ì‚¬ìš©. new í•  ë•Œ static ë‚´ë¶€ í˜¸ì¶œ!
+		//System.out.println("static ì´ˆê¸°í™” í˜¸ì¶œ"); //static í•¨ìˆ˜ëª…ì„ ì•ˆì ìœ¼ë©´ ìŠ¤íƒ ë‚´ë¶€ê°€ ë©”ëª¨ë¦¬ì— ëœ¸.
 		conn = new MyJDBC();
 	}
 }

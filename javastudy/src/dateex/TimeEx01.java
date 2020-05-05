@@ -8,14 +8,14 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
-// (±¸¹öÀü ÀÚ¹Ù 1.7 ÀÌÇÏ)³¯Â¥ ÆÐÅ°Áöµé
+// (êµ¬ë²„ì „ ìžë°” 1.7 ì´í•˜)ë‚ ì§œ íŒ¨í‚¤ì§€ë“¤
 // java.sql.Date 
 // java.sql.Time (X) 
 // java.sql.Timestamp
 // java.util.Calender (X)
 // java.util.Date
 
-// ½Å¹öÀü ÀÚ¹Ù 1.8 ÀÌ»ó
+// ì‹ ë²„ì „ ìžë°” 1.8 ì´ìƒ
 // java.time.LocalDate
 // java.time.LocalDateTime
 // java.time.LocalTime
@@ -23,32 +23,32 @@ import java.util.Date;
 public class TimeEx01 {
 
 	public static void main(String[] args) {
-		// 1. Calendar ¾È¾¸
+		// 1. Calendar ì•ˆì”€
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		String today = formater.format(cal.getTime());
 		System.out.println("cal.getTime() : " + cal.getTime());
 		System.out.println("today : " + today);
 
-		// 2. java.util.Date ¾È¾¸
-		// Date´Â 1970.01.01 ±âÁØÀ¸·Î °æ°úµÈ ¹Ð¸®ÃÊ¸¦ °è»ê
+		// 2. java.util.Date ì•ˆì”€
+		// DateëŠ” 1970.01.01 ê¸°ì¤€ìœ¼ë¡œ ê²½ê³¼ëœ ë°€ë¦¬ì´ˆë¥¼ ê³„ì‚°
 		Date time2 = new Date();
 		System.out.println("time2 : " + time2);
 		System.out.println("time2.getTime() : " + time2.getTime());
-//		System.out.println("time2.getDay() : "+time2.getDay()); // ¾È¾¸
+//		System.out.println("time2.getDay() : "+time2.getDay()); // ì•ˆì”€
 
-		// 3. java.sql.Date ¾È¾¸
+		// 3. java.sql.Date ì•ˆì”€
 		java.sql.Date time3 = new java.sql.Date(24 * 3600 * 1000);
 		System.out.println("time3 : " + time3);
 
-		// 4. java.sql.Timestamp : DB¿¡µµ ÀÖ±â¶§¹®¿¡ ¿¬µ¿ ½¬¿ò.
+		// 4. java.sql.Timestamp : DBì—ë„ ìžˆê¸°ë•Œë¬¸ì— ì—°ë™ ì‰¬ì›€.
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		Date d = new Date();
 		String timestamp = sf.format(d.getTime());
 		Timestamp ts = Timestamp.valueOf(timestamp);
 		System.out.println("ts : " + ts);
 
-		// 5. LocalDateTime : DB´Â ¾Èµé°íÀÖÀ½ -> LocalDate¸¦ TimeStamp¿¡ ´ã¾Æ¼­ µðºñ¿¡ ³Ñ±è
+		// 5. LocalDateTime : DBëŠ” ì•ˆë“¤ê³ ìžˆìŒ -> LocalDateë¥¼ TimeStampì— ë‹´ì•„ì„œ ë””ë¹„ì— ë„˜ê¹€
 		// (LocalDateTime to Timestamp)
 		Timestamp nowDate = Timestamp.valueOf(LocalDateTime.now()); // LocalDate --> TimeStamp
 		System.out.println("nowDate : " + nowDate);

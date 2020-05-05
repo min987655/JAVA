@@ -12,24 +12,24 @@ import javax.swing.SwingConstants;
 public class LableEx extends JFrame {
 
 	public LableEx() {
-		setTitle("·¹ÀÌºí ¿¹Á¦");
+		setTitle("ë ˆì´ë¸” ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		BorderLayout border = new BorderLayout();
 		c.setLayout(border);
 		
-		// ¹®ÀÚ¿­ ·¹ÀÌºí »ı¼º
-		JLabel textLabel = new JLabel("»ç¶ûÇÕ´Ï´Ù");
+		// ë¬¸ìì—´ ë ˆì´ë¸” ìƒì„±
+		JLabel textLabel = new JLabel("ì‚¬ë‘í•©ë‹ˆë‹¤");
 		
-		//ÀÌ¹ÌÁö ·¹ÀÌºí »ı¼º
-		ImageIcon beauty = new ImageIcon("img/beauty.jpg"); // ÀÌ¹ÌÁö ·Îµù
-		JLabel imageLabel = new JLabel(beauty); // ÀÌ¹ÌÁö ·¹ÀÌºí »ı¼º
+		//ì´ë¯¸ì§€ ë ˆì´ë¸” ìƒì„±
+		ImageIcon beauty = new ImageIcon("img/beauty.jpg"); // ì´ë¯¸ì§€ ë¡œë”©
+		JLabel imageLabel = new JLabel(beauty); // ì´ë¯¸ì§€ ë ˆì´ë¸” ìƒì„±
 		
-		// ¹®ÀÚ¿­°ú ÀÌ¹ÌÁö¸¦ ¸ğµÎ °¡Áø ·¹ÀÌºí »ı¼º
-		ImageIcon normalIcon = new ImageIcon("img/normalIcon.gif"); // ÀÌ¹ÌÁö ·Îµù
-		JLabel label = new JLabel("º¸°í½ÍÀ¸¸é ÀüÈ­ÇÏ¼¼¿ä.", normalIcon, SwingConstants.CENTER); // ·¹ÀÌºí »ı¼º
+		// ë¬¸ìì—´ê³¼ ì´ë¯¸ì§€ë¥¼ ëª¨ë‘ ê°€ì§„ ë ˆì´ë¸” ìƒì„±
+		ImageIcon normalIcon = new ImageIcon("img/normalIcon.gif"); // ì´ë¯¸ì§€ ë¡œë”©
+		JLabel label = new JLabel("ë³´ê³ ì‹¶ìœ¼ë©´ ì „í™”í•˜ì„¸ìš”.", normalIcon, SwingConstants.CENTER); // ë ˆì´ë¸” ìƒì„±
 		
-		// ÄÁÅÙÆ®ÆÒ¿¡ 3°³ÀÇ ·¹ÀÌºí ºÎÂø
+		// ì»¨í…íŠ¸íŒ¬ì— 3ê°œì˜ ë ˆì´ë¸” ë¶€ì°©
 		c.add(textLabel,border.NORTH);
 		c.add(imageLabel,border.CENTER);
 		c.add(label,border.SOUTH);

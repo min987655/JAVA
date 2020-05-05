@@ -15,31 +15,31 @@ public class EventEx06 extends JFrame {
 	int imgY = 90;
 
 	public EventEx06() {
-		setTitle("ÀåÇ³ ¿¹Á¦");
+		setTitle("ì¥í’ ì˜ˆì œ");
 		setSize(800, 350);
-		setLocationRelativeTo(null); // ÇÁ·¹ÀÓÀÌ È­¸é °¡¿îµ¥ ¹èÄ¡
+		setLocationRelativeTo(null); // í”„ë ˆì„ì´ í™”ë©´ ê°€ìš´ë° ë°°ì¹˜
 		setContentPane(new MyPanel());
 		setVisible(true);
 	}
 
-	// paintComponent ÇÔ¼ö´Â Frame ¾È¿¡¼­ ÀÛµ¿¾ÈÇÔ.
+	// paintComponent í•¨ìˆ˜ëŠ” Frame ì•ˆì—ì„œ ì‘ë™ì•ˆí•¨.
 	class MyPanel extends JPanel {
 
 		public MyPanel() {
-			setFocusable(true); // Æ÷Ä¿½º¸¦ ÀÌ Panel¿¡ ÁÜ(Æ÷Ä¿½º¸¦ Áà¾ß
+			setFocusable(true); // í¬ì»¤ìŠ¤ë¥¼ ì´ Panelì— ì¤Œ(í¬ì»¤ìŠ¤ë¥¼ ì¤˜ì•¼
 			this.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					System.out.println("keychar : " + e.getKeyChar());
 					System.out.println("keycode : " + e.getKeyCode());
 					switch (e.getKeyCode()) {
-					case KeyEvent.VK_LEFT: // ¹æÇâÅ° ¿ŞÂÊÀ» Å¬¸¯ÇÏ¸é
+					case KeyEvent.VK_LEFT: // ë°©í–¥í‚¤ ì™¼ìª½ì„ í´ë¦­í•˜ë©´
 						imgX = imgX - 10;
 						break;
-					case KeyEvent.VK_RIGHT: // ¿À¸¥ÂÊÀ» Å¬¸¯ÇÏ¸é
+					case KeyEvent.VK_RIGHT: // ì˜¤ë¥¸ìª½ì„ í´ë¦­í•˜ë©´
 						imgX = imgX + 10;
 						break;
-//					default: // ¹«Á¶°Ç ½ÇÇà
+//					default: // ë¬´ì¡°ê±´ ì‹¤í–‰
 //						break;
 
 					case KeyEvent.VK_SPACE:
@@ -68,7 +68,7 @@ public class EventEx06 extends JFrame {
 		}
 
 		@Override
-		protected void paintComponent(Graphics g) { // ¾µ ÇÊ¿ä ¾øÀ½. setLotion, setTextµîÀ» ¾²¸é ÀÚµ¿ repaint() µÊ
+		protected void paintComponent(Graphics g) { // ì“¸ í•„ìš” ì—†ìŒ. setLotion, setTextë“±ì„ ì“°ë©´ ìë™ repaint() ë¨
 			super.paintComponent(g);
 
 			ImageIcon imgIce = new ImageIcon("img/1.png");

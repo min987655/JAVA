@@ -15,21 +15,21 @@ public class NetworkEx02 {
 	public static void main(String[] args) {
 
 		try {
-			// 1. ÁÖ¼Ò °´Ã¼ ¸¸µé±â - ÀÚµ¿À¸·Î ÆÄ½ÌÇØ ÁÜ
+			// 1. ì£¼ì†Œ ê°ì²´ ë§Œë“¤ê¸° - ìë™ìœ¼ë¡œ íŒŒì‹±í•´ ì¤Œ
 			URL url = new URL("https://www.naver.com");
 
-			// 2. ½ºÆ®¸² ¿¬°á
+			// 2. ìŠ¤íŠ¸ë¦¼ ì—°ê²°
 			HttpURLConnection con = 
 					(HttpURLConnection) url.openConnection();
 			
-			// 3. ¹öÆÛ ¿¬°á(¹®ÀÚ¿­)
+			// 3. ë²„í¼ ì—°ê²°(ë¬¸ìì—´)
 			BufferedReader br = 
 					new BufferedReader(new InputStreamReader(con.getInputStream(),"UTF-8"));
 			
-			//tip : ÆÄÀÏ¿¡ ½ºÆ®¸² ¿¬°á
+			//tip : íŒŒì¼ì— ìŠ¤íŠ¸ë¦¼ ì—°ê²°
 			FileWriter fr = new FileWriter("c:\\utils\\test.html");
 			
-			// 4. ¹®ÀÚ ´õÇÏ±â
+			// 4. ë¬¸ì ë”í•˜ê¸°
 			StringBuilder sb = new StringBuilder();
 			
 			String input = "";

@@ -127,7 +127,7 @@ class People2 {
 public class GsonEx02 {
 
 	public static void main(String[] args) {
-		String jsonP = "{\"name\":\"È«±æµ¿\",\"age\":25,\"gender\":\"¿©\",\"add\":\"¼­¿ïÆ¯º°½Ã ¾çÃµ±¸ ¸ñµ¿\",\"hobby\":[\"³ó±¸\",\"µµ¼ú\"],\"family\":{\"number\":2,\"father\":\"È«ÆÇ¼­\",\"mother\":\"Ãá¼¶\"},\"comoany\":\"°æ±â ¼ö¿ø½Ã ÆÈ´Ş±¸ ¿ì¸¸µ¿\"}\r\n"
+		String jsonP = "{\"name\":\"í™ê¸¸ë™\",\"age\":25,\"gender\":\"ì—¬\",\"add\":\"ì„œìš¸íŠ¹ë³„ì‹œ ì–‘ì²œêµ¬ ëª©ë™\",\"hobby\":[\"ë†êµ¬\",\"ë„ìˆ \"],\"family\":{\"number\":2,\"father\":\"í™íŒì„œ\",\"mother\":\"ì¶˜ì„¬\"},\"comoany\":\"ê²½ê¸° ìˆ˜ì›ì‹œ íŒ”ë‹¬êµ¬ ìš°ë§Œë™\"}\r\n"
 				+ "";
 
 		Gson gson = new Gson();

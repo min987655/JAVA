@@ -5,15 +5,15 @@ import stars.Behavior;
 public abstract class Terran implements Behavior {
 	
 	public void move() {
-		System.out.println("ÀÌµ¿");
+		System.out.println("ì´ë™");
 	}
 	public void repair() {
-		System.out.println("SCV Ä¡·á");
+		System.out.println("SCV ì¹˜ë£Œ");
 	}
 	
 	public static void upgrade() {
 		Tank.attack++;
 		Marine.attack++;
-		System.out.println("Å×¶õ ¾÷±×·¹ÀÌµå ¿Ï·á");
+		System.out.println("í…Œë€ ì—…ê·¸ë ˆì´ë“œ ì™„ë£Œ");
 	}
 }

@@ -8,10 +8,10 @@ public class ConEx01 {
 		Scanner sc = new Scanner(System.in);
 		boolean check = sc.nextBoolean();
 		
-		if (check) {// boolean 1bit °æ¿ìÀÇ ¼ö 2°¡Áö (True or false)
-			System.out.println("ÂüÀÔ´Ï´Ù.");
+		if (check) {// boolean 1bit ê²½ìš°ì˜ ìˆ˜ 2ê°€ì§€ (True or false)
+			System.out.println("ì°¸ì…ë‹ˆë‹¤.");
 		} else {
-			System.out.println("°ÅÁşÀÔ´Ï´Ù.");
+			System.out.println("ê±°ì§“ì…ë‹ˆë‹¤.");
 		}
 
 	}

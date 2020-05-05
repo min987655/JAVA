@@ -18,28 +18,28 @@ public class TextFieldEx  extends JFrame {
 
 	private JTextField tf;
 	private JTextArea ta;
-	private ScrollPane sp; // JScrollPaneÀº »ö±òÀ» Àâ¾Æ¸Ô¾î¹ö¸². »ç¿ë X
+	private ScrollPane sp; // JScrollPaneì€ ìƒ‰ê¹”ì„ ì¡ì•„ë¨¹ì–´ë²„ë¦¼. ì‚¬ìš© X
 	
 	public TextFieldEx() {
-		init(); // newÀÇ ¼ø¼­°¡ ¾È¸Â¾Æ ¿À·ù³¯ ¼ö ÀÖÀ½.
+		init(); // newì˜ ìˆœì„œê°€ ì•ˆë§ì•„ ì˜¤ë¥˜ë‚  ìˆ˜ ìˆìŒ.
 		
-		setTitle("ÅØ½ºÆ® ¿¡µğÅÍ, ÅØ½ºÆ® ¹Ú½º ¿¬½À");
+		setTitle("í…ìŠ¤íŠ¸ ì—ë””í„°, í…ìŠ¤íŠ¸ ë°•ìŠ¤ ì—°ìŠµ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container c = getContentPane();
 		
-		// ÅØ½ºÆ®ÇÊµå µğÀÚÀÎ
+		// í…ìŠ¤íŠ¸í•„ë“œ ë””ìì¸
 		tf.setFont(new Font("Arial", Font.BOLD, 30));
-		tf.setPreferredSize(new Dimension(100,100)); // x,y ¸ğµç ÄÁÆ÷³ÍÆ® Å©±â Á¶Á¤
+		tf.setPreferredSize(new Dimension(100,100)); // x,y ëª¨ë“  ì»¨í¬ë„ŒíŠ¸ í¬ê¸° ì¡°ì •
 		
 
 		ta.setBackground(Color.ORANGE);
 		
-		ta.setEditable(false); // ±ÛÀÚ ¸øµé¾î°¡°Ô ÇÔ.
+		ta.setEditable(false); // ê¸€ì ëª»ë“¤ì–´ê°€ê²Œ í•¨.
 		ta.setFont(new Font("Arial", Font.BOLD, 60));
 		ta.setForeground(Color.GRAY);
 		
-		sp.add(ta); // ta¸¦ ½ºÅ©·Ñ¿¡ ³ÖÀ½. ¼ø¼­ Áß¿ä
+		sp.add(ta); // taë¥¼ ìŠ¤í¬ë¡¤ì— ë„£ìŒ. ìˆœì„œ ì¤‘ìš”
 		
 		
 		tf.addKeyListener(new KeyAdapter() {
@@ -60,7 +60,7 @@ public class TextFieldEx  extends JFrame {
 		setVisible(true);
 	}
 	
-	private void init() { // GUIÇÁ·Î±×·¥¿¡´Â initÀ» ¸¸µé¾î new¶ç¿ì´Â °ÍÀ» ¸ğ¾Æ³õÀ½. new ¼ø¼­ÀÇ ¿À·ù°¡ ¾ø°Ô ÇÔ.
+	private void init() { // GUIí”„ë¡œê·¸ë¨ì—ëŠ” initì„ ë§Œë“¤ì–´ newë„ìš°ëŠ” ê²ƒì„ ëª¨ì•„ë†“ìŒ. new ìˆœì„œì˜ ì˜¤ë¥˜ê°€ ì—†ê²Œ í•¨.
 		tf = new JTextField("", 20);
 		sp = new ScrollPane();
 		ta = new JTextArea("", 5, 20);

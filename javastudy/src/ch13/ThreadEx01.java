@@ -1,11 +1,11 @@
 package ch13;
 
-// OS´Â Runnable Å¸ÀÔÀÇ heap °ø°£¿¡ run ¸Ş¼­µå¸¦ È£ÃâÇØ¾ß µÈ´Ù´Â °ÍÀ» ÀÌ¹Ì ¾Ë°í ÀÖÀ½.
+// OSëŠ” Runnable íƒ€ì…ì˜ heap ê³µê°„ì— run ë©”ì„œë“œë¥¼ í˜¸ì¶œí•´ì•¼ ëœë‹¤ëŠ” ê²ƒì„ ì´ë¯¸ ì•Œê³  ìˆìŒ.
 class Sub implements Runnable {
 	@Override
 	public void run() {
 		for (int i = 1; i < 11; i++) {
-			System.out.println("¼­ºê ¾²·¹µå : " + i);
+			System.out.println("ì„œë¸Œ ì“°ë ˆë“œ : " + i);
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
@@ -17,13 +17,13 @@ class Sub implements Runnable {
 
 public class ThreadEx01 {
 
-	// ¸ŞÀÎ ¾²·¹µå
+	// ë©”ì¸ ì“°ë ˆë“œ
 	public static void main(String[] args) {
 		Thread t1 = new Thread(new Sub());
 		t1.start();
 
 		for (int i = 1; i < 6; i++) {
-			System.out.println("¸ŞÀÎ ¾²·¹µå : " + i);
+			System.out.println("ë©”ì¸ ì“°ë ˆë“œ : " + i);
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {

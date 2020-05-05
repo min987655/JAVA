@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// Å¬·¡½º ÀÚ·áÇü (Beans) : Ã¥ÀÓ¾øÀÌ µ¥ÀÌÅÍ¸¸ ÀÖ´Â ¿ÀºêÁ§Æ® = DB Table
+// í´ë˜ìŠ¤ ìë£Œí˜• (Beans) : ì±…ì„ì—†ì´ ë°ì´í„°ë§Œ ìˆëŠ” ì˜¤ë¸Œì íŠ¸ = DB Table
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

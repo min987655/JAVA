@@ -13,13 +13,13 @@ public class EventEx05 extends JFrame {
 
 	public EventEx05() {
 		la = new JLabel("Hello");
-		setTitle("MouseEvent ¿¹Á¦");
+		setTitle("MouseEvent ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.addMouseListener(new MyMouseListener());
-		c.setLayout(null); // absoulte ·¹ÀÌ¾Æ¿ô
-		la.setSize(50, 20); // ¶óº§ÀÇ »çÀÌÁî
-		la.setLocation(30, 30); // ¶óº§ÀÇ À§Ä¡
+		c.setLayout(null); // absoulte ë ˆì´ì•„ì›ƒ
+		la.setSize(50, 20); // ë¼ë²¨ì˜ ì‚¬ì´ì¦ˆ
+		la.setLocation(30, 30); // ë¼ë²¨ì˜ ìœ„ì¹˜
 		c.add(la);
 		setSize(250, 250);
 		setVisible(true);
@@ -27,7 +27,7 @@ public class EventEx05 extends JFrame {
 
 	class MyMouseListener extends MouseAdapter {
 
-		// ¸¶¿ì½º¸¦ Å¬¸¯ÇÏ°í ¶®À» ¶§
+		// ë§ˆìš°ìŠ¤ë¥¼ í´ë¦­í•˜ê³  ë• ì„ ë•Œ
 		@Override
 		public void mousePressed(MouseEvent e) {
 
@@ -35,8 +35,8 @@ public class EventEx05 extends JFrame {
 			
 				@Override
 				public void run() {
-					int x = e.getX(); // X ÁÂÇ¥
-					int y = e.getY(); // Y ÁÂÇ¥
+					int x = e.getX(); // X ì¢Œí‘œ
+					int y = e.getY(); // Y ì¢Œí‘œ
 					
 					for (int i = 0; i < y; i++) {
 						y = y - y;

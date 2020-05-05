@@ -7,20 +7,20 @@ public class NestedIF {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~100): ");
+		System.out.println("ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”(1~100): ");
 		int score = scanner.nextInt();
-		System.out.println("ÇÐ³âÀ» ÀÔ·ÂÇÏ¼¼¿ä(1~4): ");
+		System.out.println("í•™ë…„ì„ ìž…ë ¥í•˜ì„¸ìš”(1~4): ");
 		int year = scanner.nextInt();
 
 		if (score >= 60) {
 			if (year != 4) 
-				System.out.println("ÇÕ°Ý");
+				System.out.println("í•©ê²©");
 			else if (score >= 70)
-				System.out.println("ÇÕ°Ý");
+				System.out.println("í•©ê²©");
 			else
-				System.out.println("ºÒÇÕ°Ý");			
+				System.out.println("ë¶ˆí•©ê²©");			
 		} else {
-			System.out.println("ºÒÇÕ°Ý");
+			System.out.println("ë¶ˆí•©ê²©");
 
 			scanner.close();
 		}

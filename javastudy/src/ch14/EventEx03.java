@@ -15,8 +15,8 @@ public class EventEx03 extends JFrame {
 		Container c = getContentPane();
 		c.setLayout(new GridLayout(1,2));		
 		
-		JButton btn1 = new JButton("¹öÆ°1");
-		JButton btn2 = new JButton("¹öÆ°1");
+		JButton btn1 = new JButton("ë²„íŠ¼1");
+		JButton btn2 = new JButton("ë²„íŠ¼1");
 		c.add(btn1);
 		c.add(btn2);
 		
@@ -30,7 +30,7 @@ public class EventEx03 extends JFrame {
 	class MyButtonTarget implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("¾È³ç");
+			System.out.println("ì•ˆë…•");
 		}
 	}
 	

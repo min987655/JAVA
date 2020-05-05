@@ -8,7 +8,7 @@ class MoneyChanger {
 	int money = 10000;
 
 	public void accept(Callback callback) {
-		// ÀºÇà¿¡ ÀÎÃâ ¿äÃ»À» ÇØ¼­ 20000¿øÀ» ¹ŞÀ» ¿¹Á¤ 2ÃÊ !(ÇÑ¹ø¸¸ ¾µ°Å¶ó Å¸°ÙÀ» ÀÍ¸íÅ¬·¡½º·Î ¸¸µë)
+		// ì€í–‰ì— ì¸ì¶œ ìš”ì²­ì„ í•´ì„œ 20000ì›ì„ ë°›ì„ ì˜ˆì • 2ì´ˆ !(í•œë²ˆë§Œ ì“¸ê±°ë¼ íƒ€ê²Ÿì„ ìµëª…í´ë˜ìŠ¤ë¡œ ë§Œë“¬)
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -32,11 +32,11 @@ public class ThreadEx03 {
 
 			@Override
 			public void printMoney(int money) {
-				System.out.println("ÅëÀåÀÇ ÀÜ¾×Àº : " + money);
+				System.out.println("í†µì¥ì˜ ì”ì•¡ì€ : " + money);
 			}
 		});
 		for (int i = 1; i < 6; i++) {
-			System.out.println("¸ŞÀÎ¾²·¹µå : " + i);
+			System.out.println("ë©”ì¸ì“°ë ˆë“œ : " + i);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

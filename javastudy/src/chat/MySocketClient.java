@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 public class MySocketClient {
-	// Å¬¶óÀÌ¾ğÆ®´Â ¼ÒÄÏ ÇÏ³ª¸¸ ÀÖÀ¸¸é µÊ -> Àü¿ª¿¡ »© ³õÀ½. 
+	// í´ë¼ì´ì–¸íŠ¸ëŠ” ì†Œì¼“ í•˜ë‚˜ë§Œ ìˆìœ¼ë©´ ë¨ -> ì „ì—­ì— ë¹¼ ë†“ìŒ. 
 	Socket socket;
 
 	public MySocketClient() throws Exception {
@@ -24,7 +24,7 @@ public class MySocketClient {
 
 		String outputMsg = "";
 		
-		// ¸ŞÀÎ ¾²·¹µå´Â ¿©±â¼­ ¹«ÇÑ ·çÇÁ
+		// ë©”ì¸ ì“°ë ˆë“œëŠ” ì—¬ê¸°ì„œ ë¬´í•œ ë£¨í”„
 		while ((outputMsg = keyboardIn.readLine()) != null) {
 			bw.write(outputMsg + "\n");
 			bw.flush();
@@ -38,7 +38,7 @@ public class MySocketClient {
 				BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String inputMsg = "";
 				while((inputMsg = br.readLine()) != null) {
-					System.out.println("»ó´ë¹æ : "+inputMsg);
+					System.out.println("ìƒëŒ€ë°© : "+inputMsg);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

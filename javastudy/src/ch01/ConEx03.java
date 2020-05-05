@@ -5,22 +5,22 @@ import java.util.Scanner;
 public class ConEx03 {
 
 	public static void main(String[] args) {
-		System.out.println("¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš”:");
 		Scanner sc = new Scanner(System.in);
-		int point = sc.nextInt(); // Á¤¼ö¸¦ ÀÔ·Â¹Ş±â
+		int point = sc.nextInt(); // ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ê¸°
 
 		if (point <= 100 && point >= 90) {
-			System.out.println("AÇĞÁ¡ÀÔ´Ï´Ù.");
+			System.out.println("Aí•™ì ì…ë‹ˆë‹¤.");
 		} else if (point<90 && point >= 80) {
-			System.out.println("BÇĞÁ¡ÀÔ´Ï´Ù.");
+			System.out.println("Bí•™ì ì…ë‹ˆë‹¤.");
 		} else if (point<80 && point >= 70) {
-			System.out.println("CÇĞÁ¡ÀÔ´Ï´Ù.");
+			System.out.println("Cí•™ì ì…ë‹ˆë‹¤.");
 		} else if (point<70 && point >= 60) {
-			System.out.println("DÇĞÁ¡ÀÔ´Ï´Ù.");
+			System.out.println("Dí•™ì ì…ë‹ˆë‹¤.");
 		} else if (point>=0 && point<60) {
-			System.out.println("FÇĞÁ¡ÀÔ´Ï´Ù.");
+			System.out.println("Fí•™ì ì…ë‹ˆë‹¤.");
 		} else {
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÌ ÀÖ½À´Ï´Ù.");
+			System.out.println("ì˜ëª»ëœ ì…ë ¥ì´ ìˆìŠµë‹ˆë‹¤.");
 		}
 	}
 

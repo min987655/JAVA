@@ -3,7 +3,7 @@ package ch01;
 public class LogicalOperator {
 
 	public static void main(String[] args) {
-		// ºñ±³¿¬»ê
+		// ë¹„êµì—°ì‚°
 		System.out.println('a' > 'b');
 		System.out.println(3 >= 2);
 		System.out.println(-1 < 0);
@@ -12,7 +12,7 @@ public class LogicalOperator {
 		System.out.println(3 != 2);
 		System.out.println(!(3 != 2));
 
-		// ºñ±³ ¿¬»ê°ú ³í¸® ¿¬»ê º¹ÇÕ
+		// ë¹„êµ ì—°ì‚°ê³¼ ë…¼ë¦¬ ì—°ì‚° ë³µí•©
 		System.out.println((3 > 2) && (3 > 4));
 		System.out.println((3 != 2) || (-1 > 0));
 		System.out.println((3 != 2) ^ (-1 > 0));

@@ -1,8 +1,8 @@
 package ch13;
 
-// ±Ô¾à !
+// ê·œì•½ !
 interface Animal {
-	void move(); // Ãß»ó ¸Ş¼­µå : ¿ÀºêÁ§Æ®°¡ ¾Æ´Ô.
+	void move(); // ì¶”ìƒ ë©”ì„œë“œ : ì˜¤ë¸Œì íŠ¸ê°€ ì•„ë‹˜.
 }
 
 abstract class Person {
@@ -14,9 +14,9 @@ abstract class Person {
 public class AnomyEx01 {
 
 	public static void main(String[] args) {
-		// Animal a = new Animal(); Ãß»ó¸Ş¼­µå°¡ ±¸ÇöµÇ¾î ÀÖÁö ¾Ê¾Æ¼­ new ÇÒ ¼ö ¾ø´Ù.
-		// Person p = new Person(); Ãß»ó¸Ş¼­µå°¡ ±¸ÇöµÇ¾î ÀÖÁö ¾Ê¾Æ¼­ new ÇÒ ¼ö ¾ø´Ù.
-		// Person p2 = new Person(); Ãß»óÅ¬·¡½º´Â Ãß»ó¸Ş¼­µå°¡ µé¾î¿Ã ¼ö ÀÖ±â ¶§¹®¿¡ new¸¦ ¸·¾Æ ³õÀ½.
+		// Animal a = new Animal(); ì¶”ìƒë©”ì„œë“œê°€ êµ¬í˜„ë˜ì–´ ìˆì§€ ì•Šì•„ì„œ new í•  ìˆ˜ ì—†ë‹¤.
+		// Person p = new Person(); ì¶”ìƒë©”ì„œë“œê°€ êµ¬í˜„ë˜ì–´ ìˆì§€ ì•Šì•„ì„œ new í•  ìˆ˜ ì—†ë‹¤.
+		// Person p2 = new Person(); ì¶”ìƒí´ë˜ìŠ¤ëŠ” ì¶”ìƒë©”ì„œë“œê°€ ë“¤ì–´ì˜¬ ìˆ˜ ìˆê¸° ë•Œë¬¸ì— newë¥¼ ë§‰ì•„ ë†“ìŒ.
 	}
 
 }

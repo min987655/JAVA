@@ -3,19 +3,19 @@ package ch08;
 import java.io.IOException;
 import java.io.InputStream;
 
-// ½ºÆ®¸²(Byte) => ¹°ÀÇ Èå¸§
-// ¹°ÀÌ Èå¸¦ ¶§ ¼öµµ²ÀÁö¸¦ Àá±ÅµÎ¸é ¹°ÀÌ Èå¸£Áö ¾Ê´Â´Ù.
-// ¹°ÀÌ Èå¸¦ ¶§ ¼öµµ²ÀÁö¸¦ ¿­¸é ¹°ÀÌ Èå¸§(Åë½Å ½ÃÀÛ)
-// ¹° = ¹ÙÀÌÆ®
+// ìŠ¤íŠ¸ë¦¼(Byte) => ë¬¼ì˜ íë¦„
+// ë¬¼ì´ íë¥¼ ë•Œ ìˆ˜ë„ê¼­ì§€ë¥¼ ì ê¶ˆë‘ë©´ ë¬¼ì´ íë¥´ì§€ ì•ŠëŠ”ë‹¤.
+// ë¬¼ì´ íë¥¼ ë•Œ ìˆ˜ë„ê¼­ì§€ë¥¼ ì—´ë©´ ë¬¼ì´ íë¦„(í†µì‹  ì‹œì‘)
+// ë¬¼ = ë°”ì´íŠ¸
 public class InputEx01 {
 
 	public static void main(String[] args) {
-		InputStream in = System.in; // Å°º¸µå¿¡ ¿¬°áµÈ ¹ÙÀÌÆ® ½ºÆ®¸²
+		InputStream in = System.in; // í‚¤ë³´ë“œì— ì—°ê²°ëœ ë°”ì´íŠ¸ ìŠ¤íŠ¸ë¦¼
 		try {
 			int data = in.read();
 			System.out.println((char) data);
 		} catch (IOException e) {
-			System.out.println("IO ¿À·ù°¡ ¹ß»ı");
+			System.out.println("IO ì˜¤ë¥˜ê°€ ë°œìƒ");
 		}
 	}
 }

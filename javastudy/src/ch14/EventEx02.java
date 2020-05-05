@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 public class EventEx02 extends JFrame implements ActionListener {
 	
 	public EventEx02() {
-		setTitle("Action ÀÌº¥Æ® ¸®½º³Ê ¿¹Á¦");
-		// X¹öÆ° Å¬¸¯½Ã ÀÌº¥Æ® ºĞ¹è ½º·¹µåµµ Á¾·á
+		setTitle("Action ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì˜ˆì œ");
+		// Xë²„íŠ¼ í´ë¦­ì‹œ ì´ë²¤íŠ¸ ë¶„ë°° ìŠ¤ë ˆë“œë„ ì¢…ë£Œ
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());		
 		JButton btn = new JButton("Action");
-		// ¸®½º³Ê »ı¼º
+		// ë¦¬ìŠ¤ë„ˆ ìƒì„±
 		btn.addActionListener(this); 
 		c.add(btn);
 		setSize(350,150);
@@ -28,10 +28,10 @@ public class EventEx02 extends JFrame implements ActionListener {
 		EventEx02 ex02 = new EventEx02();
 	}
 
-	// Å¸°Ù (EventEx02°¡ °¡Áö°í ÀÖÀ½)
+	// íƒ€ê²Ÿ (EventEx02ê°€ ê°€ì§€ê³  ìˆìŒ)
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("¹öÆ° Å¬¸¯µÊ");
+		System.out.println("ë²„íŠ¼ í´ë¦­ë¨");
 	}
 
 }

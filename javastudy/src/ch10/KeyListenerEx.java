@@ -7,47 +7,47 @@ import javax.swing.*;
 
 public class KeyListenerEx extends JFrame {
 
-	private JLabel[] keyMessage; // 3°³ÀÇ ¸Ş¼¼Áö¸¦ Ãâ·ÂÇÒ ·¹ÀÌºí ÄÄÆ÷³ÍÆ® ¹è¿­
+	private JLabel[] keyMessage; // 3ê°œì˜ ë©”ì„¸ì§€ë¥¼ ì¶œë ¥í•  ë ˆì´ë¸” ì»´í¬ë„ŒíŠ¸ ë°°ì—´
 
 	public KeyListenerEx() {
-		setTitle("KeyListener ¿¹Á¦");
+		setTitle("KeyListener ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.addKeyListener(new MyKeyListener());
 
-		// ·¹ÀÌºí ¹è¿­À» 3°³ »ı¼ºÇÏ°í °¢ ·¹ÀÌºí ÄÄÆ÷³ÍÆ® »ı¼º
-		keyMessage = new JLabel[3]; // ·¹ÀÌºí ¹è¿­ »ı¼º
+		// ë ˆì´ë¸” ë°°ì—´ì„ 3ê°œ ìƒì„±í•˜ê³  ê° ë ˆì´ë¸” ì»´í¬ë„ŒíŠ¸ ìƒì„±
+		keyMessage = new JLabel[3]; // ë ˆì´ë¸” ë°°ì—´ ìƒì„±
 		keyMessage[0] = new JLabel("getKeyCode()");
 		keyMessage[1] = new JLabel("getKeyChar()");
 		keyMessage[2] = new JLabel("getKeyText()");
 
-		// 3°³ÀÇ ·¹ÀÌºí ÄÄÆ÷³ÍÆ®¸¦ ÄÁÅÙÆ®ÆÒ¿¡ ºÎÂø
+		// 3ê°œì˜ ë ˆì´ë¸” ì»´í¬ë„ŒíŠ¸ë¥¼ ì»¨í…íŠ¸íŒ¬ì— ë¶€ì°©
 		for (int i = 0; i < keyMessage.length; i++) {
 			c.add(keyMessage[i]);
-			keyMessage[i].setOpaque(true); // ¹è°æ»öÀÌ º¸ÀÌµµ·Ï ºÒÅõ¸í ¼Ó¼º ¼³Á¤
-			keyMessage[i].setBackground(Color.YELLOW); // ¹è°æ»öÀ» CYAN »öÀ¸·Î º¯°æ
+			keyMessage[i].setOpaque(true); // ë°°ê²½ìƒ‰ì´ ë³´ì´ë„ë¡ ë¶ˆíˆ¬ëª… ì†ì„± ì„¤ì •
+			keyMessage[i].setBackground(Color.YELLOW); // ë°°ê²½ìƒ‰ì„ CYAN ìƒ‰ìœ¼ë¡œ ë³€ê²½
 		}
 
 		setSize(300, 150);
 		setVisible(true);
 
-		// ÄÁÅÙÆ®ÆÒÀÌ Å° ÀÔ·ÂÀ» ¹ŞÀ» ¼ö ÀÖµµ·Ï Æ÷Ä¿½º °­Á¦ ÁöÁ¤
+		// ì»¨í…íŠ¸íŒ¬ì´ í‚¤ ì…ë ¥ì„ ë°›ì„ ìˆ˜ ìˆë„ë¡ í¬ì»¤ìŠ¤ ê°•ì œ ì§€ì •
 		c.setFocusable(true);
 		c.requestFocus();
 	}
 
-	// key ¸®½º³Ê ±¸Çö
+	// key ë¦¬ìŠ¤ë„ˆ êµ¬í˜„
 	class MyKeyListener extends KeyAdapter {
 		public void keyPressed(KeyEvent e) {
-			int keyCode = e.getKeyCode(); // Å° ÄÚµå ¾Ë¾Æ³»±â
-			char keyChar = e.getKeyChar(); // Å° ¹®ÀÚ °ª ¾Ë¾Æ³»±â
-			keyMessage[0].setText(Integer.toString(keyCode)); // Å° ÄÚµå Ãâ·Â
-			keyMessage[1].setText(Character.toString(keyChar)); // Å° ¹®ÀÚ Ãâ·Â
-			keyMessage[2].setText(KeyEvent.getKeyText(keyCode)); // Å° ÀÌ¸§ ¹®ÀÚ¿­ Ãâ·Â
+			int keyCode = e.getKeyCode(); // í‚¤ ì½”ë“œ ì•Œì•„ë‚´ê¸°
+			char keyChar = e.getKeyChar(); // í‚¤ ë¬¸ì ê°’ ì•Œì•„ë‚´ê¸°
+			keyMessage[0].setText(Integer.toString(keyCode)); // í‚¤ ì½”ë“œ ì¶œë ¥
+			keyMessage[1].setText(Character.toString(keyChar)); // í‚¤ ë¬¸ì ì¶œë ¥
+			keyMessage[2].setText(KeyEvent.getKeyText(keyCode)); // í‚¤ ì´ë¦„ ë¬¸ìì—´ ì¶œë ¥
 
-			System.out.println("keyPressed"); // ÄÜ¼ÖÃ¢¿¡ ¸Ş¼Òµå ÀÌ¸§ Ãâ·Â
+			System.out.println("keyPressed"); // ì½˜ì†”ì°½ì— ë©”ì†Œë“œ ì´ë¦„ ì¶œë ¥
 		}
 		public void keyReleased(KeyEvent e) {
 			System.out.println("keyReleased");

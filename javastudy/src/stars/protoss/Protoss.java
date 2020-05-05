@@ -5,15 +5,15 @@ import stars.Behavior;
 public abstract class Protoss implements Behavior {
 	@Override
 	public void move() {
-		System.out.println("ÀÌµ¿");
+		System.out.println("ì´ë™");
 	}
 	@Override
 	public void repair() {
-		System.out.println("½¯µå Ä¡·á");
+		System.out.println("ì‰´ë“œ ì¹˜ë£Œ");
 	}
 	public static void upgrade() {
 		Zealot.attack++;
 		Dragoon.attack++;
-		System.out.println("ÇÁ·ÎÅä½º ¾÷±×·¹ÀÌµå ¿Ï·á");
+		System.out.println("í”„ë¡œí† ìŠ¤ ì—…ê·¸ë ˆì´ë“œ ì™„ë£Œ");
 	}
 }

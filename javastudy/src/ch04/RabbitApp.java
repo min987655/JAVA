@@ -1,7 +1,7 @@
 package ch04;
 
 class Rabbit{
-	private String name; //heapº¯¼ö, Àü¿ªº¯¼ö, ¸â¹öº¯¼ö, ÇÊµå, ¼Ó¼º, ÇÁ·ÎÆÛÆ¼ : °íÀ¯ÇÑ ¼Ó¼º
+	private String name; //heapë³€ìˆ˜, ì „ì—­ë³€ìˆ˜, ë©¤ë²„ë³€ìˆ˜, í•„ë“œ, ì†ì„±, í”„ë¡œí¼í‹° : ê³ ìœ í•œ ì†ì„±
 	private int power;
 	
 	public Rabbit(String name, int power) {
@@ -9,9 +9,9 @@ class Rabbit{
 		this.power = power;
 	}
 	
-	// Çàµ¿(Ã¥ÀÓ)
+	// í–‰ë™(ì±…ì„)
 	boolean drink() {
-		//100ÀÌ ³Ñ¾î°¡¸é µ¿ÀÛÇÏÁö ¾Êµµ·Ï !
+		//100ì´ ë„˜ì–´ê°€ë©´ ë™ì‘í•˜ì§€ ì•Šë„ë¡ !
 		if(power == 100) {
 			return false;
 		}
@@ -36,12 +36,12 @@ class Rabbit{
 public class RabbitApp {
 
 	public static void main(String[] args) {
-		Rabbit r1 = new Rabbit("Åä³¢",20); // 100ÀÌ ¸Æ½º
+		Rabbit r1 = new Rabbit("í† ë¼",20); // 100ì´ ë§¥ìŠ¤
 		while(r1.drink()) {}
 		System.out.println(r1.getPower());	
 		
-		// ÀÌ¸§ º¯°æ
-		r1.setName("»êÅä³¢");
+		// ì´ë¦„ ë³€ê²½
+		r1.setName("ì‚°í† ë¼");
 		System.out.println(r1.getName());
 	}
 

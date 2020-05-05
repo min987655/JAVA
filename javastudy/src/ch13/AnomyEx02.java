@@ -14,7 +14,7 @@ public class AnomyEx02 {
 			
 			@Override
 			public void sound() {
-				System.out.println("∏€∏€");
+				System.out.println("Î©çÎ©ç");
 			}
 		};
 		start(d);

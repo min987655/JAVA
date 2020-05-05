@@ -20,8 +20,8 @@ public class OperEx02 {
 		System.out.println(sum);
 
 		sum = sum + move;
-		System.out.println("¿òÁ÷ÀÎ °Å¸® : "+sum);//°áÇÕ : ¹®ÀÚ¿Í ¼ıÀÚ¸¦ ´õÇÏ¸é ¹®ÀÚ·Î(¹¬½ÃÀû Çüº¯È¯) 
-		System.out.println("µµÂøÁö : " + distance);
+		System.out.println("ì›€ì§ì¸ ê±°ë¦¬ : "+sum);//ê²°í•© : ë¬¸ìì™€ ìˆ«ìë¥¼ ë”í•˜ë©´ ë¬¸ìë¡œ(ë¬µì‹œì  í˜•ë³€í™˜) 
+		System.out.println("ë„ì°©ì§€ : " + distance);
 	}
 
 }

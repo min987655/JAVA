@@ -9,32 +9,32 @@ class Animal {
 
 public class ObjectEx01 {
 	public static void main(String[] args) {
-		String d1 = "¹°";
-		String d2 = "¹°";
+		String d1 = "ë¬¼";
+		String d2 = "ë¬¼";
 
-		System.out.println(d1.equals(d2)); // ·¹ÆÛ·±½º °Ë»ö ÈÄ °ªµµ °Ë»ö
-		System.out.println(d1 == d2); // °°Àº °ø°£¿¡ ÀÖ±â ¶§¹®¿¡ true
+		System.out.println(d1.equals(d2)); // ë ˆí¼ëŸ°ìŠ¤ ê²€ìƒ‰ í›„ ê°’ë„ ê²€ìƒ‰
+		System.out.println(d1 == d2); // ê°™ì€ ê³µê°„ì— ìˆê¸° ë•Œë¬¸ì— true
 
-		String d3 = new String("¹°"); 
-		String d4 = new String("¹°");
+		String d3 = new String("ë¬¼"); 
+		String d4 = new String("ë¬¼");
 
-		System.out.println(d3.equals(d4)); // ·¹ÆÛ·±½º °Ë»ö ÈÄ °ªµµ °Ë»ö
-		System.out.println(d3 == d4); // ´Ù¸¥ °ø°£¿¡ ÀÖ±â ¶§¹®¿¡ false
+		System.out.println(d3.equals(d4)); // ë ˆí¼ëŸ°ìŠ¤ ê²€ìƒ‰ í›„ ê°’ë„ ê²€ìƒ‰
+		System.out.println(d3 == d4); // ë‹¤ë¥¸ ê³µê°„ì— ìˆê¸° ë•Œë¬¸ì— false
 		
-		System.out.println(d3.getClass()); // classÀÇ Á¤º¸(°æ·Î¿Í ÀÌ¸§) ¸®ÅÏ
+		System.out.println(d3.getClass()); // classì˜ ì •ë³´(ê²½ë¡œì™€ ì´ë¦„) ë¦¬í„´
 		System.out.println(new ObjectEx01().getClass());
 		
-		// ÇØ½¬ÄÚµå -> ÇØ½¬ ¾Ë°í¸®Áò = µ¿ÀÏÇÑ ±æÀÌÀÇ ¼ıÀÚ·Î ¸®ÅÏ
+		// í•´ì‰¬ì½”ë“œ -> í•´ì‰¬ ì•Œê³ ë¦¬ì¦˜ = ë™ì¼í•œ ê¸¸ì´ì˜ ìˆ«ìë¡œ ë¦¬í„´
 		System.out.println(d3.hashCode());
-		System.out.println(d4.hashCode()); // String¸¸ °ªÀÌ °°À¸¸é °°Àº ÇØ½¬°¡ ³ª¿Àµµ·Ï ¿À¹ö¶óÀÌµù µÅÀÖÀ½.
+		System.out.println(d4.hashCode()); // Stringë§Œ ê°’ì´ ê°™ìœ¼ë©´ ê°™ì€ í•´ì‰¬ê°€ ë‚˜ì˜¤ë„ë¡ ì˜¤ë²„ë¼ì´ë”© ë¼ìˆìŒ.
 		
 		Animal a1 = new Animal();
 		Animal a2 = new Animal();
 		
-		System.out.println(a1.hashCode()); // °°Àº °´Ã¼ÀÎÁö ºñ±³ ÇÒ ¶§ »ç¿ë.
-		System.out.println(a2.hashCode()); // String ¾Æ´Ï±â ¶§¹®¿¡ ´Ù¸¥ °ø°£¿¡ ÀÖ´Â °ª °¢°¢ ÇØ½¬ ³ª¿È.
+		System.out.println(a1.hashCode()); // ê°™ì€ ê°ì²´ì¸ì§€ ë¹„êµ í•  ë•Œ ì‚¬ìš©.
+		System.out.println(a2.hashCode()); // String ì•„ë‹ˆê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ê³µê°„ì— ìˆëŠ” ê°’ ê°ê° í•´ì‰¬ ë‚˜ì˜´.
 		
-		System.out.println(a1 instanceof Animal); // Å¸ÀÔ È®ÀÎ
+		System.out.println(a1 instanceof Animal); // íƒ€ì… í™•ì¸
 		System.out.println(a2 instanceof Animal);
 		}
 

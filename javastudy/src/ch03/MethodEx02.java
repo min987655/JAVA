@@ -6,26 +6,26 @@ class Data {
 
 public class MethodEx02 {
 
-	static int Αυ°΅(int num) {
+	static int μ¦κ°€(int num) {
 		num++;
-		System.out.println("Αυ°΅ num:" + num);
+		System.out.println("μ¦κ°€ num:" + num);
 		return num;
 	}
 
-	static void °¨ΌÒ(Data d) {
+	static void κ°μ†(Data d) {
 		d.num--;
-		System.out.println("°¨ΌÒnum: "+d.num);
+		System.out.println("κ°μ†num: "+d.num);
 	}
 
 	public static void main(String[] args) {
 		//call by value passing
 		int myNum = 100;
-		myNum = Αυ°΅(myNum);
+		myNum = μ¦κ°€(myNum);
 		System.out.println("myNum:" + myNum);
 		
 		//call by Reference passing
 		Data data = new Data();
-		°¨ΌÒ(data);
+		κ°μ†(data);
 		System.out.println("data.num:"+data.num);
 	}
 

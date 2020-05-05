@@ -1,7 +1,7 @@
 
 public class Customer 
 {
-	//1.¸â¹öº¯¼ö
+	//1.ë©¤ë²„ë³€ìˆ˜
 	private int custid;
 	private String name;
 	private String address;

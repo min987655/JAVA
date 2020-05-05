@@ -6,7 +6,7 @@ public class ArrayEx01 {
 		
 		int num = 1;
 		for (long i = 2L; i <= 2000000000000000000L; i=i*2) {
-			System.out.println("2ÀÇ "+num+"½Â : "+i);
+			System.out.println("2ì˜ "+num+"ìŠ¹ : "+i);
 		num++;
 		}
 

@@ -1,13 +1,13 @@
 package quiz;
 
-// ¹®ÀÚ¿­ ¸Ş¼­µå contains()´Â ¹®ÀÚ¿­ ¾È¿¡ Æ¯Á¤ ¹®ÀÚµéÀÌ ÀÖ´Â Áö È®ÀÎ ÇÏ´Â ¸Ş¼­µå´Ù
-// "°¨ÀÚ". contains("°¨") Àº true¸¦ ¸®ÅÏÇÏ°í, "°¨ÀÚ". contains("°í") ´Â false¸¦ ¸®ÅÏÇÑ´Ù
-// ¾Æ·¡ ¹®ÀÚ¿­¿¡ "og"°¡ ÀÖ´ÂÁö È®ÀÎÇÏ°í true ¶Ç´Â false¸¦ Ãâ·ÂÇÏ¼¼¿ä
+// ë¬¸ìì—´ ë©”ì„œë“œ contains()ëŠ” ë¬¸ìì—´ ì•ˆì— íŠ¹ì • ë¬¸ìë“¤ì´ ìˆëŠ” ì§€ í™•ì¸ í•˜ëŠ” ë©”ì„œë“œë‹¤
+// "ê°ì". contains("ê°") ì€ trueë¥¼ ë¦¬í„´í•˜ê³ , "ê°ì". contains("ê³ ") ëŠ” falseë¥¼ ë¦¬í„´í•œë‹¤
+// ì•„ë˜ ë¬¸ìì—´ì— "og"ê°€ ìˆëŠ”ì§€ í™•ì¸í•˜ê³  true ë˜ëŠ” falseë¥¼ ì¶œë ¥í•˜ì„¸ìš”
 
 public class Quiz009 {
 	public static void main(String[] args) {
 		
-		String a = "API¶ó´Â °ÍÀº Application Programming Interface ÀÇ ¾àÀÚ";
+		String a = "APIë¼ëŠ” ê²ƒì€ Application Programming Interface ì˜ ì•½ì";
 		System.out.println(a.contains("og"));
 	}
 }

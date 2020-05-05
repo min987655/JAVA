@@ -4,12 +4,12 @@ import java.util.Calendar;
 
 public class CalendarEx {
 
-	// DB Å¸ÀÔ : 2020-03-18:22:11:05
+	// DB íƒ€ì… : 2020-03-18:22:11:05
 	public static void printCalender(String msg, Calendar cal) {
 		int year = cal.get(Calendar.YEAR); // 2020
-		int month = cal.get(Calendar.MONTH) + 1; // 4(0ºÎÅÍ ³ª¿À±â¶§¹®¿¡ +1ÇØÁà¾ß ÇÔ
-		// DB Å¸ÀÔ¿¡ ¸ÂÃß±â À§ÇØ 0 ºÙÀÓ.
-		String mon = (month < 10) ? "0" + month : "" + month; // 3Ç× ¿¬»êÀÚ (DECODE)
+		int month = cal.get(Calendar.MONTH) + 1; // 4(0ë¶€í„° ë‚˜ì˜¤ê¸°ë•Œë¬¸ì— +1í•´ì¤˜ì•¼ í•¨
+		// DB íƒ€ì…ì— ë§ì¶”ê¸° ìœ„í•´ 0 ë¶™ì„.
+		String mon = (month < 10) ? "0" + month : "" + month; // 3í•­ ì—°ì‚°ì (DECODE)
 		int day = cal.get(Calendar.DAY_OF_MONTH);
 		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
 		int hour = cal.get(Calendar.HOUR);
@@ -22,7 +22,7 @@ public class CalendarEx {
 	}
 
 	public static void main(String[] args) {
-		Calendar now = Calendar.getInstance(); // ½Ì±ÛÅæ
-		printCalender("ÇöÀç", now);
+		Calendar now = Calendar.getInstance(); // ì‹±ê¸€í†¤
+		printCalender("í˜„ì¬", now);
 	}
 }

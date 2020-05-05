@@ -1,19 +1,19 @@
 package array03;
 
-//³²Àº µ¿ÀüÀÇ °³¼ö¸¦ ±¸ÇÏ´Â ÇÁ·Î±×·¥(500, 100, 50, 10)
+//ë‚¨ì€ ë™ì „ì˜ ê°œìˆ˜ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ë¨(500, 100, 50, 10)
 //2650
 public class Coin {
 	public static void main(String[] args) {
 		int money = 5555;
 		int count = 0;
 		int coin[] = {500, 100, 50, 10, 1};
-		System.out.println("½ÃÀÛ ±İ¾×: " + money);
+		System.out.println("ì‹œì‘ ê¸ˆì•¡: " + money);
 		
 		for (int i = 0; i < coin.length; i++) {
 			count = money / coin[i];
 			money = money % coin[i];
-			System.out.println(coin[i]+"¿ø °¹¼ö: "+ count);
-			System.out.println("³²Àº ±İ¾×: " + money);
+			System.out.println(coin[i]+"ì› ê°¯ìˆ˜: "+ count);
+			System.out.println("ë‚¨ì€ ê¸ˆì•¡: " + money);
 		}
 	}
 

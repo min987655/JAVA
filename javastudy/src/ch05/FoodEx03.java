@@ -1,21 +1,21 @@
 package ch05;
 
-abstract class Ä® {
+abstract class ì¹¼ {
 	abstract void kill();
 
 	abstract void cook();
 
 	abstract void repair();
 }
-// Ãß»óÅ¬·¡½º´Â ¾î´ğÅÍÀÇ ¿ëµµ·Î »ç¿ë °¡´ÉÇÏ´Ù.
-abstract class ¿ä¸®»ç¾î´ğÅÍ extends Ä® {
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” ì–´ëŒ‘í„°ì˜ ìš©ë„ë¡œ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
+abstract class ìš”ë¦¬ì‚¬ì–´ëŒ‘í„° extends ì¹¼ {
 	@Override
 	void kill() {}
 	@Override
 	void repair() {}
 }
 
-class ¹éÁ¾¿ø extends ¿ä¸®»ç¾î´ğÅÍ {
+class ë°±ì¢…ì› extends ìš”ë¦¬ì‚¬ì–´ëŒ‘í„° {
 
 	@Override
 	void cook() {

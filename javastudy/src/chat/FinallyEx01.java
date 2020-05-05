@@ -5,7 +5,7 @@ interface StarUnit {
 }
 
 abstract class Protoss implements StarUnit {
-	abstract int getSh(); // ½¯µå´Â ÇÁ·ÎÅä½º¸¸ °¡Áö°í ÀÖÀ½
+	abstract int getSh(); // ì‰´ë“œëŠ” í”„ë¡œí† ìŠ¤ë§Œ ê°€ì§€ê³  ìˆìŒ
 }
 
 abstract class Zerg implements StarUnit {
@@ -37,20 +37,20 @@ class Ultra extends Zerg {
 
 public class FinallyEx01 {
 	
-	// »óÅÂ Ã¼Å©(hp, sh)
+	// ìƒíƒœ ì²´í¬(hp, sh)
 	static void check(StarUnit unit) {
 		try {
 			Zealot z = (Zealot)unit;
-			System.out.println("³²Àº ½¯µå´Â : " + z.getSh());	
-			System.out.println("³²Àº Ã¼·ÂÀº : " + z.gethp());	
+			System.out.println("ë‚¨ì€ ì‰´ë“œëŠ” : " + z.getSh());	
+			System.out.println("ë‚¨ì€ ì²´ë ¥ì€ : " + z.gethp());	
 			
 		} catch (Exception e) {
-			// Àú±×
+			// ì €ê·¸
 			Ultra u = (Ultra)unit;
-			System.out.println("Àú±×´Â ½¯µå°¡ ¾ø½À´Ï´Ù.");
-			System.out.println("³²Àº Ã¼·ÂÀº : "+u.gethp());			
+			System.out.println("ì €ê·¸ëŠ” ì‰´ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("ë‚¨ì€ ì²´ë ¥ì€ : "+u.gethp());			
 		} finally {
-			System.out.println("³ª´Â ¹«Á¶°Ç ½ÇÇà µÅ");
+			System.out.println("ë‚˜ëŠ” ë¬´ì¡°ê±´ ì‹¤í–‰ ë¼");
 		}
 		
 	}

@@ -6,10 +6,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class KeyCodeEx extends JFrame {
-	private JLabel la = new JLabel(); // ºó ·¹ÀÌºí ÄÄÆ÷³ÍÆ® »ı¼º
+	private JLabel la = new JLabel(); // ë¹ˆ ë ˆì´ë¸” ì»´í¬ë„ŒíŠ¸ ìƒì„±
 
 	public KeyCodeEx() {
-		setTitle("Key Code ¿¹Á¦ : F1Å° ÃÊ·Ï»ö, %Å° ³ë¶õ»ö");
+		setTitle("Key Code ì˜ˆì œ : F1í‚¤ ì´ˆë¡ìƒ‰, %í‚¤ ë…¸ë€ìƒ‰");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Container c = getContentPane();
@@ -18,23 +18,23 @@ public class KeyCodeEx extends JFrame {
 		setSize(300, 150);
 		setVisible(true);
 	
-		// ÄÁÅÙÆ®ÆÒÀÌ Å° ÀÔ·Â ¹ŞÀ» ¼ö ÀÖµµ·Ï Æ÷Ä¿½º °­Á¦ ÁöÁ¤
+		// ì»¨í…íŠ¸íŒ¬ì´ í‚¤ ì…ë ¥ ë°›ì„ ìˆ˜ ìˆë„ë¡ í¬ì»¤ìŠ¤ ê°•ì œ ì§€ì •
 		c.setFocusable(true);
 		c.requestFocus();
 	}
 
-	// key ¸®½º³Ê ±¸Çö
+	// key ë¦¬ìŠ¤ë„ˆ êµ¬í˜„
 	class MyKeyListener extends KeyAdapter {
 		@Override
 		public void keyPressed(KeyEvent e) {
 			Container contantPane = (Container)e.getSource();
 			
-			// la¿¡ ÀÔ·ÂµÈ Å°ÀÇ Å° ÀÌ¸§ ¹®ÀÚ¿­À» Ãâ·ÂÇÏ¿© »ç¿ëÀÚ¿¡°Ô º¸°íÇÔ
-			la.setText(KeyEvent.getKeyText(e.getKeyCode())+"Å°°¡ ÀÔ·ÂµÇ¾úÀ½");
+			// laì— ì…ë ¥ëœ í‚¤ì˜ í‚¤ ì´ë¦„ ë¬¸ìì—´ì„ ì¶œë ¥í•˜ì—¬ ì‚¬ìš©ìì—ê²Œ ë³´ê³ í•¨
+			la.setText(KeyEvent.getKeyText(e.getKeyCode())+"í‚¤ê°€ ì…ë ¥ë˜ì—ˆìŒ");
 			
 			if (e.getKeyChar() == '%') { 
 				contantPane.setBackground(Color.YELLOW);
-			} else if(e.getKeyCode() == KeyEvent.VK_F1) { // ÀÔ·ÂµÈ Å°°¡ F1ÀÎ°¡
+			} else if(e.getKeyCode() == KeyEvent.VK_F1) { // ì…ë ¥ëœ í‚¤ê°€ F1ì¸ê°€
 				contantPane.setBackground(Color.GREEN);
 			}
 		}

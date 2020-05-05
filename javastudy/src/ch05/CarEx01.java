@@ -2,7 +2,7 @@ package ch05;
 
 class Car {
 	void run() {
-		System.out.println("±âº» ¿òÁ÷ÀÓ");
+		System.out.println("ê¸°ë³¸ ì›€ì§ì„");
 	}	
 }
 
@@ -10,7 +10,7 @@ class Sonata extends Car {
 
 	void run() {
 		super.run();
-	System.out.println("¼Ò³ªÅ¸¸¸ÀÇ ¿òÁ÷ÀÓ");
+	System.out.println("ì†Œë‚˜íƒ€ë§Œì˜ ì›€ì§ì„");
 	}
 	
 }

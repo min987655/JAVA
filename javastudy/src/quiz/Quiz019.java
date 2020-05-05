@@ -1,10 +1,10 @@
 package quiz;
 
-// Math.random()Àº 0ÃÊ°ú 1¹Ì¸¸ÀÇ ·£´ý ¼Ò¼ö¸¦ Ãâ·ÂÇÑ´Ù
-// ¿¹½Ã : 0.5188592172190253
+// Math.random()ì€ 0ì´ˆê³¼ 1ë¯¸ë§Œì˜ ëžœë¤ ì†Œìˆ˜ë¥¼ ì¶œë ¥í•œë‹¤
+// ì˜ˆì‹œ : 0.5188592172190253
 
-// ´õºíÇü º¯¼ö aÀÇ ´ÜÀ§¸¦ Á¶Á¤ÇÏ°í Ä³½ºÆÃÇÏ¿© 
-// ÇÁ·Î±×·¥À» ½ÇÇàÇÏ¸é 1 ~ 45 °¡ ·£´ýÇÏ°Ô ³ª¿Àµµ·Ï ¸¸µé¾î º¸¼¼¿ä 
+// ë”ë¸”í˜• ë³€ìˆ˜ aì˜ ë‹¨ìœ„ë¥¼ ì¡°ì •í•˜ê³  ìºìŠ¤íŒ…í•˜ì—¬ 
+// í”„ë¡œê·¸ëž¨ì„ ì‹¤í–‰í•˜ë©´ 1 ~ 45 ê°€ ëžœë¤í•˜ê²Œ ë‚˜ì˜¤ë„ë¡ ë§Œë“¤ì–´ ë³´ì„¸ìš” 
 
 public class Quiz019 {
 	public static void main(String[] args) {

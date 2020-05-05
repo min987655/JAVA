@@ -14,10 +14,10 @@ public class JComponentEx2 extends JFrame implements ActionListener {
 
 	private JButton b1, b2, b3;
 
-	// Å¸°Ù
+	// íƒ€ê²Ÿ
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource(); // Å¬¸¯µÈ ¹öÆ°À» ¾ğ¸¶¼£¸µ(¿ÀºêÁ§Æ®·Î ¹Ù²Ù¾î)ÇØ ÁÜ.
+		JButton b = (JButton) e.getSource(); // í´ë¦­ëœ ë²„íŠ¼ì„ ì–¸ë§ˆìƒ¬ë§(ì˜¤ë¸Œì íŠ¸ë¡œ ë°”ê¾¸ì–´)í•´ ì¤Œ.
 		b.setText("Hello");
 	}
 
@@ -29,9 +29,9 @@ public class JComponentEx2 extends JFrame implements ActionListener {
 		b2 = new JButton("b2");
 		b3 = new JButton("b3");
 
-		b1.addActionListener(this); // Å¸°ÙÀÌ this
-		b2.addActionListener(this); // Å¸°ÙÀÌ this
-		b3.addActionListener(this); // Å¸°ÙÀÌ this
+		b1.addActionListener(this); // íƒ€ê²Ÿì´ this
+		b2.addActionListener(this); // íƒ€ê²Ÿì´ this
+		b3.addActionListener(this); // íƒ€ê²Ÿì´ this
 
 		c.add(b1);
 		c.add(b2);

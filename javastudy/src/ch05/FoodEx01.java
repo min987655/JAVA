@@ -1,36 +1,36 @@
 package ch05;
 
-// Ãß»óÅ¬·¡½º´Â new ÇÒ ¼ö ¾ø´Ù.(¿ÀºêÁ§Æ®°¡ ¾Æ´Ï±â ¶§¹®¿¡)
-// Ãß»óÅ¬·¡½º´Â Ãß»ó¸Ş¼Òµå¸¦ °¡Áú ¼ö ÀÖ´Ù. - abstractÀ¸·Î °­Á¦¼º ºÎ¿©
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” new í•  ìˆ˜ ì—†ë‹¤.(ì˜¤ë¸Œì íŠ¸ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì—)
+// ì¶”ìƒí´ë˜ìŠ¤ëŠ” ì¶”ìƒë©”ì†Œë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìˆë‹¤. - abstractìœ¼ë¡œ ê°•ì œì„± ë¶€ì—¬
 abstract class Food1 {
 	abstract void eat();
 }
 
-class ¶ó¸é1 extends Food1 {
-	String name = "¶ó¸é";
+class ë¼ë©´1 extends Food1 {
+	String name = "ë¼ë©´";
 
 	@Override
 	void eat() {
-		System.out.println(name + "À» ¸Ô¾ú½À´Ï´Ù.");
+		System.out.println(name + "ì„ ë¨¹ì—ˆìŠµë‹ˆë‹¤.");
 	}
 }
 
-class ºÒ°í±â1 extends Food1 {
-	String name = "ºÒ°í±â";
+class ë¶ˆê³ ê¸°1 extends Food1 {
+	String name = "ë¶ˆê³ ê¸°";
 
 	@Override
 	void eat() {
-		System.out.println(name + "À» ¸Ô¾ú½À´Ï´Ù.");
+		System.out.println(name + "ì„ ë¨¹ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }
 
-class °¥ºñ1 extends Food1 {
-	String name = "°¥ºñ";
+class ê°ˆë¹„1 extends Food1 {
+	String name = "ê°ˆë¹„";
 
 	@Override
 	void eat() {
-		System.out.println(name + "À» ¸Ô¾ú½À´Ï´Ù.");
+		System.out.println(name + "ì„ ë¨¹ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }
@@ -42,7 +42,7 @@ public class FoodEx01 {
 	}
 	 
 	public static void main(String[] args) {
-		start(new ºÒ°í±â1());	
+		start(new ë¶ˆê³ ê¸°1());	
 	}
 
 }

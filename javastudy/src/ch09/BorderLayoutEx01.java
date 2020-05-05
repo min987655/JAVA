@@ -13,7 +13,7 @@ public class BorderLayoutEx01 extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 
-		// ÄÁÅÙÆ®ÆÒ¿¡ BorderLayout ¹èÄ¡°ü¸®ÀÚ ¼³Á¤
+		// ì»¨í…íŠ¸íŒ¬ì— BorderLayout ë°°ì¹˜ê´€ë¦¬ì ì„¤ì •
 		c.setLayout(new BorderLayout(30, 20));
 		c.add(new JButton("Calculate"), BorderLayout.CENTER);
 		c.add(new JButton("add"), BorderLayout.NORTH);

@@ -9,10 +9,10 @@ public class MathEx {
 		System.out.println(Math.exp(2));
 		System.out.println(Math.round(3.14));
 
-		// [1, 45] »çÀÌÀÇ Á¤¼öÇü ³­¼ö 5°³ ¹ß»ı
-		System.out.println("ÀÌ¹øÁÖ Çà¿îÀÇ ¹øÈ£´Â ");
+		// [1, 45] ì‚¬ì´ì˜ ì •ìˆ˜í˜• ë‚œìˆ˜ 5ê°œ ë°œìƒ
+		System.out.println("ì´ë²ˆì£¼ í–‰ìš´ì˜ ë²ˆí˜¸ëŠ” ");
 		for (int i = 0; i < 5; i++) {
-			System.out.println((int) (Math.random() * 45 + 1) + " "); // ³­¼ö ¹ß»ı
+			System.out.println((int) (Math.random() * 45 + 1) + " "); // ë‚œìˆ˜ ë°œìƒ
 		}
 	}
 

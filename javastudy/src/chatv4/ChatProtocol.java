@@ -1,8 +1,8 @@
 package chatv4;
 
-// ¾à¼Ó
-// ¸Ş¼­µå´Â ¸öÃ¼°¡ ÇÊ¿ä¾øÀ½. Ãß»ó¸Ş¼­µå -> public abstract »ı·«µÇ¾î ÀÖÀ½.
-// º¯¼ö°¡ String name -> public static final »ı·«µÇ¾î ÀÖÀ½.
+// ì•½ì†
+// ë©”ì„œë“œëŠ” ëª¸ì²´ê°€ í•„ìš”ì—†ìŒ. ì¶”ìƒë©”ì„œë“œ -> public abstract ìƒëµë˜ì–´ ìˆìŒ.
+// ë³€ìˆ˜ê°€ String name -> public static final ìƒëµë˜ì–´ ìˆìŒ.
 public interface ChatProtocol {
 	public static final String ALL = "ALL";
 	String MSG = "MSG";

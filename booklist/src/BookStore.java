@@ -1,13 +1,13 @@
 
 
 public class BookStore {
-	//¸¸µé¾îÁø Å¬·¡½º¸¦ »ç¿ëÇÏ´Â ºÎºĞ
+	//ë§Œë“¤ì–´ì§„ í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ” ë¶€ë¶„
 //	BookStore()
 	void run()
 	{
 		BookList bl = new BookList();//
-		bl.getConnection();// ¿¬°á open
-		bl.getBookDB();	   // ¿¬°á close
+		bl.getConnection();// ì—°ê²° open
+		bl.getBookDB();	   // ì—°ê²° close
 		bl.printBook_Obj_array();
 		bl.printBook_Obj_array();
 		bl.printBook_Obj_array();

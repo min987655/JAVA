@@ -1,13 +1,13 @@
 package ch05;
 
-// ¾Û ½ºÆ®·ºÆ®
+// ì•± ìŠ¤íŠ¸ë ‰íŠ¸
 abstract class Animal {
 	abstract String getName();
 }
 
 class Mouse extends Animal{
 	
-	final String NAME="Áã";
+	final String NAME="ì¥";
 	
 	@Override
 	String getName() {
@@ -16,7 +16,7 @@ class Mouse extends Animal{
 }
 
 class Dog extends Animal{
-	final String NAME = "°­¾ÆÁö";
+	final String NAME = "ê°•ì•„ì§€";
 	
 	@Override
 	String getName() {
@@ -25,7 +25,7 @@ class Dog extends Animal{
 }
 
 class Cat extends Animal {
-	final String NAME = "°í¾çÀÌ";
+	final String NAME = "ê³ ì–‘ì´";
 	
 	@Override
 	String getName() {
@@ -34,7 +34,7 @@ class Cat extends Animal {
 }
 
 class Bird extends Animal {
-	final String NAME = "»õ";
+	final String NAME = "ìƒˆ";
 	
 	@Override
 	String getName() {
@@ -43,7 +43,7 @@ class Bird extends Animal {
 }
 
 class Tiger extends Animal{
-	final String NAME = "È£¶ûÀÌ";
+	final String NAME = "í˜¸ë‘ì´";
 	@Override
 	String getName() {
 		return NAME;
@@ -53,7 +53,7 @@ class Tiger extends Animal{
 public class AnimalEx01 {
 
 	static void attack(Animal u1, Animal u2) {
-		System.out.println(u2.getName()+"°¡ "+u1.getName()+"¿¡°Ô °ø°İ´çÇß½À´Ï´Ù.");
+		System.out.println(u2.getName()+"ê°€ "+u1.getName()+"ì—ê²Œ ê³µê²©ë‹¹í–ˆìŠµë‹ˆë‹¤.");
 	}
 	
 	public static void main(String[] args) {
@@ -62,9 +62,9 @@ public class AnimalEx01 {
 		Bird b1 = new Bird();
 		Tiger t1 = new Tiger();
 		
-		System.out.println(d1.NAME+" Åº»ı");
-		System.out.println(c1.NAME+" Åº»ı");
-		System.out.println(b1.NAME+" Åº»ı");		
+		System.out.println(d1.NAME+" íƒ„ìƒ");
+		System.out.println(c1.NAME+" íƒ„ìƒ");
+		System.out.println(b1.NAME+" íƒ„ìƒ");		
 
 
 		attack(d1, c1);	

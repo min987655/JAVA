@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class Quiz020 {
 	public static void main(String[] args) {
 		ArrayList<String> arr = new ArrayList<>();
-		arr.add("°¡³ª");
-		arr.add("´Ù¶ó");
-		arr.add("¸¶¹Ù");
-		arr.add("´Ù¶ó");
+		arr.add("ê°€ë‚˜");
+		arr.add("ë‹¤ë¼");
+		arr.add("ë§ˆë°”");
+		arr.add("ë‹¤ë¼");
 		System.out.println(arr);
 	}
 }

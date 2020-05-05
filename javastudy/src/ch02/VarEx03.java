@@ -3,29 +3,29 @@ package ch02;
 public class VarEx03 {
 
 	public static void main(String[] args) {
-		char s1 = '°¡';// 2Byte
+		char s1 = 'ê°€';//2Byte
 		System.out.println(s1);
-
-		s1 = '³ª';// s1ÀÇ °ª º¯°æ
+		
+		s1 = 'ë‚˜';//s1ì˜ ê°’ ë³€ê²½
 		System.out.println(s1);
-
-		char c1 = '°¡';
-		char c2 = '³ª';
-		char c3 = '´Ù';
-
+		
+		char c1 = 'ê°€';
+		char c2 = 'ë‚˜';
+		char c3 = 'ë‹¤';
+		
 		System.out.print(c1);
 		System.out.print(c2);
 		System.out.print(c3);
 		System.out.println();
-
-		char[] str = { '°¡', '³ª', '´Ù' };
+		
+		char[] str = {'ê°€','ë‚˜','ë‹¤'};
 		System.out.print(str[0]);
 		System.out.print(str[1]);
 		System.out.print(str[2]);
 		System.out.println();
-
-		str[0] = '¶ó';
+		
+		str[0] = 'ë¼';
 		System.out.println(str[0]);
-		// str[3] = 'ÆÄ'; ¿À·ù
+		//str[3] = 'íŒŒ'; ì˜¤ë¥˜
 	}
 }

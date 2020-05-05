@@ -11,8 +11,8 @@ public class GuessNum {
 			for (int i = 0; i < 4; i++) {
 				System.out.print(arr[i]+" ");
 			}	
-		} catch (Exception e) { // ¿À·ù Ã³¸® ¹ý
-			System.out.println("¹è¿­ÀÇ Å©±â¸¦ ³Ñ¾î°¬½À´Ï´Ù.");
+		} catch (Exception e) { // ì˜¤ë¥˜ ì²˜ë¦¬ ë²•
+			System.out.println("ë°°ì—´ì˜ í¬ê¸°ë¥¼ ë„˜ì–´ê°”ìŠµë‹ˆë‹¤.");
 		}
 		
 	}

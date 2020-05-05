@@ -9,18 +9,18 @@ public class SelectEx01 {
 
 	public static void main(String[] args) {
 //		OracleDriver o = new OracleDriver();
-//		´Ù¸¥ ½ºÅÃ¿¡¼­ ÇÊ¿äÇÏ¸é ¶Ç new ÇØ¾ßÇÑ´Ù. 
+//		ë‹¤ë¥¸ ìŠ¤íƒì—ì„œ í•„ìš”í•˜ë©´ ë˜ new í•´ì•¼í•œë‹¤. 
 
 		try {
 			final String SQL = "select id, name, email, password from users where id = ?";
-			// OJDBC ¹®¼­¿¡ ÇØ´ç µå¶óÀÌ¹ö¸¦ ·ÎµåÇÏ¶ó´Â ¸Ş´º¾óÀÌ ÀÖÀ½(ÀÎÅÍÆäÀÌ½º)
-			Class.forName("oracle.jdbc.driver.OracleDriver"); // heap¿¡ ¿À¶óÅ¬ µå¶óÀÌ¹ö newÇØ¼­ ¶ç¿ò(stream ¿¬°áÇÏ±â À§ÇØ¼­) but ÁÖ¼Ò ¸ğ¸§
-			// ½ºÆ®¸² ¿¬°á(ÀÎÅ¸ÆäÀÌ½º°¡ Àû¿ëµÈ ½ºÆ®¸²)
+			// OJDBC ë¬¸ì„œì— í•´ë‹¹ ë“œë¼ì´ë²„ë¥¼ ë¡œë“œí•˜ë¼ëŠ” ë©”ë‰´ì–¼ì´ ìˆìŒ(ì¸í„°í˜ì´ìŠ¤)
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // heapì— ì˜¤ë¼í´ ë“œë¼ì´ë²„ newí•´ì„œ ë„ì›€(stream ì—°ê²°í•˜ê¸° ìœ„í•´ì„œ) but ì£¼ì†Œ ëª¨ë¦„
+			// ìŠ¤íŠ¸ë¦¼ ì—°ê²°(ì¸íƒ€í˜ì´ìŠ¤ê°€ ì ìš©ëœ ìŠ¤íŠ¸ë¦¼)
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ssar", "bitc5600");
-			// ¹öÆÛ´Ş±â(?¸¦ »ç¿ëÇÏ°Ô ÇØÁØ´Ù), ÀÎÁ§¼Ç °ø°İÀ» ¸·¾ÆÁÜ.
+			// ë²„í¼ë‹¬ê¸°(?ë¥¼ ì‚¬ìš©í•˜ê²Œ í•´ì¤€ë‹¤), ì¸ì ì…˜ ê³µê²©ì„ ë§‰ì•„ì¤Œ.
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, 3);
-			// ¹öÆÛ¿¡ ¾²±â(ResultSet(Ä¿¼­)À» ¸®ÅÏ¹ŞÀ½-Ã¹¹øÂ° Ä¿¼­¸¸ ¸®ÅÏ¹ŞÀ½)
+			// ë²„í¼ì— ì“°ê¸°(ResultSet(ì»¤ì„œ)ì„ ë¦¬í„´ë°›ìŒ-ì²«ë²ˆì§¸ ì»¤ì„œë§Œ ë¦¬í„´ë°›ìŒ)
 			ResultSet rs = pstmt.executeQuery();
 			Users users = null;
 			if (rs.next()) { 
@@ -31,7 +31,7 @@ public class SelectEx01 {
 						rs.getString("password")
 						);
 			}
-				System.out.println(users.getId()); // ÄÃ·³¸í ÀûÀ½(°¡µ¶¼º)
+				System.out.println(users.getId()); // ì»¬ëŸ¼ëª… ì ìŒ(ê°€ë…ì„±)
 				System.out.println(users.getName());
 				System.out.println(users.getEmail());
 				System.out.println(users.getPassword());

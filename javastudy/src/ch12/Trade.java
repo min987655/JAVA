@@ -10,7 +10,7 @@ public class Trade extends JFrame{
 	private MyPanel panel = new MyPanel();
 	
 	public Trade() {
-		setTitle("°ø°øµ¥ÀÌÅÍ È°¿ë");
+		setTitle("ê³µê³µë°ì´í„° í™œìš©");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(panel);
 		

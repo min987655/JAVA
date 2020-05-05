@@ -1,11 +1,11 @@
 package ch02;
 
 class Person {
-	String name = "°­¹ÎÁ¤";
+	String name = "ê°•ë¯¼ì •";
 	int age = 34;
-	char gender = '¿©';
+	char gender = 'ì—¬';
 	String email = "min987655@naver.com";
-	String phone = "010-5501-0844";
+	String phone = "010-0000-0000";
 }
 
 public class VarEx06 {

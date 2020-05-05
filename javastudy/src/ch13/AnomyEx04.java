@@ -7,21 +7,21 @@ abstract class Ani {
 class Cat extends Ani {
 	@Override
 	void sound() {
-		System.out.println("³Ä¿Ë");
+		System.out.println("ëƒì˜¹");
 	}
 }
 
 class Bird extends Ani {
 	@Override
 	void sound() {
-		System.out.println("Â±Â±");
+		System.out.println("ì§¹ì§¹");
 	}
 }
 
 class Fish extends Ani {
 	@Override
 	void sound() {
-		System.out.println("»µ²û»µ²û");
+		System.out.println("ë»ë”ë»ë”");
 	}
 }
 
@@ -31,7 +31,7 @@ public class AnomyEx04 {
 	static void start(Ani a) {
 		a.sound();
 	}
-	//ÇÑ¹ø¸¸ ±¸ÇöµÇ°í ¸» ¶§ »ç¿ë. new Ani
+	//í•œë²ˆë§Œ êµ¬í˜„ë˜ê³  ë§ ë•Œ ì‚¬ìš©. new Ani
 	public static void main(String[] args) {
 		start(new Cat());
 		start(new Fish());
@@ -39,7 +39,7 @@ public class AnomyEx04 {
 			
 			@Override
 			void sound() {
-				System.out.println("À½¸Ş");
+				System.out.println("ìŒë©”");
 			}
 		});
 	}

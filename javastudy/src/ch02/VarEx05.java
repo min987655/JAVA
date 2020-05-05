@@ -1,20 +1,20 @@
 package ch02;
 
-class µ¿¹° {
-	String name = "»çÀÚ";
-	String color = "³ë¶û";
+class ë™ë¬¼ {
+	String name = "ì‚¬ì";
+	String color = "ë…¸ë‘";
 	int speed = 100;
-	char gender = '¿©';
+	char gender = 'ì—¬';
 }
 
 public class VarEx05 {
 	static int num = 10;
 
 	public static void main(String[] args) {
-		System.out.println("µ¿¹° »ı¼º ÁØºñ");
+		System.out.println("ë™ë¬¼ ìƒì„± ì¤€ë¹„");
 		System.out.println(VarEx05.num);
 
-		µ¿¹° a = new µ¿¹°();// µ¿¹°¿¡ ÀÖ´Â StaticÀÌ ¾Æ´Ñ ¸ğµç °ÍÀÌ ¶ä. new·Î heap¿¡ ¶ç¿ò.
+		ë™ë¬¼ a = new ë™ë¬¼();// ë™ë¬¼ì— ìˆëŠ” Staticì´ ì•„ë‹Œ ëª¨ë“  ê²ƒì´ ëœ¸. newë¡œ heapì— ë„ì›€.
 		System.out.println(a.name);
 		System.out.println(a.color);
 		System.out.println(a.speed);

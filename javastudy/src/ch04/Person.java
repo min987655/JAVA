@@ -1,7 +1,7 @@
 package ch04;
 
 
-// »óÅÂ¿Í Çàµ¿
+// ìƒíƒœì™€ í–‰ë™
 public class Person {
 	String name;
 	String job;
@@ -10,14 +10,14 @@ public class Person {
 	String bloodType;
 	
 	
-	//¿À¹ö·Îµù : °°Àº ÀÌ¸§ÀÇ ÇÔ¼ö¸¦ ¿À¹öÇÏ¿© ÀûÀç ½ÃÅ´. - ¸Å°³º¯¼öÀÇ °¹¼ö³ª Å¸ÀÔÀÌ ´Ù¸£¸é ´Ù¸£°Ô ÀÎ½Ä.
-	//ÇÏ´Ü °°Àº ÀÌ¸§ÀÇ ÇÔ¼ö°¡ ÀÖ´Âµ¥ ¿À·ù°¡ ¾È³².
+	//ì˜¤ë²„ë¡œë”© : ê°™ì€ ì´ë¦„ì˜ í•¨ìˆ˜ë¥¼ ì˜¤ë²„í•˜ì—¬ ì ìž¬ ì‹œí‚´. - ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ë‚˜ íƒ€ìž…ì´ ë‹¤ë¥´ë©´ ë‹¤ë¥´ê²Œ ì¸ì‹.
+	//í•˜ë‹¨ ê°™ì€ ì´ë¦„ì˜ í•¨ìˆ˜ê°€ ìžˆëŠ”ë° ì˜¤ë¥˜ê°€ ì•ˆë‚¨.
 	//System.out.println() 
-	//µðÆú»ý¼ºÀÚ(¸Å°³º¯¼ö°¡ ¾ø´Â ¾ÆÀÌ) = ÃÊ±âÈ­ : Å¬·¡½º ÀÌ¸§°ú °°À½.
+	//ë””í´ìƒì„±ìž(ë§¤ê°œë³€ìˆ˜ê°€ ì—†ëŠ” ì•„ì´) = ì´ˆê¸°í™” : í´ëž˜ìŠ¤ ì´ë¦„ê³¼ ê°™ìŒ.
 	public Person() {
 
 	}
-	//¸Å°³º¯¼ö°¡ ÀÖ´Â »ý¼ºÀÚ
+	//ë§¤ê°œë³€ìˆ˜ê°€ ìžˆëŠ” ìƒì„±ìž
 	public Person(String name, String job, int age, char gender, String bloodType) {
 		this.name = name;
 		this.job = job;

@@ -5,11 +5,11 @@ public class OperEx03 {
 	public static void main(String[] args) {
 		int sum = 0;
 		
-		// 1ΎΏ Αυ°΅
+		// 1μ”© μ¦κ°€
 		sum++;
 		System.out.println(sum);
 		
-		//1ΎΏ °¨ΌÒ sum = sum -1;
+		//1μ”© κ°μ† sum = sum -1;
 		sum--;
 
 		

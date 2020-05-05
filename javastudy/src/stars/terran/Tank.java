@@ -14,6 +14,6 @@ public class Tank extends Terran {
 
 	@Override
 	public void attack(Behavior unit) {
-		System.out.println("¿ø°Å¸® °ø°İ");
+		System.out.println("ì›ê±°ë¦¬ ê³µê²©");
 	}
 }

@@ -2,8 +2,8 @@ package array03;
 /**
  * 
  * @author admin
- * for¹®Àº Á¶°ÇÀ» °Ë»çÇÑ´Ù. Áõ°¡´Â ½ºÅÃÀÌ ³¡³¯ ¶§.
- * ÃÊ±â°ªÀº Ã³À½¿¡¸¸ ½ÇÇà
+ * forë¬¸ì€ ì¡°ê±´ì„ ê²€ì‚¬í•œë‹¤. ì¦ê°€ëŠ” ìŠ¤íƒì´ ëë‚  ë•Œ.
+ * ì´ˆê¸°ê°’ì€ ì²˜ìŒì—ë§Œ ì‹¤í–‰
  */
 
 public class ArrayEx02 {

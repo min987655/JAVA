@@ -1,8 +1,8 @@
 package quiz;
 
-// String Å¸ÀÔÀº .charAt(index)·Î ÇØ´çÀ§Ä¡ÀÇ ±ÛÀÚ¸¦ ºÒ·¯¿Ã ¼öÀÖ´Ù.
-// ¿¹¸¦µé¾î "°¡³ª´Ù".charAt(0) Àº  '°¡' ÀÌ´Ù
-// ¾Æ·¡ ÁÖ¾îÁø numStrÀ» charAt°ú for¹®À» ÀÌ¿ëÇÏ¿© ÇÑ±ÛÀÚ¾¿ Ãâ·ÂÇØº¸ÀÚ
+//String íƒ€ìž…ì€ .charAt(index)ë¡œ í•´ë‹¹ìœ„ì¹˜ì˜ ê¸€ìžë¥¼ ë¶ˆëŸ¬ì˜¬ ìˆ˜ìžˆë‹¤.
+//ì˜ˆë¥¼ë“¤ì–´ "ê°€ë‚˜ë‹¤".charAt(0) ì€  'ê°€' ì´ë‹¤
+//ì•„ëž˜ ì£¼ì–´ì§„ numStrì„ charAtê³¼ forë¬¸ì„ ì´ìš©í•˜ì—¬ í•œê¸€ìžì”© ì¶œë ¥í•´ë³´ìž
 
 public class Quiz002 {
 

@@ -11,9 +11,9 @@ public class VarEx01 {
 		long num3 = 10;
 		System.out.println(num3);//8Byte
 
-		int n1 = num1; /* ¹¬½ÃÀûÇüº¯È¯ */
-		// byte n2 = num2; ¿À·ù!!
-		byte n3 = (byte) num3; /* ¸í½ÃÀûÇüº¯È¯ */
+		int n1 = num1; /* ë¬µì‹œì í˜•ë³€í™˜ */
+		// byte n2 = num2; ì˜¤ë¥˜!!
+		byte n3 = (byte) num3; /* ëª…ì‹œì í˜•ë³€í™˜ */
 		
 		int n4 = (int)num3;
 	}

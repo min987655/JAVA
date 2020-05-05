@@ -4,27 +4,27 @@ import java.util.Scanner;
 
 public class Gugudan2 {
 
-	// »ç¿ëÀÚ·Î ºÎÅÍ ÀÔ·Â ¹ŞÀº ±¸±¸´Ü ÇÁ·Î±×·¥À» ¿Ï¼º !
+	// ì‚¬ìš©ìë¡œ ë¶€í„° ì…ë ¥ ë°›ì€ êµ¬êµ¬ë‹¨ í”„ë¡œê·¸ë¨ì„ ì™„ì„± !
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("±¸±¸´ÜÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
 		boolean confirm = true;
 		while (confirm) {
 
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.(2~9)");
+			System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.(2~9)");
 			int num = sc.nextInt();
 
 			for (int i = 1; i < 10; i++) {
 				System.out.println(num + "*" + i + "=" + (num * i));
 			}
-			System.out.println("°è¼Ó ÁøÇàÇÒ±î¿ä? y or n");
+			System.out.println("ê³„ì† ì§„í–‰í• ê¹Œìš”? y or n");
 			String check = sc.next();
 			if (check.equals("n")) {
-				// break;// °¡Àå °¡±î¿î ¹İº¹¹®À» ºüÁ®³ª°¥ ¶§ »ç¿ë(while)
+				// break;// ê°€ì¥ ê°€ê¹Œìš´ ë°˜ë³µë¬¸ì„ ë¹ ì ¸ë‚˜ê°ˆ ë•Œ ì‚¬ìš©(while)
 				confirm = false;
 			}
 		}
-		System.out.println("±¸±¸´Ü ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("êµ¬êµ¬ë‹¨ í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	}
 
 }

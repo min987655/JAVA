@@ -12,7 +12,7 @@ public class EventEx07 extends JFrame {
 	int y = 100;
 	
 	public EventEx07() {
-		JLabel la = new JLabel("¾È³ç");
+		JLabel la = new JLabel("ì•ˆë…•");
 		Container c = getContentPane();
 		c.setLayout(null);
 		la.setLocation(100, y);

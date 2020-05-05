@@ -24,7 +24,7 @@ public class RectApp {
 		System.out.print(">> ");
 		rect.setWidth(scanner.nextInt());
 		rect.setHeight(scanner.nextInt());
-		System.out.println("»ç°¢ÇüÀÇ ¸éÀûÀº " + rect.getArea());
+		System.out.println("ì‚¬ê°í˜•ì˜ ë©´ì ì€ " + rect.getArea());
 		scanner.close();
 	}
 

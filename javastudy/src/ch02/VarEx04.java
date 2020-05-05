@@ -3,10 +3,10 @@ package ch02;
 public class VarEx04 {
 
 	public static void main(String[] args) {
-		String s1 = "¾È³çÇÏ¼¼¿ä";//¹®ÀÚ¿­Àº""
+		String s1 = "ì•ˆë…•í•˜ì„¸ìš”";//ë¬¸ìì—´ì€""
 		System.out.println(s1);
 		
-		s1 = "¹İ°¡¿ö";
+		s1 = "ë°˜ê°€ì›Œ";
 		System.out.println(s1);
 	}
 }

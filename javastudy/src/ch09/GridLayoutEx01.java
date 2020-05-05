@@ -13,19 +13,19 @@ public class GridLayoutEx01 extends JFrame {
 		setTitle("GridLayout Sample");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// 4*2 °İÀÚÀÇ GridLayout ¹èÄ¡°ü¸®ÀÚ »ı¼º
+		// 4*2 ê²©ìì˜ GridLayout ë°°ì¹˜ê´€ë¦¬ì ìƒì„±
 		GridLayout grid = new GridLayout(4, 2);
-		grid.setVgap(5); // °İÀÚ »çÀÌÀÇ ¼öÁ÷ °£°İÀ» 5 ÇÈ¼¿·Î ÁöÁ¤
+		grid.setVgap(5); // ê²©ì ì‚¬ì´ì˜ ìˆ˜ì§ ê°„ê²©ì„ 5 í”½ì…€ë¡œ ì§€ì •
 
 		Container c = getContentPane();
-		c.setLayout(grid); // grid¸¦ ÄÁÅÙÆ®ÆÒÀÇ ¹èÄ¡°ü¸®ÀÚ·Î ÁöÁ¤
-		c.add(new JLabel("ÀÌ¸§"));
+		c.setLayout(grid); // gridë¥¼ ì»¨í…íŠ¸íŒ¬ì˜ ë°°ì¹˜ê´€ë¦¬ìë¡œ ì§€ì •
+		c.add(new JLabel("ì´ë¦„"));
 		c.add(new JTextField(""));
-		c.add(new JLabel("ÇĞ¹ø"));
+		c.add(new JLabel("í•™ë²ˆ"));
 		c.add(new JTextField(""));
-		c.add(new JLabel("ÇĞ°ú"));
+		c.add(new JLabel("í•™ê³¼"));
 		c.add(new JTextField(""));
-		c.add(new JLabel("°ú¸ñ"));
+		c.add(new JLabel("ê³¼ëª©"));
 		c.add(new JTextField(""));
 
 		setSize(300, 200);

@@ -53,11 +53,11 @@ public class MySms extends JFrame {
 	private void init() {
 		f1 = new Font("SansSerif", Font.BOLD, 15);
 		f2 = new Font("SansSerif", Font.PLAIN, 15);
-		jl1 = new JLabel("ÀüÈ­¹øÈ£");
+		jl1 = new JLabel("ì „í™”ë²ˆí˜¸");
 		jt1 = new JTextField(12);
-		jl2 = new JLabel("¸Þ¼¼Áö");
+		jl2 = new JLabel("ë©”ì„¸ì§€");
 		jt2 = new JTextField(12);
-		jb = new JButton("Àü¼Û");
+		jb = new JButton("ì „ì†¡");
 	}
 	
 	public static void main(String[] args) {

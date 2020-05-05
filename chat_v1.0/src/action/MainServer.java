@@ -1,20 +1,47 @@
 package action;
 
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 
-import DO.Room;
+import info.Rooms;
 
 public class MainServer {
-	
-	private ServerSocket ss; // ¼­¹ö ¼ÒÄÏ
-	private ArrayList<MainHandler> allUserList; // ÀüÃ¼ »ç¿ëÀÚ
-	private ArrayList<MainServer> WaitUserList; // ´ë±â½Ç »ç¿ëÀÚ
-	private ArrayList<Room> roomtotalList; // ÀüÃ¼ ¹æ ¸®½ºÆ®
-	
+
+	private ServerSocket ss; // ì„œë²„ ì†Œì¼“
+	private ArrayList<MainHandler> allUserList; // ì „ì²´ ì‚¬ìš©ì
+	private ArrayList<MainHandler> waitUserList; // ëŒ€ê¸°ì‹¤ ì‚¬ìš©ì
+	private ArrayList<Rooms> roomTotalList; // ì „ì²´ ë°© ë¦¬ìŠ¤íŠ¸
+
 	private Connection conn;
-	
+	private String driver = "oracle.jdbc.driver.OracleDriver";
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String user = "chat";
+	private String password = "bitc5600";
+
+	public MainServer() {
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, password); // DB ì—°ê²°
+
+			ss = new ServerSocket(9500);
+			System.out.println("ì„œë²„ì¤€ë¹„ ì™„ë£Œ");
+
+			allUserList = new ArrayList<MainHandler>(); // ì „ì²´ ì‚¬ìš©ì
+			waitUserList = new ArrayList<MainHandler>(); // ëŒ€ê¸°ì‹¤ ì‚¬ìš©ì
+			roomTotalList = new ArrayList<Rooms>();
+			while (true) {
+				Socket socket = ss.accept();
+				MainHandler handler = new MainHandler(socket, allUserList, waitUserList, roomTotalList, conn); // ìŠ¤ë ˆë“œ ìƒì„±
+				handler.start(); // ìŠ¤ë ˆë“œ ì‹œì‘
+				allUserList.add(handler);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void main(String[] args) {
 		new MainServer();

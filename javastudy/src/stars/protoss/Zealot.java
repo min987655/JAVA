@@ -5,7 +5,7 @@ import stars.Behavior;
 public class Zealot extends Protoss {
 	private String name;
 	private int hp;
-	private int sh; //º¸È£¸·
+	private int sh; //ë³´í˜¸ë§‰
 	public static int attack = 10;
 	
 	public Zealot(String name) {
@@ -16,6 +16,6 @@ public class Zealot extends Protoss {
 
 	@Override
 	public void attack(Behavior unit) {
-		System.out.println("±Ù°Å¸® °ø°Ý");
+		System.out.println("ê·¼ê±°ë¦¬ ê³µê²©");
 	}
 }

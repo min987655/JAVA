@@ -1,10 +1,10 @@
 package quiz;
 
-// ±âº»ÀÚ·áÇüÀº ¸Ş¼­µå°¡ ¾ø´Ù
-// ¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ·Á¸é Wrapper¸¦ »ç¿ëÇØ¾ßÇÑ´Ù
-// int´Â Integer¶ó´Â Wrapper°¡ ÀÖ´Ù
-// ¼ıÀÚ¸¦ ¹®ÀÚ·Î ¹Ù²Ù´Â¹ı Integer.toString(¼ıÀÚº¯¼ö) , ¹®ÀÚ¸¦ ¼ıÀÚ·Î ¹Ù²Ù´Â ¹ı Integer.parseInt(¹®ÀÚº¯¼ö)
-// Integer¾ÈÀÇ ¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© numÀ» String Å¸ÀÔÀ¸·Î ¹Ù²Ù°í ´Ù½Ã ¼ıÀÚ·Î ¹Ù²ãº¸ÀÚ
+// ê¸°ë³¸ìë£Œí˜•ì€ ë©”ì„œë“œê°€ ì—†ë‹¤
+// ë©”ì„œë“œë¥¼ ì´ìš©í•˜ë ¤ë©´ Wrapperë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤
+// intëŠ” Integerë¼ëŠ” Wrapperê°€ ìˆë‹¤
+// ìˆ«ìë¥¼ ë¬¸ìë¡œ ë°”ê¾¸ëŠ”ë²• Integer.toString(ìˆ«ìë³€ìˆ˜) , ë¬¸ìë¥¼ ìˆ«ìë¡œ ë°”ê¾¸ëŠ” ë²• Integer.parseInt(ë¬¸ìë³€ìˆ˜)
+// Integerì•ˆì˜ ë©”ì„œë“œë¥¼ ì´ìš©í•˜ì—¬ numì„ String íƒ€ì…ìœ¼ë¡œ ë°”ê¾¸ê³  ë‹¤ì‹œ ìˆ«ìë¡œ ë°”ê¿”ë³´ì
 
 public class Quiz003 {
 
@@ -12,11 +12,11 @@ public class Quiz003 {
 
 		int num = 5600;
 
-		String numStr = Integer.toString(num); // ¿©±â¸¦ ¼öÁ¤ÇÏ¼¼¿ä
+		String numStr = Integer.toString(num); // ì—¬ê¸°ë¥¼ ìˆ˜ì •í•˜ì„¸ìš”
 
 		System.out.println(11 + numStr);
 
-		int strNum = Integer.parseInt(numStr); // ¿©±â¸¦ ¼öÁ¤ÇÏ¼¼¿ä
+		int strNum = Integer.parseInt(numStr); // ì—¬ê¸°ë¥¼ ìˆ˜ì •í•˜ì„¸ìš”
 
 		System.out.println(11 + strNum);
 

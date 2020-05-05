@@ -9,24 +9,24 @@ import java.sql.Statement;
 
 public class CustomerList 
 {
-	//1.¸â¹öº¯¼ö
-	private Connection con; // ¸â¹öº¯¼ö
+	//1.ë©¤ë²„ë³€ìˆ˜
+	private Connection con; // ë©¤ë²„ë³€ìˆ˜
 	private Statement stmt;
 	private ResultSet rs;
 	
-	//1.¸â¹öº¯¼ö
+	//1.ë©¤ë²„ë³€ìˆ˜
 //	private int custid;
 //	private String name;
 //	private String address;
 //	private String phone;
 	
-	//2.¹è¿­
-	private int custid2[]; // ÂÀ! -> ·¹ÆÛ·±½º(¿¬°á)
+	//2.ë°°ì—´
+	private int custid2[]; // ì©œ! -> ë ˆí¼ëŸ°ìŠ¤(ì—°ê²°)
 	private String name2[];
 	private String address2[];
 	private String phone2[];
 	
-	//3.°´Ã¼
+	//3.ê°ì²´
 //	class Customer2{
 //		private int custid;
 //		private String name;
@@ -35,33 +35,33 @@ public class CustomerList
 //	}	
 	Customer cs;
 	
-	//4.°´Ã¼ ¹è¿­
+	//4.ê°ì²´ ë°°ì—´
 	Customer cs2[];
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public CustomerList()
 	{
-		//1.º¯¼ö ÃÊ±âÈ­
+		//1.ë³€ìˆ˜ ì´ˆê¸°í™”
 //		custid 	= 0;
 //		name 	= "";
 //		address = "";
 //		phone	= "";
 		
-		//2.¹è¿­ ÃÊ±âÈ­
+		//2.ë°°ì—´ ì´ˆê¸°í™”
 		custid2  = new int[5];
 		name2	 = new String[5];
 		address2 = new String[5];
 		phone2	 = new String[5];
 		
-		//3.°´Ã¼ ÃÊ±âÈ­
+		//3.ê°ì²´ ì´ˆê¸°í™”
 		cs = new Customer();
 		
-		//4.°´Ã¼ ¹è¿­ ÃÊ±âÈ­
-		cs2 = new Customer[5];//°´Ã¼ ¾Æ´Ô! ¹è¿­ÀÏ »Ó(°ø°£)
-		//4-1.°´Ã¼ ¹è¿­À» ¸¸µé¾úÀ¸¸é, 
-		//¹İµå½Ã °´Ã¼¹è¿­¾È¿¡ µé¾î°¥ "°´Ã¼"¿ø¼Ò¸¦ ¸¸µé¾î¾ß µÈ´Ù.
+		//4.ê°ì²´ ë°°ì—´ ì´ˆê¸°í™”
+		cs2 = new Customer[5];//ê°ì²´ ì•„ë‹˜! ë°°ì—´ì¼ ë¿(ê³µê°„)
+		//4-1.ê°ì²´ ë°°ì—´ì„ ë§Œë“¤ì—ˆìœ¼ë©´, 
+		//ë°˜ë“œì‹œ ê°ì²´ë°°ì—´ì•ˆì— ë“¤ì–´ê°ˆ "ê°ì²´"ì›ì†Œë¥¼ ë§Œë“¤ì–´ì•¼ ëœë‹¤.
 		for(int i=0; i<5; i++)
-			cs2[i]  = new Customer();//5°³ÀÇ °´Ã¼ »ı¼º
+			cs2[i]  = new Customer();//5ê°œì˜ ê°ì²´ ìƒì„±
 	}
 	
 	
@@ -69,13 +69,13 @@ public class CustomerList
 	public void getConnection() 
 	{
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String userid =  "c##madang"; //c##Ãß°¡
-		String pwd = "c##madang"; //c##Ãß°¡
+		String userid =  "c##madang"; //c##ì¶”ê°€
+		String pwd = "c##madang"; //c##ì¶”ê°€
 	   
 		try 
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("µå¶óÀÌ¹ö ·Îµå ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ë¡œë“œ ì„±ê³µ");
 		}
 		catch (ClassNotFoundException e) 
 		{
@@ -84,9 +84,9 @@ public class CustomerList
 		
 		try 
 		{
-		   System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ÁØºñ .....");
+		   System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì¤€ë¹„ .....");
 		   con = DriverManager.getConnection(url,userid,pwd);
-		   System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+		   System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		}
 		catch (SQLException e) 
 		{
@@ -94,7 +94,7 @@ public class CustomerList
 		}
 	}
 
-	public void getCustomer_DB() //ÇÏ´Â ÀÏÀÌ ¹¹³Ä?
+	public void getCustomer_DB() //í•˜ëŠ” ì¼ì´ ë­ëƒ?
 	{ 
 		String query = "SELECT custid, name, address, phone  FROM customer";
 		try 
@@ -106,7 +106,7 @@ public class CustomerList
 			int index=0;
 			while (rs.next ()) 
 			{
-				//1.º¯¼ö¿¡ ´ã±â
+				//1.ë³€ìˆ˜ì— ë‹´ê¸°
 //				custid 	= rs.getInt(1);
 //				name 	= rs.getString(2);
 //				address	= rs.getString(3);
@@ -114,7 +114,7 @@ public class CustomerList
 				
 //				print1();
 				
-				//2.¹è¿­¿¡ ´ã±â
+				//2.ë°°ì—´ì— ë‹´ê¸°
 //				custid2[index] 	= rs.getInt(1);
 //				name2[index] 	= rs.getString(2);
 //				address2[index]	= rs.getString(3);
@@ -122,7 +122,7 @@ public class CustomerList
 //				
 //				index++;
 				
-				//3.°´Ã¼¿¡ ´ã±â //º¯¼ö Á÷Á¢ Á¢±Ù ±İÁö!
+				//3.ê°ì²´ì— ë‹´ê¸° //ë³€ìˆ˜ ì§ì ‘ ì ‘ê·¼ ê¸ˆì§€!
 //				cs.custid 	= rs.getInt(1);
 //				cs.name 	= rs.getString(2);
 //				cs.address	= rs.getString(3);
@@ -135,7 +135,7 @@ public class CustomerList
 //				
 //				print3();
 				
-				//4.°´Ã¼ ¹è¿­¿¡ ´ã±â,  ¸â¹öº¯¼ö¿¡ Á÷Á¢ Á¢±Ù ±İÁö!
+				//4.ê°ì²´ ë°°ì—´ì— ë‹´ê¸°,  ë©¤ë²„ë³€ìˆ˜ì— ì§ì ‘ ì ‘ê·¼ ê¸ˆì§€!
 //				cs2[0].custid 	= rs.getInt(1);
 //				cs2[0].name 	= rs.getString(2);
 //				cs2[0].address	= rs.getString(3);
@@ -177,13 +177,13 @@ public class CustomerList
 	
 	void print3()
 	{
-		//º¯¼ö Á÷Á¢ Á¢±Ù ±İÁö!
+		//ë³€ìˆ˜ ì§ì ‘ ì ‘ê·¼ ê¸ˆì§€!
 //		System.out.print(cs.custid + "\t");
 //		System.out.print(cs.name+ "\t");
 //		System.out.print(cs.address+ "\t");
 //		System.out.println(cs.phone+ "\t");
 		
-		//±×·¡¼­ ¸â¹ö ¸Ş¼Òµå¸¦ ÅëÇØ¼­ Á¢±Ù
+		//ê·¸ë˜ì„œ ë©¤ë²„ ë©”ì†Œë“œë¥¼ í†µí•´ì„œ ì ‘ê·¼
 		System.out.print(cs.getCustid() + "\t");
 		System.out.print(cs.getName()+ "\t");
 		System.out.print(cs.getAddress()+ "\t");
@@ -192,7 +192,7 @@ public class CustomerList
 	
 	void print4()
 	{
-		//º¯¼ö Á÷Á¢ Á¢±Ù ±İÁö!
+		//ë³€ìˆ˜ ì§ì ‘ ì ‘ê·¼ ê¸ˆì§€!
 //		for(int i=0; i<5;i++)
 //		{
 //			System.out.print(cs2[i].custid + "\t");
@@ -201,8 +201,8 @@ public class CustomerList
 //			System.out.println(cs2[i].phone+ "\t");
 //		}
 		
-		//±×·¡¼­ ¸â¹ö ¸Ş¼Òµå¸¦ ÅëÇØ¼­ Á¢±Ù
-		//º¯¼ö Á÷Á¢ Á¢±Ù ±İÁö!
+		//ê·¸ë˜ì„œ ë©¤ë²„ ë©”ì†Œë“œë¥¼ í†µí•´ì„œ ì ‘ê·¼
+		//ë³€ìˆ˜ ì§ì ‘ ì ‘ê·¼ ê¸ˆì§€!
 		for(int i=0; i<5;i++)
 		{
 			System.out.print(cs2[i].getCustid() + "\t");

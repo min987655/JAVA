@@ -4,25 +4,25 @@ import com.google.gson.Gson;
 
 class Family {
 	int number = 2;
-	String father = "È«ÆÇ¼­";
-	String mother = "Ãá¼¶";
+	String father = "í™íŒì„œ";
+	String mother = "ì¶˜ì„¬";
 }
 
 class Person {
-	String name = "È«±æµ¿";
+	String name = "í™ê¸¸ë™";
 	int age = 25;
-	String gender = "¿©";
-	String add = "¼­¿ïÆ¯º°½Ã ¾çÃµ±¸ ¸ñµ¿";
-	String[] hobby = { "³ó±¸", "µµ¼ú" };
+	String gender = "ì—¬";
+	String add = "ì„œìš¸íŠ¹ë³„ì‹œ ì–‘ì²œêµ¬ ëª©ë™";
+	String[] hobby = { "ë†êµ¬", "ë„ìˆ " };
 	Family family = new Family();
-	String company = "°æ±â ¼ö¿ø½Ã ÆÈ´Þ±¸ ¿ì¸¸µ¿";
+	String company = "ê²½ê¸° ìˆ˜ì›ì‹œ íŒ”ë‹¬êµ¬ ìš°ë§Œë™";
 }
 
 public class JsonEx01 {
 	public static void main(String[] args) {
 		Gson gson = new Gson();
-		// fromJson() ÇÔ¼ö : json(String) -> java
-		// toJson() ÇÔ¼ö : java -> json(String)
+		// fromJson() í•¨ìˆ˜ : json(String) -> java
+		// toJson() í•¨ìˆ˜ : java -> json(String)
 		String personJson = gson.toJson(new Person());
 		System.out.println(personJson);
 	}

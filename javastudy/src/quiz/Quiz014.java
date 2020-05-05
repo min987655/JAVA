@@ -2,14 +2,14 @@ package quiz;
 
 import java.util.Scanner;
 
-// while Àº Á¶°ÇÀÌ ¸ÂÀ¸¸é ¾ÈÀÇ ³»¿ëÀ» ¹İº¹ÇÏ¿© Ãâ·ÂÇÑ´Ù.
+// while ì€ ì¡°ê±´ì´ ë§ìœ¼ë©´ ì•ˆì˜ ë‚´ìš©ì„ ë°˜ë³µí•˜ì—¬ ì¶œë ¥í•œë‹¤.
 
-// ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¸é ÀÔ·ÂÇÑ ¼ıÀÚ¸¸Å­ "¾È³çÇÏ¼¼¿ä"¸¦ Ãâ·ÂÇÏ¶ó
+// ìˆ«ìë¥¼ ì…ë ¥í•˜ë©´ ì…ë ¥í•œ ìˆ«ìë§Œí¼ "ì•ˆë…•í•˜ì„¸ìš”"ë¥¼ ì¶œë ¥í•˜ë¼
 
 public class Quiz014 {
 	
 	public static void main(String[] args) {
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		Scanner sc = new Scanner(System.in);
 		
 		

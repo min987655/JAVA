@@ -2,14 +2,14 @@ package ch05;
 
 class A {
 	void run() {
-	System.out.println("A ´Þ¸°´Ù");
+	System.out.println("A ë‹¬ë¦°ë‹¤");
 	}
 }
 
 class B extends A {
 	@Override
 	void run() {
-	 System.out.println("B ´Þ¸°´Ù");	
+	 System.out.println("B ë‹¬ë¦°ë‹¤");	
 	}
 }
 
@@ -17,7 +17,7 @@ class C extends B {
 	String name = "C";
 	@Override
 	void run() {
-	 System.out.println(name+" ´Þ¸°´Ù");	
+	 System.out.println(name+" ë‹¬ë¦°ë‹¤");	
 	}
 }
 

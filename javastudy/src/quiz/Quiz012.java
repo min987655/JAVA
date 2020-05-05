@@ -1,11 +1,11 @@
 package quiz;
 
 // > >= == !=
-// ºñ±³ ¿¬»êÀÚ´Â true ¶Ç´Â false ¸¦ ¸®ÅÏÇÑ´Ù 
-// (2 > 1)Àº true  (1 > 2)´Â false
+// ë¹„êµ ì—°ì‚°ìëŠ” true ë˜ëŠ” false ë¥¼ ë¦¬í„´í•œë‹¤ 
+// (2 > 1)ì€ true  (1 > 2)ëŠ” false
 
-// ºñ±³¿¬»êÀÚ·Î ¸ğµÎ ´Ù¸£°Ô ¸¸µé¾î¼­
-// true false true false true false ¸¦ Ãâ·ÂÇØº¸ÀÚ
+// ë¹„êµì—°ì‚°ìë¡œ ëª¨ë‘ ë‹¤ë¥´ê²Œ ë§Œë“¤ì–´ì„œ
+// true false true false true false ë¥¼ ì¶œë ¥í•´ë³´ì
 
 public class Quiz012 {
 	public static void main(String[] args) {

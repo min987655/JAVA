@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ArrayEx08 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("¿µ¾î ´ë¹®ÀÚ ÇÑÀÚ¸®¸¦ ÀÔ·ÂÇÏ½Ã¿À.");
+		System.out.println("ì˜ì–´ ëŒ€ë¬¸ì í•œìë¦¬ë¥¼ ì…ë ¥í•˜ì‹œì˜¤.");
 		
 		String str = sc.next();
 		char ch = str.charAt(0);

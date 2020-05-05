@@ -8,23 +8,23 @@ public class InsertEx01 {
 
 	public static void main(String[] args) {
 //		OracleDriver o = new OracleDriver();
-//		´Ù¸¥ ½ºÅÃ¿¡¼­ ÇÊ¿äÇÏ¸é ¶Ç new ÇØ¾ßÇÑ´Ù. 
+//		ë‹¤ë¥¸ ìŠ¤íƒì—ì„œ í•„ìš”í•˜ë©´ ë˜ new í•´ì•¼í•œë‹¤. 
 
 		try {
-			final String SQL = "insert into users(id,name,email,password) values(?,?,?,?)"; //?¸¦ ³¯¸®¸é ÆÄ½ÌÀ» ¾ÈÇÔ. ÀÎÁ§¼Ç°ø¹éÀ» ¸·¾ÆÁÜ
-			// OJDBC ¹®¼­¿¡ ÇØ´ç µå¶óÀÌ¹ö¸¦ ·ÎµåÇÏ¶ó´Â ¸Ş´º¾óÀÌ ÀÖÀ½(ÀÎÅÍÆäÀÌ½º)
-			Class.forName("oracle.jdbc.driver.OracleDriver"); // heap¿¡ ¿À¶óÅ¬ µå¶óÀÌ¹ö newÇØ¼­ ¶ç¿ò(stream ¿¬°áÇÏ±â À§ÇØ¼­) but ÁÖ¼Ò ¸ğ¸§
-			// ½ºÆ®¸² ¿¬°á(ÀÎÅ¸ÆäÀÌ½º°¡ Àû¿ëµÈ ½ºÆ®¸²)
+			final String SQL = "insert into users(id,name,email,password) values(?,?,?,?)"; //?ë¥¼ ë‚ ë¦¬ë©´ íŒŒì‹±ì„ ì•ˆí•¨. ì¸ì ì…˜ê³µë°±ì„ ë§‰ì•„ì¤Œ
+			// OJDBC ë¬¸ì„œì— í•´ë‹¹ ë“œë¼ì´ë²„ë¥¼ ë¡œë“œí•˜ë¼ëŠ” ë©”ë‰´ì–¼ì´ ìˆìŒ(ì¸í„°í˜ì´ìŠ¤)
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // heapì— ì˜¤ë¼í´ ë“œë¼ì´ë²„ newí•´ì„œ ë„ì›€(stream ì—°ê²°í•˜ê¸° ìœ„í•´ì„œ) but ì£¼ì†Œ ëª¨ë¦„
+			// ìŠ¤íŠ¸ë¦¼ ì—°ê²°(ì¸íƒ€í˜ì´ìŠ¤ê°€ ì ìš©ëœ ìŠ¤íŠ¸ë¦¼)
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ssar", "bitc5600");
-			// ¹öÆÛ´Ş±â(?¸¦ »ç¿ëÇÏ°Ô ÇØÁØ´Ù)
+			// ë²„í¼ë‹¬ê¸°(?ë¥¼ ì‚¬ìš©í•˜ê²Œ í•´ì¤€ë‹¤)
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, 4);
-			pstmt.setString(2, "Á¤Á¶");
+			pstmt.setString(2, "ì •ì¡°");
 			pstmt.setString(3, "jj@nate.com");
 			pstmt.setString(4, "1234");
-			// ¹öÆÛ¿¡ ¾²±â(commit/auto flush ÀÖÀ½)
+			// ë²„í¼ì— ì“°ê¸°(commit/auto flush ìˆìŒ)
 			pstmt.executeUpdate();
-			System.out.println("ÀÎ¼­Æ® ¿Ï·á");
+			System.out.println("ì¸ì„œíŠ¸ ì™„ë£Œ");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

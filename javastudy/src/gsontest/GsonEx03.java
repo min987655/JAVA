@@ -1,6 +1,6 @@
 package gsontest;
 
-//{"name":"ÄÚ½º","age":40}
+//{"name":"ì½”ìŠ¤","age":40}
 import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,11 +40,11 @@ class People {
 public class GsonEx03 {
 
 	public static void main(String[] args) {
-		// 1. ´Ù¿î¹ŞÀº json µ¥ÀÌÅÍ
-		String jsonData = "{\"name\":\"ÄÚ½º\",\"age\":40}";
+		// 1. ë‹¤ìš´ë°›ì€ json ë°ì´í„°
+		String jsonData = "{\"name\":\"ì½”ìŠ¤\",\"age\":40}";
 		System.out.println(jsonData);
 
-		// 2. json µ¥ÀÌÅÍ -> java ¿ÀºêÁ§Æ® º¯È¯
+		// 2. json ë°ì´í„° -> java ì˜¤ë¸Œì íŠ¸ ë³€í™˜
 		Gson gson = new Gson();
 		People people = gson.fromJson(jsonData, People.class);
 		System.out.println(people.getName());
