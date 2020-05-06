@@ -1,6 +1,7 @@
 package CoControl;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -33,29 +34,33 @@ import javax.swing.ListSelectionModel;
 
 public class CoprocessFrame extends JFrame {
 
-	public JButton /**openB, saveB, loadB, deleteB,**/ exitB, sendB;
+	public JButton openB, /**saveB, loadB, deleteB,**/ exitB, sendB;
 	public JTextArea area, area1, partList;
-	public JTextField field;
+	public JTextField field, quiz;
 
 	public JList<String> list2;
-	public File file, folder;
+//	public File file, folder;
 	private BufferedReader br;
 	private ArrayList<String> arr;
 	public DefaultListModel<String> model;
 
 	public CoprocessFrame() {
 
+		quiz = new JTextField(18);
 //		openB = new JButton("내PC 파일열기");
 //		saveB = new JButton("내PC 파일저장");
 //		loadB = new JButton("업로드");
 		exitB = new JButton("나가기");
 
+		quiz.setEditable(true);
+		quiz.setBackground(Color.WHITE);
 //		openB.setEnabled(true);
 //		saveB.setEnabled(true);
 //		loadB.setEnabled(true);
 		exitB.setEnabled(true);
 
 		JPanel wpanel = new JPanel(new GridLayout(1, 5, 5, 0));
+		wpanel.add(quiz);
 //		wpanel.add(openB);
 //		wpanel.add(saveB);
 //		wpanel.add(loadB);
@@ -88,10 +93,10 @@ public class CoprocessFrame extends JFrame {
 		epanel.add("North", user);
 		epanel.add("Center", scroll1);
 
-//		JPanel epanel1 = new JPanel(new BorderLayout());
-//		JPanel p2 = new JPanel();
-//		JLabel file = new JLabel("                               업로드한 파일");
-//		p2.add(file);
+		JPanel epanel1 = new JPanel(new BorderLayout());
+		JPanel p2 = new JPanel();
+		JLabel file = new JLabel("                               점수판");
+		p2.add(file);
 
 		list2 = new JList<String>(new DefaultListModel<String>());
 		list2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -101,12 +106,12 @@ public class CoprocessFrame extends JFrame {
 		JScrollPane scroll2 = new JScrollPane(list2);
 		scroll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//		epanel1.add("North", file);
-//		epanel1.add("Center", scroll2);
+		epanel1.add("North", file);
+		epanel1.add("Center", scroll2);
 
 		JPanel epanel12 = new JPanel(new GridLayout(2, 1, 0, 10));
 		epanel12.add(epanel);
-//		epanel12.add(epanel1);
+		epanel12.add(epanel1);
 
 		JPanel epanel3 = new JPanel(new BorderLayout());
 
@@ -125,8 +130,8 @@ public class CoprocessFrame extends JFrame {
 
 		JPanel epanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		field = new JTextField(18);
-//		sendB = new JButton("Enter");
-//		epanel4.add(field);
+		sendB = new JButton("Enter");
+		epanel4.add(field);
 		epanel4.add(sendB);
 
 		JPanel totepanel = new JPanel(new BorderLayout());

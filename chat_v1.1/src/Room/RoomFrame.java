@@ -75,7 +75,7 @@ public class RoomFrame extends JFrame {
 
 		// 채팅방 목록
 		roomP = new JPanel(new BorderLayout());
-		la4 = new JLabel("채팅방 목록");
+		la4 = new JLabel("게임방 목록");
 		la4.setFont(new Font("돋움", Font.PLAIN, 20));
 
 		centerPanel = new JPanel(new GridLayout(100, 2, 10, 10)); // 100개

@@ -14,9 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.text.GapContent;
 
 public class MembershipB extends JFrame {
-	JPasswordField pwT;
+	JPasswordField pwT, pwT1;
 	JTextField nameT, idT; //, tel2T, tel3T;
-	private JLabel nameL, idL, pwL; // phoneL, ageL, ageYearL, ageMonthL, ageDayL;
+	private JLabel nameL, idL, pwL, pwL1; // phoneL, ageL, ageYearL, ageMonthL, ageDayL;
 	JButton joinB, calneB, idoverlapB;
 //	JComboBox<String> telC, ageYearC, ageMonthC, ageDayC;
 
@@ -57,6 +57,13 @@ public class MembershipB extends JFrame {
 		JPanel p3 = new JPanel();
 		p3.add(pwL);
 		p3.add(pwT);
+		
+		pwL1 = new JLabel("비밀번호 확인");
+		pwT1 = new JPasswordField(15);
+		pwT1.setEchoChar('*');
+		JPanel p4 = new JPanel();
+		p4.add(pwL1);
+		p4.add(pwT1);
 
 //		ageL = new JLabel("생년월일");
 //		ageYearL = new JLabel("년도");
@@ -90,7 +97,7 @@ public class MembershipB extends JFrame {
 		p.add(p1);
 		p.add(p2);
 		p.add(p3);
-//		p.add(p4);
+		p.add(p4);
 //		p.add(p5);
 		p.add(p8);
 
