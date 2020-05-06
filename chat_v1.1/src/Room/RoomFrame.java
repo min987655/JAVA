@@ -40,7 +40,7 @@ public class RoomFrame extends JFrame {
 	public JTextArea chatarea, usertxt;
 	public JTextField chattxt, tx1, tx2, tx3, tx4, tx5, tx6, tx7, tx8;
 	private JLabel la1, la2, la3, la4, la5, la6;
-	private String[] com = { "경영지원", "마케팅", "고객관리", "개발", "디자인" };
+//	private String[] com = { "경영지원", "마케팅", "고객관리", "개발", "디자인" };
 	private JList<String> entlist, frlist;
 	private EtchedBorder eb;
 	private JList<DetailPanel> list;
@@ -62,14 +62,14 @@ public class RoomFrame extends JFrame {
 		dp = new DetailPanel[100];
 		upP = new JPanel(new FlowLayout());
 		la6 = new JLabel("정 렬 : ");
-		sortCB = new JComboBox<String>(com);
-		sortCB.setPreferredSize(new Dimension(200, 30));
+//		sortCB = new JComboBox<String>(com);
+//		sortCB.setPreferredSize(new Dimension(200, 30));
 		makeB = new JButton("방 만 들 기");
 		makeB.setPreferredSize(new Dimension(400, 30));
 		exitB = new JButton("exit");
 		exitB.setPreferredSize(new Dimension(200, 30));
 		upP.add(la6);
-		upP.add(sortCB);
+//		upP.add(sortCB);
 		upP.add(makeB);
 		upP.add(exitB);
 
@@ -137,7 +137,7 @@ public class RoomFrame extends JFrame {
 		list2P = new JPanel(new BorderLayout());
 		list2P.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
-		la3 = new JLabel(" 친 구 목 록");
+		la3 = new JLabel(" 랭 킹" );
 		la3.setFont(new Font("돋움", Font.PLAIN, 15));
 		frlist = new JList<String>(new DefaultListModel<String>());
 		JScrollPane scroll2 = new JScrollPane(frlist);

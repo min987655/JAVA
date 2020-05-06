@@ -13,26 +13,26 @@ import javax.swing.JTextField;
 
 public class RoomMake extends JFrame {
 
-	private JLabel title, subject, pw, num;
-	public JTextField tf, pf;
-	public JCheckBox cb;
+	private JLabel title, /**subject, pw,**/ num;
+	public JTextField tf; //pf;
+//	public JCheckBox cb;
 	public JButton makeB, canB;
-	public JComboBox<String> combo, combo1;
+	public JComboBox<String> combo1;//, combo;
 
 	public RoomMake() {
 
 		title = new JLabel("방제목 :");
-		subject = new JLabel("방주제 :");
-		pw = new JLabel("비밀번호 :");
+//		subject = new JLabel("방주제 :");
+//		pw = new JLabel("비밀번호 :");
 		num = new JLabel("인원수 :");
 
 		tf = new JTextField(15);
-		pf = new JTextField(15);
+//		pf = new JTextField(15);
 
-		String[] com = { "경영", "마케팅", "고객관리", "개발", "디자인" };
-		combo = new JComboBox<String>(com);
+//		String[] com = { "경영", "마케팅", "고객관리", "개발", "디자인" };
+//		combo = new JComboBox<String>(com);
 
-		cb = new JCheckBox();
+//		cb = new JCheckBox();
 
 		String[] com1 = { "2", "3", "4", "5", "6", "7", "8", "9", };
 		combo1 = new JComboBox<String>(com1);
@@ -45,22 +45,22 @@ public class RoomMake extends JFrame {
 		panel1.add(tf);
 
 		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		panel2.add(pw);
-		panel2.add(pf);
-		panel2.add(cb);
+//		panel2.add(pw);
+//		panel2.add(pf);
+//		panel2.add(cb);
 
-		JPanel panel3 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		panel3.add(subject);
-		panel3.add(combo);
+//		JPanel panel3 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+//		panel3.add(subject);
+//		panel3.add(combo);
 
 		JPanel panel4 = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		panel4.add(num);
 		panel4.add(combo1);
 
-		JPanel totpanel = new JPanel(new GridLayout(4, 1, 0, 0));
+		JPanel totpanel = new JPanel(new GridLayout(3, 1, 0, 0));
 		totpanel.add(panel1);
 		totpanel.add(panel2);
-		totpanel.add(panel3);
+//		totpanel.add(panel3);
 		totpanel.add(panel4);
 
 		JPanel btpanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));

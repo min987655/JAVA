@@ -15,7 +15,7 @@ import Action.Protocol;
 
 public class DetailPanel extends JPanel implements ActionListener {
 
-	public static String labelName[] = { "방 번호 :", "      ", "방 주제 :", "      ", "인원 수 : ", "      ", "방 제목 : ",
+	public static String labelName[] = { "방 번호 :", "      ",/** "방 주제 :", "      ",**/ "인원 수 : ", "      ", "방 제목 : ",
 			"      ", "      " };
 	public JLabel labelArray[]; // 1(방번호),3(방주제),5(인원수),7(방제목)
 	private JButton enterButton;

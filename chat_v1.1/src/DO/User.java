@@ -5,22 +5,22 @@ public class User {
 	private String idName;
 	private String password;
 	private String name;
-	private String age;
-	private String phoneNumber;
+//	private String age;
+//	private String phoneNumber;
 	
 	public User() {
-		this(0, "", "", "", "", "", "");
+		this(0, "", "", "");
 	}
 
-	public User(int pryNumber, String idName, String password, String name, String age, String email,
-			String phoneNumber) {
+	public User(int pryNumber, String idName, String password, String name /**, String age,
+			String phoneNumber**/) {
 		super();
 		this.pryNumber = pryNumber;
 		this.idName = idName;
 		this.password = password;
 		this.name = name;
-		this.age = age;
-		this.phoneNumber = phoneNumber;
+//		this.age = age;
+//		this.phoneNumber = phoneNumber;
 	}
 
 	public int getPryNumber() {
@@ -55,26 +55,26 @@ public class User {
 		this.name = name;
 	}
 
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+//	public String getAge() {
+//		return age;
+//	}
+//
+//	public void setAge(String age) {
+//		this.age = age;
+//	}
+//
+//	public String getPhoneNumber() {
+//		return phoneNumber;
+//	}
+//
+//	public void setPhoneNumber(String phoneNumber) {
+//		this.phoneNumber = phoneNumber;
+//	}
 
 	@Override
 	public String toString() {
 		return "User [pryNumber=" + pryNumber + ", idName=" + idName + ", password=" + password + ", name=" + name
-				+ ", age=" + age + ", phoneNumber=" + phoneNumber + "]";
+				+ /** ", age=" + age + ", phoneNumber=" + phoneNumber + **/ "]";
 	}
 
 }

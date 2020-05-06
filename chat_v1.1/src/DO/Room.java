@@ -6,31 +6,31 @@ import Action.MainHandler;
 public class Room {
 	private int rID;
 	private String title;
-	private String rPassword;
+//	private String rPassword;
 	private String userCount;
 	private String masterName;
-	private String subject;
-	private int condtionP;
+//	private String subject;
+//	private int condtionP;
 	public ArrayList<MainHandler> roomInUserList;
 
 	public Room() {
 		this.rID = 0;
 		this.title = "";
-		this.rPassword = "";
+//		this.rPassword = "";
 		this.userCount = "";
 		this.masterName = "";
-		this.subject = "";
-		this.condtionP = 0; 
+//		this.subject = "";
+//		this.condtionP = 0; 
 		roomInUserList = new ArrayList<MainHandler>();
 	}
 
-	public Room(int rID, String title, String rPassword, String userCount, String masterName, int condtionP) {
+	public Room(int rID, String title, String rPassword, String userCount, String masterName /** int condtionP **/) {
 		this.rID = rID;
 		this.title = title;
-		this.rPassword = rPassword;
+//		this.rPassword = rPassword;
 		this.userCount = userCount;
 		this.masterName = masterName;
-		this.condtionP = condtionP;
+//		this.condtionP = condtionP;
 		roomInUserList = new ArrayList<MainHandler>();
 	}
 
@@ -50,13 +50,13 @@ public class Room {
 		this.title = title;
 	}
 
-	public String getrPassword() {
-		return rPassword;
-	}
-
-	public void setrPassword(String rPassword) {
-		this.rPassword = rPassword;
-	}
+//	public String getrPassword() {
+//		return rPassword;
+//	}
+//
+//	public void setrPassword(String rPassword) {
+//		this.rPassword = rPassword;
+//	}
 
 	public String getUserCount() {
 		return userCount;
@@ -74,21 +74,21 @@ public class Room {
 		this.masterName = masterName;
 	}
 
-	public int getCondtionP() {
-		return condtionP;
-	}
-
-	public void setCondtionP(int condtionP) {
-		this.condtionP = condtionP;
-	}
-
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+//	public int getCondtionP() {
+//		return condtionP;
+//	}
+//
+//	public void setCondtionP(int condtionP) {
+//		this.condtionP = condtionP;
+//	}
+//
+//	public String getSubject() {
+//		return subject;
+//	}
+//
+//	public void setSubject(String subject) {
+//		this.subject = subject;
+//	}
 
 	public ArrayList<MainHandler> getRoomInUserList() {
 		return roomInUserList;
@@ -100,8 +100,8 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [rID=" + rID + ", title=" + title + ", rPassword=" + rPassword + ", userCount=" + userCount
-				+ ", masterName=" + masterName + ", condtionP=" + condtionP + "]";
+		return "Room [rID=" + rID + ", title=" + title + /**", rPassword=" + rPassword +**/ ", userCount=" + userCount
+				+ ", masterName=" + masterName + /**", condtionP=" + condtionP +**/"]";
 	}
 
 }

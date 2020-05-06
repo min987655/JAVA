@@ -50,7 +50,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 	CoprocessFrame chattingF;
 
 	private String sNumber = "><^^"; // default 시크릿넘버
-	private boolean condition_S = false; // 이메일 인증확인
+	// private boolean condition_S = false; // 이메일 인증확인
 	private boolean condition_Id = false; // ID 중복체크
 
 	public EnterFrame() {
@@ -134,11 +134,11 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 		rMakeF.makeB.addActionListener(this);
 		rMakeF.canB.addActionListener(this);
 		chattingF.exitB.addActionListener(this);
-		chattingF.sendB.addActionListener(this);
-		// ----------------------채팅방 관련 ---------------------------------
-		chattingF.openB.addActionListener(this);
-		chattingF.saveB.addActionListener(this);
-		chattingF.loadB.addActionListener(this);
+//		chattingF.sendB.addActionListener(this);
+//		// ----------------------채팅방 관련 ---------------------------------
+//		chattingF.openB.addActionListener(this);
+//		chattingF.saveB.addActionListener(this);
+//		chattingF.loadB.addActionListener(this);
 		chattingF.list2.addListSelectionListener(this);
 		//
 	}
@@ -178,23 +178,23 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			String name = menbersShipF.nameT.getText();
 			String id = menbersShipF.idT.getText();
 			String pw1 = menbersShipF.pwT.getText();
-			String ageYear = (String) menbersShipF.ageYearC.getSelectedItem();
-			String ageMonth = (String) menbersShipF.ageMonthC.getSelectedItem();
-			String ageDay = (String) menbersShipF.ageDayC.getSelectedItem();
-			String tel = (String) menbersShipF.telC.getSelectedItem();
-			String tel2 = menbersShipF.tel2T.getText();
-			String tel3 = menbersShipF.tel3T.getText();
+//			String ageYear = (String) menbersShipF.ageYearC.getSelectedItem();
+//			String ageMonth = (String) menbersShipF.ageMonthC.getSelectedItem();
+//			String ageDay = (String) menbersShipF.ageDayC.getSelectedItem();
+//			String tel = (String) menbersShipF.telC.getSelectedItem();
+//			String tel2 = menbersShipF.tel2T.getText();
+//			String tel3 = menbersShipF.tel3T.getText();
 
-			if (name.length() == 0 || id.length() == 0 || pw1.length() == 0 || tel2.length() == 0 || tel3.length() == 0) {
+			if (name.length() == 0 || id.length() == 0 || pw1.length() == 0 /**|| tel2.length() == 0 || tel3.length() == 0 **/) {
 				JOptionPane.showMessageDialog(this, "빈간을 입력해주세요");
-			} else if (condition_S && condition_Id) { // -> 이메일, 중복확인 인증이 된거
+			} else if (/**condition_S &&**/ condition_Id) { // -> 이메일, 중복확인 인증이 된거
 
 				String line = "";
 				line += (menbersShipF.idT.getText() + "%" + menbersShipF.pwT.getText() + "%"
-						+ menbersShipF.nameT.getText() + "%" + menbersShipF.ageYearC.getSelectedItem()
-						+ menbersShipF.ageMonthC.getSelectedItem() + menbersShipF.ageDayC.getSelectedItem() + "%"
-						+ menbersShipF.telC.getSelectedItem() + "" + menbersShipF.tel2T.getText()
-						+ menbersShipF.tel3T.getText());
+						+ menbersShipF.nameT.getText()); // + "%" + menbersShipF.ageYearC.getSelectedItem()
+//						+ menbersShipF.ageMonthC.getSelectedItem() + menbersShipF.ageDayC.getSelectedItem() + "%"
+//						+ menbersShipF.telC.getSelectedItem() + "" + menbersShipF.tel2T.getText()
+//						+ menbersShipF.tel3T.getText());
 				System.out.println(line);
 
 				pw.println(Protocol.REGISTER + "|" + line);
@@ -206,24 +206,24 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 				menbersShipF.nameT.setText("");
 				menbersShipF.idT.setText("");
 				menbersShipF.pwT.setText("");
-				menbersShipF.ageYearC.setSelectedIndex(0);
-				menbersShipF.ageMonthC.setSelectedIndex(0);
-				menbersShipF.ageDayC.setSelectedIndex(0);
-				menbersShipF.telC.setSelectedIndex(0);
-				menbersShipF.tel2T.setText("");
-				menbersShipF.tel3T.setText("");
+//				menbersShipF.ageYearC.setSelectedIndex(0);
+//				menbersShipF.ageMonthC.setSelectedIndex(0);
+//				menbersShipF.ageDayC.setSelectedIndex(0);
+//				menbersShipF.telC.setSelectedIndex(0);
+//				menbersShipF.tel2T.setText("");
+//				menbersShipF.tel3T.setText("");
 
-				condition_S = false;
+//				condition_S = false;
 				condition_Id = false;
 				sNumber = "><^^";
 
-			} else if (!condition_Id && condition_S) {
+			} else if (!condition_Id /**&& condition_S**/) {
 				JOptionPane.showMessageDialog(this, "ID 중복확인 해주세요");
 			} 
 		} else if (e.getSource() == menbersShipF.calneB) { // 회원가입페이지 -----------> 취소
 			menbersShipF.setVisible(false);
 			this.setVisible(true);
-			condition_S = false;
+			//condition_S = false;
 			sNumber = "><^^";
 
 		} else if (e.getSource() == menbersShipF.idoverlapB) { // 회원가입 페이지ID -----------> 중복확인
@@ -243,50 +243,50 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			searchF.setVisible(true);
 		} else if (e.getSource() == searchF.joinB) { // ID 찾기 -----------> 확인
 			String name = searchF.nameT.getText();
-			String ageYear = (String) searchF.ageYearC.getSelectedItem();
-			String ageMonth = (String) searchF.ageMonthC.getSelectedItem();
-			String ageDay = (String) searchF.ageDayC.getSelectedItem();
-			String tel2 = searchF.tel2T.getText();
-			String tel3 = searchF.tel3T.getText();
+//			String ageYear = (String) searchF.ageYearC.getSelectedItem();
+//			String ageMonth = (String) searchF.ageMonthC.getSelectedItem();
+//			String ageDay = (String) searchF.ageDayC.getSelectedItem();
+//			String tel2 = searchF.tel2T.getText();
+//			String tel3 = searchF.tel3T.getText();
 
-			if (name.length() == 0 || tel2.length() == 0 || tel3.length() == 0) {
+			if (name.length() == 0) { // || tel2.length() == 0 || tel3.length() == 0) {
 				JOptionPane.showMessageDialog(this, "빈칸을 입력해주세요");
-			} else if (condition_S) {
-				String line = "";
-
-				line += (searchF.nameT.getText() + "%" + searchF.ageYearC.getSelectedItem()
-						+ searchF.ageMonthC.getSelectedItem() + searchF.ageDayC.getSelectedItem() + "%"
-						+ searchF.telC.getSelectedItem() + "" + searchF.tel2T.getText() + searchF.tel3T.getText());
-				System.out.println(line);
-
-				pw.println(Protocol.IDSEARCH + "|" + line);
-				pw.flush();
-
-				searchF.nameT.setText("");
-				searchF.ageYearC.setSelectedIndex(0);
-				searchF.ageMonthC.setSelectedIndex(0);
-				searchF.ageDayC.setSelectedIndex(0);
-				searchF.telC.setSelectedIndex(0);
-				searchF.tel2T.setText("");
-				searchF.tel3T.setText("");
-				condition_S = false;
-				sNumber = "><^^";
-			} else if (!condition_S) {
-				JOptionPane.showMessageDialog(this, "이메일 인증을 해주세요");
-			}
+			} //else if (condition_S) {
+//				String line = "";
+//
+//				line += (searchF.nameT.getText() + "%" + searchF.ageYearC.getSelectedItem()
+//						+ searchF.ageMonthC.getSelectedItem() + searchF.ageDayC.getSelectedItem() + "%"
+//						+ searchF.telC.getSelectedItem() + "" + searchF.tel2T.getText() + searchF.tel3T.getText());
+//				System.out.println(line);
+//
+//				pw.println(Protocol.IDSEARCH + "|" + line);
+//				pw.flush();
+//
+//				searchF.nameT.setText("");
+//				searchF.ageYearC.setSelectedIndex(0);
+//				searchF.ageMonthC.setSelectedIndex(0);
+//				searchF.ageDayC.setSelectedIndex(0);
+//				searchF.telC.setSelectedIndex(0);
+//				searchF.tel2T.setText("");
+//				searchF.tel3T.setText("");
+//				condition_S = false;
+//				sNumber = "><^^";
+//			} else if (!condition_S) {
+//				JOptionPane.showMessageDialog(this, "이메일 인증을 해주세요");
+//			}
 
 		} else if (e.getSource() == searchF.cancelB) { // ID찾기페이지 -----------> ID찾기 취소
 
 			searchF.setVisible(false);
 			this.setVisible(true);
 			searchF.nameT.setText("");
-			searchF.ageYearC.setSelectedIndex(0);
-			searchF.ageMonthC.setSelectedIndex(0);
-			searchF.ageDayC.setSelectedIndex(0);
-			searchF.telC.setSelectedIndex(0);
-			searchF.tel2T.setText("");
-			searchF.tel3T.setText("");
-			condition_S = false;
+//			searchF.ageYearC.setSelectedIndex(0);
+//			searchF.ageMonthC.setSelectedIndex(0);
+//			searchF.ageDayC.setSelectedIndex(0);
+//			searchF.telC.setSelectedIndex(0);
+//			searchF.tel2T.setText("");
+//			searchF.tel3T.setText("");
+//			condition_S = false;
 			sNumber = "><^^";
 
 		} else if (e.getSource() == accessB) { // 메인페이지 --> 대기방 (Login)
@@ -329,61 +329,63 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			rMakeF.setVisible(true);
 		} else if (e.getSource() == rMakeF.makeB) { // 방만들기 페이지 -----> 방만들기 버튼
 			String title = rMakeF.tf.getText();
-			String rPassword = rMakeF.pf.getText();
+//			String rPassword = rMakeF.pf.getText();
 			String userCount = (String) rMakeF.combo1.getSelectedItem();
-			String subject = (String) rMakeF.combo.getSelectedItem();
-			int condition = rMakeF.cb.isSelected() ? 1 : 0;
+//			String subject = (String) rMakeF.combo.getSelectedItem();
+//			int condition = rMakeF.cb.isSelected() ? 1 : 0;
 
 			if (title.length() == 0) {
 				JOptionPane.showMessageDialog(this, "제목을 입력해주세요");
-			} else {
-				if (condition == 1 && rPassword.length() == 0) // PW를 쓴다고했놓고 안넣을때
-				{
-					JOptionPane.showMessageDialog(this, "비밀번호을 입력해주세요");
-				} else if (condition == 1 && rPassword.length() != 0) {// PW를 쓴다고했놓고 넣은경우
+			} 
+//			  else {
+//				if (condition == 1 && rPassword.length() == 0) // PW를 쓴다고했놓고 안넣을때
+//				{
+//					JOptionPane.showMessageDialog(this, "비밀번호을 입력해주세요");
+//				} else if (condition == 1 && rPassword.length() != 0) {// PW를 쓴다고했놓고 넣은경우
+//
+//					String line = "";
+//					line += (title + "%" + rPassword + "%" + userCount + "%" + subject + "%" + condition);
+//					pw.println(Protocol.ROOMMAKE + "|" + line);
+//					pw.flush();
 
+//					rMakeF.setVisible(false);
+//					RoomF.setVisible(true);
+
+//					rMakeF.tf.setText("");
+//					rMakeF.pf.setText("");
+//					rMakeF.combo1.setSelectedIndex(0);
+//					rMakeF.combo.setSelectedIndex(0);
+//					rMakeF.cb.setSelected(false);
+
+//				} else if (condition == 0 && rPassword.length() != 0) {
+//					JOptionPane.showMessageDialog(this, "비밀번호 사용을 선택해주세요.");
+////				} 
+//				  else if (condition == 0) // 공개방
+//				{
 					String line = "";
-					line += (title + "%" + rPassword + "%" + userCount + "%" + subject + "%" + condition);
+					line += (title + "%" + userCount + "%" /**+ subject + "%" + condition**/);
 					pw.println(Protocol.ROOMMAKE + "|" + line);
 					pw.flush();
 
 //					rMakeF.setVisible(false);
 //					RoomF.setVisible(true);
-
 					rMakeF.tf.setText("");
-					rMakeF.pf.setText("");
+//					rMakeF.pf.setText("");
 					rMakeF.combo1.setSelectedIndex(0);
-					rMakeF.combo.setSelectedIndex(0);
-					rMakeF.cb.setSelected(false);
+//					rMakeF.combo.setSelectedIndex(0);
+//					rMakeF.cb.setSelected(false);
+//				}
 
-				} else if (condition == 0 && rPassword.length() != 0) {
-					JOptionPane.showMessageDialog(this, "비밀번호 사용을 선택해주세요.");
-				} else if (condition == 0) // 공개방
-				{
-					String line = "";
-					line += (title + "%" + userCount + "%" + subject + "%" + condition);
-					pw.println(Protocol.ROOMMAKE + "|" + line);
-					pw.flush();
-
-//					rMakeF.setVisible(false);
-//					RoomF.setVisible(true);
-					rMakeF.tf.setText("");
-					rMakeF.pf.setText("");
-					rMakeF.combo1.setSelectedIndex(0);
-					rMakeF.combo.setSelectedIndex(0);
-					rMakeF.cb.setSelected(false);
-				}
-
-			}
+//			}
 
 		} else if (e.getSource() == rMakeF.canB) { // 방만들기페이지 ----> 취소버튼
 			rMakeF.setVisible(false);
 			RoomF.setVisible(true);
 			rMakeF.tf.setText("");
-			rMakeF.pf.setText("");
+//			rMakeF.pf.setText("");
 			rMakeF.combo1.setSelectedIndex(0);
-			rMakeF.combo.setSelectedIndex(0);
-			rMakeF.cb.setSelected(false);
+//			rMakeF.combo.setSelectedIndex(0);
+//			rMakeF.cb.setSelected(false);
 		} else if (e.getSource() == chattingF.exitB) { // 채팅방에서 나가기 버튼
 
 			chattingF.setVisible(false);
@@ -399,7 +401,8 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			pw.println(Protocol.CHATTINGSENDMESSAGE + "|" + chattingF.field.getText()); // 메세지를 보냄
 			pw.flush();
 			chattingF.field.setText("");
-		} else if (e.getSource() == chattingF.openB) // 채팅방에서 ------> 내컴터 파일 열기
+		} 
+		  else if (e.getSource() == chattingF.openB) // 채팅방에서 ------> 내컴터 파일 열기
 		{
 			chattingF.openDialog();
 			chattingF.fileRead();
