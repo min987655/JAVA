@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Event"/>
+		<item key="selection" value="ROOMMAKE_OK1"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ROOMMAKE_OK1"/>
+			<item value="line"/>
+			<item value="roomList"/>
+			<item value="local"/>
+			<item value="labelArray"/>
+			<item value="labelArray[2]"/>
+			<item value="labelArray[1]"/>
+			<item value="pry"/>
+			<item value="chattxt"/>
+			<item value="chat"/>
+			<item value="condition_Id"/>
 			<item value="event"/>
 			<item value="RoomF"/>
 			<item value="sendB"/>
 			<item value="epanel"/>
-			<item value="field"/>
-			<item value="listener"/>
-			<item value="listerner"/>
-			<item value="lis"/>
-			<item value="참여"/>
-			<item value="참여인원"/>
-			<item value="sNumber"/>
-			<item value="logoutC"/>
-			<item value="modifiedC"/>
-			<item value="loginL"/>
-			<item value="logoutL"/>
 		</list>
 		<list key="replacehistory">
 			<item value="rpassword"/>
@@ -32,10 +32,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1654"/>
-		<item key="DIALOG_Y_ORIGIN" value="258"/>
-		<item key="DIALOG_WIDTH" value="319"/>
-		<item key="DIALOG_HEIGHT" value="454"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="DIALOG_X_ORIGIN" value="1463"/>
+		<item key="DIALOG_Y_ORIGIN" value="455"/>
+		<item key="DIALOG_WIDTH" value="271"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

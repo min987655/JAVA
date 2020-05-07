@@ -587,7 +587,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 							RoomF.dp[i].labelArray[5].setText(userNumber); // 인원수
 							RoomF.dp[i].labelArray[7].setText(roomListDetail[1]); // 방제목
 							RoomF.dp[i].labelArray[8].setText("개설자 : " + roomListDetail[4]); // 개설자
-						} else if (roomListDetail.length == 7) // 공개방
+						} else if (roomListDetail.length == 7) // 공개방 // 1(방번호),3(방주제),5(인원수),7(방제목)
 						{
 							userNumber += (roomListDetail[6] + "/" + roomListDetail[2]);
 							RoomF.dp[i].labelArray[1].setText(roomListDetail[0]); // 방번호

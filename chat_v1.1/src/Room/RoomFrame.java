@@ -1,15 +1,13 @@
 package Room;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -24,14 +22,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 
-import CoControl.CoprocessFrame;
-import Room.RoomMake;
-
-/**
- * @author 형곤
- * @category 대기실 내용
- *
- */
 public class RoomFrame extends JFrame {
 	public JButton makeB, exitB, sendB, enterB;
 	private JComboBox<String> sortCB;
@@ -40,7 +30,6 @@ public class RoomFrame extends JFrame {
 	public JTextArea chatarea, usertxt;
 	public JTextField chattxt, tx1, tx2, tx3, tx4, tx5, tx6, tx7, tx8;
 	private JLabel la1, la2, la3, la4, la5, la6;
-//	private String[] com = { "경영지원", "마케팅", "고객관리", "개발", "디자인" };
 	private JList<String> entlist, frlist;
 	private EtchedBorder eb;
 	private JList<DetailPanel> list;
@@ -58,18 +47,14 @@ public class RoomFrame extends JFrame {
 		this.pw = pw;
 
 		// 상단버튼
-//		rmake = new RoomMake();
 		dp = new DetailPanel[100];
 		upP = new JPanel(new FlowLayout());
 		la6 = new JLabel("정 렬 : ");
-//		sortCB = new JComboBox<String>(com);
-//		sortCB.setPreferredSize(new Dimension(200, 30));
 		makeB = new JButton("방 만 들 기");
 		makeB.setPreferredSize(new Dimension(400, 30));
 		exitB = new JButton("exit");
 		exitB.setPreferredSize(new Dimension(200, 30));
 		upP.add(la6);
-//		upP.add(sortCB);
 		upP.add(makeB);
 		upP.add(exitB);
 
@@ -87,8 +72,7 @@ public class RoomFrame extends JFrame {
 		scrollRoomList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollRoomList.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollRoomList.getVerticalScrollBar().setValue(scrollRoomList.getVerticalScrollBar().getMaximum());
-		
-		
+
 		roomP.add("Center", scrollRoomList);
 		roomP.add("North", la4);
 
@@ -103,8 +87,7 @@ public class RoomFrame extends JFrame {
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scroll.setPreferredSize(new Dimension(400, 250));
 		scroll.getVerticalScrollBar().setValue(scrollRoomList.getVerticalScrollBar().getMaximum());
-		
-		
+
 		chatP1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
 		chattxt = new JTextField(30);
@@ -137,7 +120,7 @@ public class RoomFrame extends JFrame {
 		list2P = new JPanel(new BorderLayout());
 		list2P.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
-		la3 = new JLabel(" 랭 킹" );
+		la3 = new JLabel(" 랭 킹");
 		la3.setFont(new Font("돋움", Font.PLAIN, 15));
 		frlist = new JList<String>(new DefaultListModel<String>());
 		JScrollPane scroll2 = new JScrollPane(frlist);
@@ -164,7 +147,6 @@ public class RoomFrame extends JFrame {
 
 		setBounds(400, 200, 1000, 800);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-
 
 	}// 생성자
 

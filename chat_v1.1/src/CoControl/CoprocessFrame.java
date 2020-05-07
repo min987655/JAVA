@@ -26,20 +26,13 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
-/**
- * @author 수병
- * @category 방 세부내용
- *
- */
-
 public class CoprocessFrame extends JFrame {
 
-	public JButton openB, /**saveB, loadB, deleteB,**/ exitB, sendB;
+	public JButton openB, exitB, sendB;
 	public JTextArea area, area1, partList;
 	public JTextField field, quiz;
 
 	public JList<String> list2;
-//	public File file, folder;
 	private BufferedReader br;
 	private ArrayList<String> arr;
 	public DefaultListModel<String> model;
@@ -47,23 +40,14 @@ public class CoprocessFrame extends JFrame {
 	public CoprocessFrame() {
 
 		quiz = new JTextField(18);
-//		openB = new JButton("내PC 파일열기");
-//		saveB = new JButton("내PC 파일저장");
-//		loadB = new JButton("업로드");
 		exitB = new JButton("나가기");
 
 		quiz.setEditable(true);
 		quiz.setBackground(Color.WHITE);
-//		openB.setEnabled(true);
-//		saveB.setEnabled(true);
-//		loadB.setEnabled(true);
 		exitB.setEnabled(true);
 
 		JPanel wpanel = new JPanel(new GridLayout(1, 5, 5, 0));
 		wpanel.add(quiz);
-//		wpanel.add(openB);
-//		wpanel.add(saveB);
-//		wpanel.add(loadB);
 		wpanel.add(exitB);
 
 		JPanel wpanel1 = new JPanel();
@@ -71,7 +55,6 @@ public class CoprocessFrame extends JFrame {
 		JScrollPane scroll = new JScrollPane(area);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//		area.setEditable(false);
 		scroll.setPreferredSize(new Dimension(700, 735));
 		wpanel1.add(scroll);
 
@@ -79,7 +62,6 @@ public class CoprocessFrame extends JFrame {
 		totwpanel.add("North", wpanel);
 		totwpanel.add("Center", wpanel1);
 
-		// *************************************************
 		JPanel epanel = new JPanel(new BorderLayout());
 		JPanel p1 = new JPanel();
 		JLabel user = new JLabel("                                   참여 인원");
@@ -102,7 +84,6 @@ public class CoprocessFrame extends JFrame {
 		list2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		model = (DefaultListModel<String>) list2.getModel();
-		// list2.setSelectedIndex(0);
 		JScrollPane scroll2 = new JScrollPane(list2);
 		scroll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -147,77 +128,5 @@ public class CoprocessFrame extends JFrame {
 		setBounds(400, 200, 1000, 800);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-	}// 생성자
-/**
-	public void openDialog() {
-
-		JFileChooser chooser = new JFileChooser();
-		int result = chooser.showOpenDialog(this);
-		if (result == JFileChooser.APPROVE_OPTION) {
-			file = chooser.getSelectedFile();
-		} else if (result != JFileChooser.APPROVE_OPTION) {
-			area.setText("");
-		}
 	}
-
-	public void fileRead() {// 구현
-		if (file == null)
-			return;
-		area.setText("");
-		String line = null;
-		try {
-			br = new BufferedReader(new FileReader(file));
-			while ((line = br.readLine()) != null) {
-				area.append(line + "\n");
-			}
-			br.close();
-		} catch (IOException io) {
-			io.printStackTrace();
-		}
-	}
-
-	public void fileSave() {
-		JFileChooser chooser = new JFileChooser();
-		int result = chooser.showSaveDialog(this);
-		if (result == JFileChooser.APPROVE_OPTION) {
-			file = chooser.getSelectedFile();
-		}
-	}
-
-	public void fileWrite() {
-		if (file == null)
-			return;
-
-		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
-			String data = area.getText();
-			bw.write(data);
-			bw.close();
-		} catch (IOException io) {
-			io.printStackTrace();
-		}
-	}
-
-	public void listUpload() {
-		String fileName = folder.getName();
-		String fileExtention = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
-		File[] contents = folder.listFiles();
-
-		if (contents != null) {
-			for (int i = 0; i < contents.length; i++) {
-				contents[i].getName();
-				// model.addElement(file.getName());
-				// System.out.println(contents[i].getName());
-			}
-		} else {
-			System.out.println("파일이 없습니다.");
-		}
-
-	}
-
-	public void fileDelete() {
-		model.remove(list2.getSelectedIndex());
-		area.setText("");
-
-	}**/
 }
