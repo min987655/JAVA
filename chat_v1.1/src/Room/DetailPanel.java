@@ -16,7 +16,7 @@ import Action.Protocol;
 public class DetailPanel extends JPanel implements ActionListener {
 
 	public static String labelName[] = { "방 번호 :", "      ", "방 제목 : ", "      ", "인원 수 : ", "      ", "      " };
-	public JLabel labelArray[]; // 1(방번호),3(방제목),5(인원수),6(개설자)
+	public JLabel labelArray[]; // 1(방번호),3(방제목),5(인원수),6(방장)
 	private JButton enterButton;
 
 	private BufferedReader br;
@@ -48,7 +48,7 @@ public class DetailPanel extends JPanel implements ActionListener {
 		System.out.println("입장버튼 ");
 		if (e.getSource() == enterButton) {
 
-			String count[] = labelArray[3].getText().split("/");
+			String count[] = labelArray[5].getText().split("/");
 
 			if (count[0].compareTo(count[1]) == 0) {
 				JOptionPane.showMessageDialog(this, "인원수 초과로 들어갈 수 없습니다");

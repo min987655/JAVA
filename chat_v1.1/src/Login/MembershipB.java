@@ -2,16 +2,13 @@ package Login;
 
 import java.awt.Container;
 import java.awt.GridLayout;
-import java.awt.Label;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.text.GapContent;
 
 public class MembershipB extends JFrame {
 	JPasswordField pwT, pwT2;

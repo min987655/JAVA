@@ -2,9 +2,6 @@ package DO;
 import java.util.ArrayList;
 
 import Action.MainHandler;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 public class Room {
 	private int rID;

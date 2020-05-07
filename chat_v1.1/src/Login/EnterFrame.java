@@ -122,7 +122,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 
 		// 소켓 생성
 		try {
-			socket = new Socket("192.168.0.64", 9500);
+			socket = new Socket("localhost", 9500);
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
 
@@ -352,7 +352,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 				{
 					
 					System.out.println("이거 되냐?");
-					String roomList[] = line[1].split("-"); // 방 갯수
+					String roomList[] = line[1].split("-"); // line[1] : 방장
 					for (int i = 0; i < roomList.length; i++) {
 						System.out.print(roomList[i] + "/");
 					}
@@ -367,13 +367,13 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 						roomListDetail = roomList[i].split("%");
 						String userNumber = "";
 
-						if (roomListDetail.length == 6) // 공개방 // 1(방번호),3(방제목),5(인원수),6(개설자)
+						if (roomListDetail.length == 6) // 공개방 // 1(방번호),3(방제목),5(인원수),6(방장)
 						{
 							userNumber += (roomListDetail[4] + "/" + roomListDetail[2]);
 							RoomF.dp[i].labelArray[1].setText(roomListDetail[0]); // 방번호
 							RoomF.dp[i].labelArray[3].setText(roomListDetail[1]); // 방제목
 							RoomF.dp[i].labelArray[5].setText(userNumber); // 인원수
-							RoomF.dp[i].labelArray[6].setText("개설자 : " + roomListDetail[3]); // 개설자
+							RoomF.dp[i].labelArray[6].setText("개설자 : " + roomListDetail[3]); // 방장
 						}
 						System.out.println("userNumber : " + userNumber);
 
