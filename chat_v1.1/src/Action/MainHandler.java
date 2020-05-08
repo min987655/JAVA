@@ -42,7 +42,6 @@ public class MainHandler extends Thread {
 
 		br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
-
 	}
 
 	@Override
