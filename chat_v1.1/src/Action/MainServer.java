@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 
 import DO.Room;
-import lombok.NonNull;
 
 public class MainServer {
 	private ServerSocket ss; // 서버 소켓

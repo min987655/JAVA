@@ -1,15 +1,17 @@
 package CoControl;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,91 +20,105 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
+
+import Paint.MyDrawing;
 
 public class CoprocessFrame extends JFrame {
 
-	public JButton openB, exitB, sendB;
-	public JTextArea area, area1, partList;
-	public JTextField field, quiz;
-
-	public JList<String> list2;
-	private BufferedReader br;
-	private ArrayList<String> arr;
-	public DefaultListModel<String> model;
+	// GUI
+	public JButton quizB, quizcB, startB, deleteB, exitB, sendB;
+	public JTextArea area1, partList, scoreList, screen;
+	public JTextField field;
+	public MyDrawing md;
 
 	public CoprocessFrame() {
 
-		quiz = new JTextField(18);
+		quizB = new JButton("제시어");
+		quizcB = new JButton("제시어나올칸");
 		exitB = new JButton("나가기");
+		startB = new JButton("게임 시작");
 
-		quiz.setEditable(true);
-		quiz.setBackground(Color.WHITE);
+		quizB.setEnabled(true);
+		quizcB.setEnabled(true);
 		exitB.setEnabled(true);
+		startB.setEnabled(true);
 
-		JPanel wpanel = new JPanel(new GridLayout(1, 5, 5, 0));
-		wpanel.add(quiz);
-		wpanel.add(exitB);
+		// 상단 버튼 - 제시어 버튼, 문제 area, 나가기 버튼
+		JPanel buttonpanel = new JPanel(new GridLayout(1, 5, 10, 10)); // 상단 버튼
+		buttonpanel.add(quizB);
+		buttonpanel.add(quizcB);
+		buttonpanel.add(exitB);
 
+		// 그림판 영역
 		JPanel wpanel1 = new JPanel();
-		area = new JTextArea();
-		JScrollPane scroll = new JScrollPane(area);
+		md = new MyDrawing();
+		
+		JScrollPane scroll = new JScrollPane(md);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scroll.setPreferredSize(new Dimension(700, 735));
 		wpanel1.add(scroll);
 
 		JPanel totwpanel = new JPanel(new BorderLayout());
-		totwpanel.add("North", wpanel);
+		totwpanel.add("North", buttonpanel);
 		totwpanel.add("Center", wpanel1);
 
-		JPanel epanel = new JPanel(new BorderLayout());
+		// 우측 - 참여 인원, 스코어, 게임시작 버튼, 채팅 공간
+		JPanel userlistpanel = new JPanel(new BorderLayout());
 		JPanel p1 = new JPanel();
-		JLabel user = new JLabel("                                   참여 인원");
+		JLabel user = new JLabel("                                   참여 유저");
 		p1.add(user);
 
-		partList = new JTextArea();
-		partList.setEditable(true);
+		partList = new JTextArea(); // 참여 인원 창
+		partList.setEditable(false);
 		JScrollPane scroll1 = new JScrollPane(partList);
 		scroll1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		epanel.add("North", user);
-		epanel.add("Center", scroll1);
+		userlistpanel.add("North", user); // 참여 인원 라벨
+		userlistpanel.add("Center", scroll1); // 스크롤
+		userlistpanel.setPreferredSize(new Dimension(100, 120));
 
-		JPanel epanel1 = new JPanel(new BorderLayout());
+		JPanel scorepanel = new JPanel(new BorderLayout());
 		JPanel p2 = new JPanel();
-		JLabel file = new JLabel("                               점수판");
-		p2.add(file);
+		JLabel score = new JLabel("                              	 스 코 어"); // 디비 연결
+		p2.add(score);
 
-		list2 = new JList<String>(new DefaultListModel<String>());
-		list2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//		list2 = new JList<String>(new DefaultListModel<String>());
+//		list2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-		model = (DefaultListModel<String>) list2.getModel();
-		JScrollPane scroll2 = new JScrollPane(list2);
+//		model = (DefaultListModel<String>) list2.getModel();
+		// list2.setSelectedIndex(0);
+
+		scoreList = new JTextArea(); // 스코어 창
+		scoreList.setEditable(false);
+		JScrollPane scroll2 = new JScrollPane(scoreList);
 		scroll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		epanel1.add("North", file);
-		epanel1.add("Center", scroll2);
+		scorepanel.add("North", score);
+		scorepanel.add("Center", scroll2);
+		scorepanel.setPreferredSize(new Dimension(100, 120));
 
-		JPanel epanel12 = new JPanel(new GridLayout(2, 1, 0, 10));
-		epanel12.add(epanel);
-		epanel12.add(epanel1);
+		JPanel totalpanel = new JPanel(new GridLayout(3, 1, 0, 10));
+		totalpanel.add(userlistpanel);
+		totalpanel.add(scorepanel);
+		totalpanel.add(startB);
 
 		JPanel epanel3 = new JPanel(new BorderLayout());
 
-		JPanel p3 = new JPanel();
+		JPanel chatpanel = new JPanel();
 		JLabel chat = new JLabel("                                        채 팅");
-		p3.add(chat);
+		chatpanel.add(chat);
 
-		area1 = new JTextArea();
+		area1 = new JTextArea(); // 채팅 공간
 		JScrollPane scroll3 = new JScrollPane(area1);
 		scroll3.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll3.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		
-		area1.setEditable(false);
+
+		area1.setEditable(false); // 채팅창에 텍스트 수정 불가
 		epanel3.add("North", chat);
 		epanel3.add("Center", scroll3);
 
+		// 채팅 입력 창
 		JPanel epanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		field = new JTextField(18);
 		sendB = new JButton("Enter");
@@ -110,7 +126,7 @@ public class CoprocessFrame extends JFrame {
 		epanel4.add(sendB);
 
 		JPanel totepanel = new JPanel(new BorderLayout());
-		totepanel.add("North", epanel12);
+		totepanel.add("North", totalpanel);
 		totepanel.add("Center", epanel3);
 		totepanel.add("South", epanel4);
 		// *************************************************
@@ -123,4 +139,84 @@ public class CoprocessFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
+
 }
+
+class FileRead {
+	private File file;
+	private final String dir = "src" + File.separator + "Game" + File.separator + "answer.txt";
+	private ArrayList<String> list;
+
+	public void read() {
+		makeList();
+		readstart();
+	}
+
+	private void makeList() {
+		list = new ArrayList<String>();
+	}
+
+	private void readstart() {
+		try {
+			file = new File(dir);
+			FileReader filereader = new FileReader(file);
+			BufferedReader bufReader = new BufferedReader(filereader);
+			String line = "";
+			while ((line = bufReader.readLine()) != null) {
+				list.add(line);
+			}
+			bufReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Working Directory = " + System.getProperty("user.dir"));
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+	}
+
+	public ArrayList<String> getAnswer() {
+		return this.list;
+	}
+}
+
+ class Game {
+
+	private FileRead file;
+	private ArrayList<String> answerList;
+	private String answer;
+
+	public void start() {
+		readFile();
+		saveAnswer();
+	}
+
+	private void readFile() {
+		file = new FileRead();
+		file.read();
+	}
+
+	private void saveAnswer() {
+		answerList = file.getAnswer();
+	}
+
+	public void print() {
+		for (int i = 0; i < answerList.size(); i++) {
+			System.out.println(answerList.get(i));
+		}
+	}
+
+	public boolean hasMoreAnswer() {
+		if (answerList.size() != 0) {
+			int index = (int) (Math.random() * answerList.size());
+			answer = answerList.get(index);
+			answerList.remove(index);
+			return true;
+		}
+		else return false;
+	}
+
+	public String getAnswer() {
+		return this.answer;
+	}
+}
+ 
+ 

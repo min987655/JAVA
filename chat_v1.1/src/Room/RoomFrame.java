@@ -65,7 +65,7 @@ public class RoomFrame extends JFrame {
 
 		centerPanel = new JPanel(new GridLayout(100, 2, 10, 10)); // 100개
 		for (int i = 0; i < 100; i++) {
-			dp[i] = new DetailPanel(br, pw);
+			dp[i] = new DetailPanel(br, pw); // DetailPanel 스트림 달기
 			centerPanel.add(dp[i]);
 		}
 		JScrollPane scrollRoomList = new JScrollPane(centerPanel);

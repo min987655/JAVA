@@ -29,7 +29,7 @@ import Room.RoomFrame;
 import Room.RoomMake;
 import lombok.NonNull;
 
-public class EnterFrame extends JFrame implements ActionListener, KeyListener, Runnable {
+public class EnterFrame3 extends JFrame implements ActionListener, KeyListener, Runnable {
 	private JPasswordField pwT;
 	private JTextField idT;
 	private JButton idB, pwB, accessB, membershipB;
@@ -47,7 +47,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 	private boolean condition_Id = false; // ID 중복체크
 //	private boolean condition_PW = false; // 비밀번호 확인
 
-	public EnterFrame() {
+	public EnterFrame3() {
 		network(); // Enter 쓰레드 실행
 
 		menbersShipF = new MembershipB();
@@ -56,9 +56,9 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 		chattingF = new CoprocessFrame();
 
 		idB = new JButton("아이디");
-		idT = new JTextField("test2",15);
+		idT = new JTextField("test4",15);
 		pwB = new JButton("패스워드");
-		pwT = new JPasswordField("2222",15);
+		pwT = new JPasswordField("4444",15);
 		pwT.setEchoChar('*');
 
 		JPanel p2 = new JPanel(new FlowLayout());
@@ -385,7 +385,6 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 							RoomF.dp[i].labelArray[5].setText(userNumber); // 인원수
 							RoomF.dp[i].labelArray[6].setText("개설자 : " + roomListDetail[3]); // 방장
 						}
-						// #####
 						System.out.println("userNumber : " + userNumber);
 
 					}
