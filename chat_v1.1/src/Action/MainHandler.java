@@ -30,13 +30,15 @@ public class MainHandler extends Thread {
 
 	private Room priRoom; // 사용자가 있는 방
 
-	// 사용자 연결 소켓, 전체사용자,대기방,방 리스트,JDBC
+	// 사용자 연결 소켓, 전체사용자,대기방,방 리스트,JDBC 
+	// this 소켓이 연결 된
 	public MainHandler(Socket socket, ArrayList<MainHandler> allUserList, ArrayList<MainHandler> waitUserList,
 			ArrayList<Room> roomtotalList, Connection conn) throws IOException {
 		this.user = new User();
 		this.priRoom = new Room();
 		this.socket = socket;
 		this.allUserList = allUserList;
+		// waitUserList : 돌고있는 쓰레드를 배열에 담음
 		this.waitUserList = waitUserList;
 		this.roomtotalList = roomtotalList;
 		this.conn = conn;
@@ -55,11 +57,12 @@ public class MainHandler extends Thread {
 			while (true) {
 				
 				line = br.readLine().split("\\|");
+//				line[0] 프로토콜 | line[1] idName % line[2] password % line[3] name
 
 				if (line == null) {
 					break; // while 문 빠져나옴
 				}
-				if (line[0].compareTo(Protocol.REGISTER) == 0) // [회원가입]
+				if (line[0].compareTo(Protocol.REGISTER) == 0) // ***회원가입
 				{
 					String userContent[] = line[1].split("%"); // 회원 정보를 userContent 배열에 담음
 
@@ -72,7 +75,7 @@ public class MainHandler extends Thread {
 					int su = pstmt.executeUpdate(); // auto flush 자동 커밋
 					System.out.println(su + "회원가입 [DB]");
 
-				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK) == 0) // [회원가입 ID 중복체크]
+				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK_OK) == 0) // ***ID중복체크(사용가능)
 				{
 					System.out.println(line[0] + "/" + line[1]); // 프로토콜 + / + 유저ID
 
@@ -92,18 +95,20 @@ public class MainHandler extends Thread {
 
 					if (count == 0) // 중복안되서 가입가능
 					{
-						pw.println(Protocol.IDSEARCHCHECK_OK + "|" + "MESSAGE");
+						pw.println(Protocol.IDSEARCHCHECK_OK + "|" + "MESSAGE"); // ***ID중복체크(사용가능) 
 						pw.flush();
 					} else {
-						pw.println(Protocol.IDSEARCHCHECK_NO + "|" + "MESSAGE");
+						pw.println(Protocol.IDSEARCHCHECK_NO + "|" + "MESSAGE"); // ***ID중복체크(사용불가능)
 						pw.flush();
 					}
-				} else if (line[0].compareTo(Protocol.ENTERLOGIN) == 0) // [login]
+				} else if (line[0].compareTo(Protocol.ENTERLOGIN_OK) == 0) // ***로그인OK
 				{
-
 					boolean con = true; // 기존에 로그인 됐는지 안됐는지 확인
 					System.out.println("login");
-					String userContent[] = line[1].split("%"); // 유저 정보 userContent 담김
+					
+					// 유저 정보 userContent에 담음
+					// userContent[0] idName % userContent[1] password % userContent[2] name
+					String userContent[] = line[1].split("%"); 
 
 					System.out.println(userContent[0] + "/" + userContent[1]); // UserId / 비밀번호
 
@@ -146,18 +151,20 @@ public class MainHandler extends Thread {
 //						} else 
 
 						if (count == 1) { // 로그인 되었을때
-							waitUserList.add(this); // 대기방 인원수 추가
-							String userline = "";
+							waitUserList.add(this); // [Thread[Thread-3,5,main]
+							String userline = ""; // 새로운 유저들 담아 줌
 							for (int i = 0; i < waitUserList.size(); i++) {
-								userline += (waitUserList.get(i).user.getIdName() + ":"); // 새로운 유저들 추가
+								userline += (waitUserList.get(i).user.getIdName() + ":"); // 새로운 유저의 id 추가 : 
 							}
 
 							for (int i = 0; i < waitUserList.size(); i++) {
-								waitUserList.get(i).pw.println( // EnterFrame 로그인 연동
+								waitUserList.get(i).pw.println( // EnterFrame 로그인 연동, 대기실 채팅방에 해당 문구 뿌려줌
 										Protocol.ENTERLOGIN_OK + "|" + user.getIdName() + "|님이 입장하였습니다.|" + userline);
 								waitUserList.get(i).pw.flush();
 							}
-							System.out.println("[대기방 인원수] :" + waitUserList.size());
+							System.out.println("[대기방 인원수] : " + waitUserList.size());
+							System.out.println("userline : " + userline); // userline : userId 
+							System.out.println("waitUserList : " + waitUserList); // waitUserList : [Thread[Thread-3,5,main]
 
 							System.out.println("[Room 정보]");
 							for (Room room : roomtotalList) {
@@ -190,7 +197,7 @@ public class MainHandler extends Thread {
 						pw.flush();
 					}
 
-				} else if (line[0].compareTo(Protocol.EXITWAITROOM) == 0) { // 대기실방에서 로그인페이지(로그 아웃 할 때);
+				} else if (line[0].compareTo(Protocol.EXITWAITROOM) == 0) { // 대기실방에서 로그인페이지(로그아웃 할 때);
 
 					String thisName = waitUserList.get(waitUserList.indexOf(this)).user.getIdName(); // 메인화면 창으로 간 유저의 이름(-여기 다시하기)
 
@@ -306,7 +313,7 @@ public class MainHandler extends Thread {
 
 				} else if (line[0].compareTo(Protocol.ENTERROOM) == 0) { // [방 입장버튼]
 					System.out.println("================================= 방 입장 함==============================");
-					// waitUserList 중 입장버튼을 누른 user.gerIdName
+					// waitUserList 중 입장버튼을 누른 user.getIdName
 					String thisName = waitUserList.get(waitUserList.indexOf(this)).user.getIdName();
 					int roomid = Integer.parseInt(line[1]); // 룸ID를 숫자로 변환
 
@@ -369,7 +376,7 @@ public class MainHandler extends Thread {
 						userline += (waitUserList.get(i).user.getIdName() + ":" + ""); // 대기실 인원 수정
 					}
 					for (int i = 0; i < waitUserList.size(); i++) {
-						waitUserList.get(i).pw.println( // 대기실에 입장 문구 뿌려줌
+						waitUserList.get(i).pw.println( // ***로그아웃(대기방.exit)
 								Protocol.EXITWAITROOM + "|" + thisName + "|님이 " + roomid + "방에 입장하였습니다.|" + userline);
 						waitUserList.get(i).pw.flush();
 					}
@@ -448,11 +455,8 @@ public class MainHandler extends Thread {
 						userline += (waitUserList.get(i).user.getIdName() + ":");
 					}
 					for (int i = 0; i < waitUserList.size(); i++) {
-						waitUserList.get(i).pw.println(
-								Protocol.EXITWAITROOM + "|" + user.getIdName() + "|님이 대기실에에 입장하였습니다.|" + userline);// 대기방에
-																													// 바꿔주고
-						// Message
-						// 전송;
+						waitUserList.get(i).pw.println( // 대기방에 바꿔주고 Message 전송
+								Protocol.EXITWAITROOM + "|" + user.getIdName() + "|님이 대기실에 입장하였습니다.|" + userline);
 						waitUserList.get(i).pw.flush();
 					}
 

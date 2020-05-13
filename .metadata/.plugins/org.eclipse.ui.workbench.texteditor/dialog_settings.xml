@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&quot;&quot;"/>
+		<item key="selection" value="님이 입장하였습니다."/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="&quot;&quot;"/>
-			<item value="게임방 생성"/>
-			<item value="userline += (waitUserList.get(i).user.getIdName()"/>
-			<item value="userline += (waitUserList.get(i).user.getIdName() + &quot;:&quot; + &quot;&quot;);"/>
-			<item value="방입장동작 부분  -"/>
-			<item value="방입장동작 부분  --&gt;&gt; [대기실 인원수 ]"/>
-			<item value="userN"/>
-			<item value="thisName"/>
-			<item value="roomtotalList.get(index).roomInUserList"/>
-			<item value="priRoom"/>
-			<item value="la"/>
-			<item value="roomListDetail"/>
-			<item value="roomListDetail[2]"/>
-			<item value="userCount"/>
-			<item value="게임방"/>
+			<item value="님이 입장하였습니다."/>
+			<item value="입장"/>
+			<item value="회원가입"/>
+			<item value="방만들기"/>
+			<item value="방만즐기"/>
+			<item value="ROOMMAKE"/>
+			<item value="CHATTINGSENDMESSAGE"/>
+			<item value="***"/>
+			<item value="EXITWAITROOM"/>
+			<item value="EXIT"/>
+			<item value="EXITCHATTINGROOM"/>
+			<item value="ENTERLOGIN_NO"/>
+			<item value="ENTERLOGIN"/>
+			<item value="입장하"/>
+			<item value="ENTERLOGIN_OK"/>
 		</list>
 		<list key="replacehistory">
 			<item value="rpassword"/>
@@ -32,8 +32,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1679"/>
-		<item key="DIALOG_Y_ORIGIN" value="451"/>
+		<item key="DIALOG_X_ORIGIN" value="1661"/>
+		<item key="DIALOG_Y_ORIGIN" value="608"/>
 		<item key="DIALOG_WIDTH" value="319"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

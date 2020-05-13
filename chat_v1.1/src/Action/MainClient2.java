@@ -1,5 +1,6 @@
 package Action;
 
+import Login.EnterFrame;
 import Login.EnterFrame2;
 
 public class MainClient2 {

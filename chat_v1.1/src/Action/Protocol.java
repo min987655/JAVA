@@ -3,25 +3,13 @@ package Action;
 public class Protocol {
 	public static final String REGISTER = "100"; // 회원가입(request)
 
-	public static final String IDSEARCH = "110"; // ID찾기 Join (request)
-
-	public static final String IDSEARCH_OK = "111"; // ID찾기 (기존에 있는거) (ACK)
-
-	public static final String IDSEARCH_NO = "112"; // ID찾기 (기존에 없음) (NACK)
-
-	public static final String IDSEARCHCHECK = "113"; // (using 회원가입)ID찾기 중복확인(request)
-
 	public static final String IDSEARCHCHECK_OK = "114"; // (using 회원가입)ID 중복확인 (사용가능) (ACK)
 
 	public static final String IDSEARCHCHECK_NO = "115"; // (using 회원가입)ID 중복확인 (사용 불가능) (NACK)
 
-	public static final String ENTERLOGIN = "120"; // 로그인(request)
-
 	public static final String ENTERLOGIN_OK = "121"; // 로그인 성공(ACK)
 
 	public static final String ENTERLOGIN_NO = "122"; // 로그인 실패(NACK)
-
-	public static final String PWSEARCH = "130"; // PW찾기
 
 	public static final String ROOMMAKE = "200"; // 방만들기
 
@@ -54,17 +42,4 @@ public class Protocol {
 	public static final String CHATTINGSENDMESSAGE = "420"; // 채팅방에서 메세지 보내기 (Request)
 
 	public static final String CHATTINGSENDMESSAGE_OK = "430"; // 채팅방에서 메세지 보내기 (Request)
-
-	public static final String CHATTINGFILESEND_SYN = "500"; // 파일전송1
-
-	public static final String CHATTINGFILESEND_SYNACK = "510"; // 파일전송2
-
-	public static final String CHATTINGFILESEND_FILE = "520"; // 파일전송3
-
-	public static final String CHATTINGFILESEND_FILEACK = "530"; // 파일전송4
-
-	public static final String CHATTINGFILEDOWNLOAD_SYN = "550"; // 파일 다운로드1
-
-	public static final String CHATTINGFILEDOWNLOAD_SEND = "560"; // 파일 보냄
-
 }

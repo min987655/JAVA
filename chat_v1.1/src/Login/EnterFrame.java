@@ -27,7 +27,6 @@ import Action.Protocol;
 import CoControl.CoprocessFrame;
 import Room.RoomFrame;
 import Room.RoomMake;
-import lombok.NonNull;
 
 public class EnterFrame extends JFrame implements ActionListener, KeyListener, Runnable {
 	private JPasswordField pwT;
@@ -44,8 +43,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 	RoomMake rMakeF; // 방만들기
 	CoprocessFrame chattingF;
 
-	private boolean condition_Id = false; // ID 중복체크
-//	private boolean condition_PW = false; // 비밀번호 확인
+//	private boolean condition_Id = false; // ID 중복체크
 
 	public EnterFrame() {
 		network(); // Enter 쓰레드 실행
@@ -56,9 +54,9 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 		chattingF = new CoprocessFrame();
 
 		idB = new JButton("아이디");
-		idT = new JTextField("test2",15);
+		idT = new JTextField("test1",15);
 		pwB = new JButton("패스워드");
-		pwT = new JPasswordField("2222",15);
+		pwT = new JPasswordField("1111",15);
 		pwT.setEchoChar('*');
 
 		JPanel p2 = new JPanel(new FlowLayout());
@@ -153,23 +151,21 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 			String name = menbersShipF.nameT.getText(); // 회원가입 이름 받음
 			String id = menbersShipF.idT.getText(); // 회원가입 아이디 받고
 			String pw1 = menbersShipF.pwT.getText(); // 비밀번호 받고
-//			String pw2 = menbersShipF.pwT2.getText();
 
-			if (name.length() == 0 || id.length() == 0 || pw1.length() == 0 /** || pw2.length() == 0 **/) {
+			if (name.length() == 0 || id.length() == 0 || pw1.length() == 0) { // 입력된 길이가 없을 떄
 				JOptionPane.showMessageDialog(menbersShipF, "빈 칸을 입력해주세요");
-			} else if (!condition_Id) { // 아이디 중복확인
-				JOptionPane.showMessageDialog(this, "ID 중복 확인해주세요");
 			} 
-//			  else if (!condition_PW) {
-//				JOptionPane.showMessageDialog(this, "PW 확인 해주세요");
-//			}
+//			  else if (!condition_Id) { // 아이디 중복확인
+//				JOptionPane.showMessageDialog(this, "ID 중복 확인해주세요");
+//			} 
 			  else { 
-				String line = "";
+				String line = ""; 
 				line += (menbersShipF.idT.getText() + "%" + menbersShipF.pwT.getText() + "%"
 						+ menbersShipF.nameT.getText());
 				System.out.println(line);
 
-				pw.println(Protocol.REGISTER + "|" + line);
+				// *** 회원가입 (pw : 프로토콜 | idName % password % name)
+				pw.println(Protocol.REGISTER + "|" + line); 
 				pw.flush();
 				JOptionPane.showMessageDialog(this, "회원가입 완료");
 				menbersShipF.setVisible(false);
@@ -179,22 +175,21 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 				menbersShipF.nameT.setText("");
 				menbersShipF.idT.setText("");
 				menbersShipF.pwT.setText("");
-				condition_Id = false;
-//				condition_PW = false;
+//				condition_Id = false;
 
 			} 
 
 		} else if (e.getSource() == menbersShipF.calneB) { // 회원가입페이지 -> 취소 버튼
 			menbersShipF.setVisible(false);
 			this.setVisible(true);
-			condition_Id = false;
+//			condition_Id = false;
 
 		} else if (e.getSource() == menbersShipF.idoverlapB) { // 회원가입 페이지ID -> 중복확인
-
 			if (menbersShipF.idT.getText().length() == 0) {
 				JOptionPane.showMessageDialog(menbersShipF, "아이디 입력하세요");
 			} else {
-				pw.println(Protocol.IDSEARCHCHECK + "|" + menbersShipF.idT.getText());
+				// ***ID중복체크(사용가능) (pw 프로토콜 | userId)
+				pw.println(Protocol.IDSEARCHCHECK_OK + "|" + menbersShipF.idT.getText());
 				pw.flush();
 			}
 
@@ -205,9 +200,10 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 
 			if (id.length() == 0 || pwss.length() == 0) {
 				JOptionPane.showMessageDialog(this, "빈칸을 입력해주세요");
+			// ***로그인OK (pw : 프로토콜 | userId % password)
 			} else {
 				String line = id + "%" + pwss;
-				pw.println(Protocol.ENTERLOGIN + "|" + line);
+				pw.println(Protocol.ENTERLOGIN_OK + "|" + line);
 				pw.flush();
 			}
 			//초기화
@@ -219,16 +215,17 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 			RoomF.setVisible(false); // 대기실 창 꺼짐
 			this.setVisible(true); // 메인화면 창 나옴
 
+			// ***로그아웃(대기방.exit) (pw : 프로토콜 | message)
 			pw.println(Protocol.EXITWAITROOM + "|" + "message"); // ~님이 퇴장하셨습니다 문구 뜸
 			pw.flush();
 
-		} else if (e.getSource() == RoomF.sendB) {// 대기실 페이지 -> 채팅 메세지 전송
-		
+		} else if (e.getSource() == RoomF.sendB) {// 대기실 페이지 -> 대기실채팅 메세지 전송
 			String line = RoomF.chattxt.getText(); // 입력받는 문구 받음
 			if (RoomF.chattxt.getText().length() != 0) { // 들어오는 문구가 있을 때
+				// ***대기실채팅 (pw : 프로토콜 | 입력받는문구)
 				pw.println(Protocol.SENDMESSAGE + "|" + line);
 				pw.flush();
-				RoomF.chattxt.setText(""); // 입력 값 비워둠
+				RoomF.chattxt.setText(""); // 입력값 초기화
 			}
 
 		} else if (e.getSource() == RoomF.makeB) { // 대기실 페이지 -> 방 만들기 버튼
@@ -244,11 +241,12 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 			} else {
 				String line = "";
 				line += (title + "%" + userCount);
+				// ***방만들기 (pw : 프로토콜 | 방제목 % 방최대인원)
 				pw.println(Protocol.ROOMMAKE + "|" + line);
 				pw.flush();
 				RoomF.setVisible(false); // 대기실 창 사라짐
 	
-				// 초기화 : 방 타이틀, 인원 수 
+				// 초기화 : 방 타이틀, 인원 수
 				rMakeF.tf.setText("");
 				rMakeF.combo1.setSelectedIndex(0);
 			}
@@ -264,6 +262,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 			chattingF.setVisible(false); // 게임방 창 꺼짐
 			RoomF.setVisible(true); // 대기방 창 열림
 			
+			// ***방만들기 (pw : 프로토콜 | 방제목 % 방최대인원)
 			pw.println(Protocol.EXITCHATTINGROOM + "|" + "Message");
 			pw.flush();
 
@@ -312,27 +311,29 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 
 					System.exit(0);
 					
-				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK_OK) == 0) { // 회원가입 ID 중복 안됨
+				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK_OK) == 0) { // ***ID중복체크(사용가능)
 					JOptionPane.showMessageDialog(menbersShipF, "사용 가능");
-					condition_Id = true;
+//					condition_Id = true;
 					
-				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK_NO) == 0) { // 회원가입 ID 중복 됨
+				} else if (line[0].compareTo(Protocol.IDSEARCHCHECK_NO) == 0) { // ***ID중복체크(사용불가능)
 					JOptionPane.showMessageDialog(menbersShipF, "사용 불가능");
-					condition_Id = false;
+//					condition_Id = false;
 					
-				} else if (line[0].compareTo(Protocol.ENTERLOGIN_OK) == 0) // 로그인 성공
+				} else if (line[0].compareTo(Protocol.ENTERLOGIN_OK) == 0) // ***로그인 성공
 				{
 					this.setVisible(false); // 메인화면 사라지고
 					RoomF.setVisible(true); // 대기창 뜨고
+					// line[1] userId | line[2] "님이 입장하였습니다." 
 					RoomF.chatarea.append(line[1] + line[2] + '\n'); // 대기창 : 채팅방에 누가 입장했다는 문구 뜸
 
-					// 대기실 인원 수
+					// line[3] userline을 : 으로 파싱(대기실 입장 유저 리스트)
 					String text[] = line[3].split(":");
 					String userlist = "";
 					for (int i = 0; i < text.length; i++) {
 						userlist += (text[i] + "\n");
 					}
-					RoomF.usertxt.setText(userlist); // 대기실 인원 수를 화면에 뿌려 줌 
+					// 파싱 한 리스트를 대기실 인원에 뿌려줌
+					RoomF.usertxt.setText(userlist);  
 
 				} else if (line[0].compareTo(Protocol.ENTERLOGIN_NO) == 0) // 로그인 실패
 				{
