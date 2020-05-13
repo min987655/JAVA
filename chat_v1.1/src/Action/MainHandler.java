@@ -154,7 +154,7 @@ public class MainHandler extends Thread {
 							waitUserList.add(this); // [Thread[Thread-3,5,main]
 							String userline = ""; // 새로운 유저들 담아 줌
 							for (int i = 0; i < waitUserList.size(); i++) {
-								userline += (waitUserList.get(i).user.getIdName() + ":"); // 새로운 유저의 id 추가 : 
+								userline += (waitUserList.get(i).user.getIdName() + ":"); // 새로운 유저의 id 추가 ":" 
 							}
 
 							for (int i = 0; i < waitUserList.size(); i++) {

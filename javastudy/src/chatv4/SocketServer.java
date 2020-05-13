@@ -21,7 +21,8 @@ public class SocketServer {
 			// 메인쓰레드는 소켓을 accept()하고 vector에 담는 역할을 함.
 			while (true) {
 				System.out.println("요청 대기");
-				Socket socket = serverSocket.accept(); // 클라이언트 요청 받음.
+				// 클라이언트 요청 받음.
+				Socket socket = serverSocket.accept(); 
 				System.out.println("요청 받음");
 				SocketThread st = new SocketThread(socket);
 				st.start();
