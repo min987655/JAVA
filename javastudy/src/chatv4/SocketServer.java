@@ -44,7 +44,7 @@ public class SocketServer {
 		PrintWriter writer;
 
 		public SocketThread(Socket socket) {
-			this.socket = socket;
+			this.socket = socket;	
 		}
 
 		// List

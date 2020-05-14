@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="979"/>
-		<item key="DIALOG_Y_ORIGIN" value="207"/>
+		<item key="DIALOG_X_ORIGIN" value="404"/>
+		<item key="DIALOG_Y_ORIGIN" value="-9"/>
 	</section>
 	<section name="org.eclipse.ui.preferences.keysPreferencePage">
 		<item key="actionSetFilter" value="true"/>
@@ -24,8 +24,10 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wb.swing.ApplicationWindow"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wst.server.ui.new.server"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.server.ui"/>
+			<item value="org.eclipse.wst.web.ui"/>
 			<item value="org.eclipse.wb"/>
 			<item value="org.eclipse.wb/org.eclipse.wb.swing"/>
 		</list>
