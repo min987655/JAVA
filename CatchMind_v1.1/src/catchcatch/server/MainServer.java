@@ -4,13 +4,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
 
-import catchcatch.util.StringParser;
-
 public class MainServer {
 
 	ServerSocket ss;
 	Vector<SocketThread> vc;
-	StringParser msgParser;
 
 	public MainServer() {
 

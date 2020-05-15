@@ -15,8 +15,8 @@ import address.model.GroupType;
 
 public class DetailFrame extends JFrame {
 
-	private JFrame detailFrame = this;
-	private JFrame mainFrame;
+	private DetailFrame detailFrame = this;
+	private MainFrame mainFrame;
 	private int memberId; // mainFrame에서 넘어온 member의 id 값
 	private Container backgroundPanel;
 	private JLabel laName, laPhone, laAddress, laGroup;
@@ -24,7 +24,7 @@ public class DetailFrame extends JFrame {
 	private JComboBox<GroupType> cbGroup;
 	private JButton updateButton, deleteButton;
 	
-	public DetailFrame(JFrame mainFrame, int memberId) {
+	public DetailFrame(MainFrame mainFrame, int memberId) {
 		this.mainFrame = mainFrame;
 		initObject();
 		initData();
@@ -89,14 +89,3 @@ public class DetailFrame extends JFrame {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-

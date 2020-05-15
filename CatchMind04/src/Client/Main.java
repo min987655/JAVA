@@ -25,5 +25,6 @@ public class Main {
 		Socket.setScreen(design.getScreen());
 		Socket.setBrush(design.getBrush());
 		Socket.setImgbuff(design.getImgbuff());
+		
 	}
 }

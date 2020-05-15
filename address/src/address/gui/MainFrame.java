@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -18,11 +19,13 @@ import javax.swing.JScrollPane;
 
 import address.model.GroupType;
 import address.model.Member;
+import address.service.MemberService;
 import address.utils.MyStringParser;
 
 public class MainFrame extends JFrame {
-
-	private JFrame mainFrame = this;
+	
+	private MemberService memberService = MemberService.getinstance();
+	private MainFrame mainFrame = this;
 	private Container backGroundPanel;
 	private JPanel topPanel, menuPanel, listPanel;
 	private JButton homeButton, frButton, coButton, scButton, faButton, addButton;
@@ -61,9 +64,24 @@ public class MainFrame extends JFrame {
 
 	// 데이터 초기화
 	private void initData() {
-		for (int i = 1; i < 31; i++) {
-			listModel.addElement(new Member(i, "홍길동", "0000000", "부산시", GroupType.친구));
+		List<Member> members = memberService.전체목록();
+		for (Member member : members) {
+			listModel.addElement(member);
 		}
+		
+		//		for (int i = 1; i < 31; i++) {
+//		//  생성자를 갯수, 순서 상관없이 넣을 수 있음
+//		//  싱글톤 아님 계속 new 할 수 있음
+//			Member member = Member.builder() 
+//					.id(i)
+//					.phone("0000000")
+//					.name("홍길동")
+//					.address("부산시")
+//					.groupType(GroupType.친구)
+//					.build(); // new 해서 마무리
+//			listModel.addElement(member);
+//		}
+		
 	}
 
 	// 디자인
@@ -111,11 +129,21 @@ public class MainFrame extends JFrame {
 		});
 		
 		addButton.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new AddFrame(mainFrame);
+//				mainFrame.setEnabled(false); // 메인 프레임 동작 안되게 함
+				mainFrame.setVisible(false);
 			}
 		});
 	}
+	
+	public void notifyUserList() {
+		// 1. listModel 비우고
+		listModel.clear();
+		// 2. select 해서 전체목록 가져오고, list<Member>에 담기
+		// 3. lsitModel 채워줌(userList 자동 갱신)
+		initData();		
+	}
+	
 }

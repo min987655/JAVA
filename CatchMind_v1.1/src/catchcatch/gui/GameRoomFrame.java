@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import catchcatch.model.Users;
+import catchcatch.models.Users;
 import catchcatch.server.MainServer;
 
 public class GameRoomFrame {
@@ -102,8 +102,8 @@ public class GameRoomFrame {
 	}
 	// 데이터 초기화
 	private void initData() {
-		for (int i = 1; i<=vc.size(); i++) {
-			listModel.addElement(new Users(i, "홍길동"));
+		for (int i = 1; i<=vc.size(); i++) {  
+//			listModel.addElement(new Users(i, "홍길동"));
 		}
 	}
 	// 리스너 등록

@@ -41,7 +41,7 @@ class SocketThread extends Thread {
 		
 		String[] gubun = line.split(":");
 		String protocol = gubun[0];
-		if (protocol.equals(Protocol.MSG)) {
+		if (protocol.equals(Protocol.CHAT)) {
 			String msg = gubun[1];
 			Chat(msg);
 		}

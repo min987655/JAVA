@@ -10,6 +10,6 @@ public class EnumTest {
 	@Test
 	public void enum_toString_test() {
 		Member m = new Member(1, "홍길동", "00000000000", "부산", GroupType.가족);
-		System.out.println(GroupType.가족.toString());
+		System.out.println(m.getGroupType().toString());
 	}
 }
