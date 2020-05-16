@@ -41,6 +41,15 @@ public class MainClient {
 			e.printStackTrace();
 		} 
 	}
+//	
+//	public void send(String msg) {
+//		try {
+//			System.out.println(TAG + "send() : " + msg);
+//			pw.println(msg);			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	} 
 
 	class SocketThread extends Thread {
 		@Override
@@ -50,6 +59,7 @@ public class MainClient {
 				String msg = null;
 				while ((msg = br.readLine()) != null) {
 					System.out.println(TAG + "br : " + msg);
+//					msg = br.readLine().split(":"); //
 					gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
 				}
 			

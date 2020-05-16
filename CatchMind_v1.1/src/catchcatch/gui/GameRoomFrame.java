@@ -31,7 +31,7 @@ public class GameRoomFrame extends JFrame {
 	public GameRoomFrame(MainClient mainClient) {
 		this.mainClient = mainClient;
 		initObject();
-		initData();
+//		initData();
 		initDesign();
 		initListener();
 		setVisible(true);
@@ -49,11 +49,11 @@ public class GameRoomFrame extends JFrame {
 		btEnter = new JButton("Enter");
 		taChat = new JTextArea();
 	}
-
-	// 데이터초기화
-	private void initData() {
-
-	}
+//
+//	// 데이터초기화
+//	private void initData() {
+//
+//	}
 
 	// 디자인
 	public void initDesign() {
@@ -99,7 +99,6 @@ public class GameRoomFrame extends JFrame {
 //				 taChat.setText(taChat.getText()+tfChat.getText()+ "\n");
 //				mainClient.send(tfChat.getText());
 				tfChat.setText("");
-
 			}
 		});
 		

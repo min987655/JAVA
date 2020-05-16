@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Vector;
 
+import catchcatch.gui.GameRoomFrame;
 import catchcatch.util.Protocol;
 
 // 소켓정보 + 타겟(run) + 식별자

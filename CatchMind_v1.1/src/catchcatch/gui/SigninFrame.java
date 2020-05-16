@@ -3,9 +3,7 @@ package catchcatch.gui;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import catchcatch.client.MainClient;
+import catchcatch.dao.UsersDao;
 import catchcatch.models.Users;
 import catchcatch.service.UsersService;
 
@@ -90,36 +89,54 @@ public class SigninFrame extends JFrame {
 		Login.add(btSign);
 		Login.add(btCancel);
 	}
-	
+
 	private void initListener() {
-		btCancel.addActionListener(new  ActionListener() {
-			
+		btCancel.addActionListener(new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new LoginFrame();
 				signinFrame.setVisible(false);
 			}
 		});
-		
+
 		btSign.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// 1. 2. TF에 있는 값을 가져와 Users에 담음
-				System.out.println(TAG + "회원가입 : " + tfSid.getText() + ", " + tfSpw.getText());
-				Users users = Users.builder()
-						.userName(tfSid.getText())
-						.password(tfSpw.getText())
-						.build();
-				int result = usersService.회원가입(users);
-				// 4. return 값을 확인해서 로직을 직접 짜야함(성공, 실패)
-				if (result == 1) {
-					// 5. 성공 
-					JOptionPane.showMessageDialog(null, "가입 성공");
-					new LoginFrame();
-					signinFrame.setVisible(false);					
+				System.out.println(TAG + "회원가입 : " + "userName " + tfSid.getText() + "/ password " + tfSpw.getText());
+				if (tfSid.getText().length() == 0 || tfSpw.getText().length() == 0) {
+					JOptionPane.showMessageDialog(null, "빈 칸을 입력해주세요.");
+				} else {
+//					Users users = new Users(tfSid.getText(),tfSpw.getText());
+//					
+//					String msg = "";
+//					msg = msg + (tfSid.getText() + ":" + tfSpw.getText());
+//					System.out.println(TAG + ", " + msg);
+//					
+//					JOptionPane.showMessageDialog(null, "회원가입 완료");
+//					new LoginFrame();
+//					signinFrame.setVisible(false);			
+//					
+					Users users = new Users(tfSid.getText(), tfSpw.getText());
+					
+//					Users users2 = usersService.아이디확인(userNameList1)
+//					if (tfSid.getText().equals()) {
+//						JOptionPane.showMessageDialog(null, "아이디가 중복되었습니다.");
+//					} else {}
+						int result = usersService.회원가입(users);
+						// 4. return 값을 확인해서 로직을 직접 짜야함(성공, 실패)
+						if (result == 1) {
+							// 5. 성공
+							JOptionPane.showMessageDialog(null, "가입 성공");
+							new LoginFrame();
+							signinFrame.setVisible(false);
+						}
+					
+
 				}
-				
+
 			}
 		});
 	}

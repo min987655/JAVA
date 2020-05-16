@@ -2,10 +2,15 @@ package catchcatch.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+import java.util.Vector;
 
 import catchcatch.db.DBConnection;
 import catchcatch.db.DBUtils;
+import catchcatch.gui.SigninFrame;
 import catchcatch.models.Users;
+
 
 // 자바와 디비의 거점
 public class UsersDao {
@@ -41,5 +46,26 @@ public class UsersDao {
 			DBUtils.close(conn, pstmt);
 		}
 		return -1;
+	}
+	public List<Users> 확인(List<Users> userNameList) {
+		
+		final String SQL = "SELECT userName FROM users";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<Users> userNameList1 = new Vector<>();
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Users user = new Users(rs.getString("userName"));
+				userNameList1.add(user);
+			}
+			return userNameList1;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
