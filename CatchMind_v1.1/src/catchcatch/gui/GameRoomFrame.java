@@ -1,118 +1,117 @@
 package catchcatch.gui;
 
-import java.awt.EventQueue;
-import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.Vector;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import catchcatch.models.Users;
-import catchcatch.server.MainServer;
+import catchcatch.client.MainClient;
 
-public class GameRoomFrame {
+public class GameRoomFrame extends JFrame {
 
-	private Vector<MainServer> vc;
-	private JFrame frame;
-	private JTextField tfCard;
-	private JTextField tfChat;
-	private JList<Users> userList;
-	private DefaultListModel<Users> listModel;
-	private JButton btGstart, btEnter;
+	private final static String TAG = "GameroomFrame : ";
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GameRoomFrame window = new GameRoomFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private GameRoomFrame gameroomFrame = this;
+	public JTextField tfCard, tfChat;
+	public JButton btEnter, btCard, btGstart;
+	public JTextArea taChat, taUserList;
+	public JLabel LuserList;
+	public MainClient mainClient;
+	public JPanel Canvas;
+//	public Drawing dw;
+//	public MyCanvas2 cv2;
+
+	public GameRoomFrame(MainClient mainClient) {
+		this.mainClient = mainClient;
+		initObject();
+		initData();
+		initDesign();
+		initListener();
+		setVisible(true);
 	}
 
-	public GameRoomFrame() {
-		initialize();
-	}
-	
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 962, 738);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		JButton btCard = new JButton("제시어");
-		btCard.setBounds(40, 46, 112, 34);
-		frame.getContentPane().add(btCard);
-		
-		// 제시어 뿌려줌
-		tfCard = new JTextField(); 
-		tfCard.setBounds(160, 46, 262, 34);
-		frame.getContentPane().add(tfCard);
-		tfCard.setColumns(10);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(40, 106, 502, 541);
-		frame.getContentPane().add(panel);
-		
-		JButton btGstart = new JButton("게임시작");
-		btGstart.setBounds(580, 46, 323, 63);
-		frame.getContentPane().add(btGstart);
-		
-		JLabel LuserList = new JLabel("User List");
-		LuserList.setBounds(579, 121, 308, 27);
-		frame.getContentPane().add(LuserList);
-
-//		// 참여유저
-//		JTextArea taUserList = new JTextArea(); 
-//		taUserList.setBounds(580, 157, 323, 120);
-//		frame.getContentPane().add(taUserList);
-		
-		// 유저리스트
-		listModel = new DefaultListModel<>();
-		userList = new JList<>(listModel);
-		userList.setBounds(580, 157, 323, 120);
-		frame.getContentPane().add(userList);		
-		
-		// 채팅리스트
-		JTextArea taChat = new JTextArea();
-		taChat.setBounds(580, 292, 323, 305);
-		frame.getContentPane().add(taChat);
-
-		// 채팅
+	// 객체생성
+	public void initObject() {
+		btCard = new JButton("제시어");
+		btGstart = new JButton("게임시작");
+		tfCard = new JTextField();
+		Canvas = new JPanel();
+		LuserList = new JLabel("User List");
+		taUserList = new JTextArea();
 		tfChat = new JTextField();
-		tfChat.setBounds(580, 609, 229, 38);
-		frame.getContentPane().add(tfChat);
-		tfChat.setColumns(10);
-		
-		JButton btEnter = new JButton("Enter");
-		btEnter.setBounds(823, 609, 80, 38);
-		frame.getContentPane().add(btEnter);
+		btEnter = new JButton("Enter");
+		taChat = new JTextArea();
 	}
-	// 데이터 초기화
+
+	// 데이터초기화
 	private void initData() {
-		for (int i = 1; i<=vc.size(); i++) {  
-//			listModel.addElement(new Users(i, "홍길동"));
-		}
+
 	}
+
+	// 디자인
+	public void initDesign() {
+		// 1. 기본세팅
+		setTitle("Game Room");
+		setBounds(100, 100, 962, 738);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
+
+		// 2. 패널세팅
+		btCard.setBounds(40, 46, 112, 34);
+		tfCard.setBounds(160, 46, 262, 34);
+		tfCard.setColumns(10);
+		btGstart.setBounds(580, 46, 323, 63);
+		LuserList.setBounds(579, 121, 308, 27);
+		taUserList.setBounds(580, 157, 323, 120);
+		Canvas.setBounds(40, 106, 502, 541);
+		taChat.setBounds(580, 292, 323, 305);
+		tfChat.setBounds(580, 609, 229, 38);
+		tfChat.setColumns(10);
+		btEnter.setBounds(823, 609, 80, 38);
+
+		// 3. 패널에 컴포넌트 추가
+		getContentPane().add(btCard);
+		getContentPane().add(tfCard);
+		getContentPane().add(Canvas);
+		getContentPane().add(btGstart);
+		getContentPane().add(LuserList);
+		getContentPane().add(taUserList);
+		getContentPane().add(taChat);
+		getContentPane().add(tfChat);
+		getContentPane().add(btEnter);
+	}
+
 	// 리스너 등록
 	private void initListener() {
-		btGstart.addMouseListener(new MouseAdapter() {
+		
+		btEnter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				System.out.println(TAG + "통신X 이벤트 : " + tfChat.getText());
+				taChat.append(tfChat.getText() + "\n");
+//				 taChat.setText(taChat.getText()+tfChat.getText()+ "\n");
+//				mainClient.send(tfChat.getText());
+				tfChat.setText("");
+
 			}
 		});
+		
+//		btEnter.addKeyListener(new KeyAdapter() {
+//			@Override
+//			public void keyPressed(KeyEvent keyE) {
+//				if (keyE.getKeyCode() == KeyEvent.VK_ENTER) {
+//					System.out.println(TAG + "엔터이벤트");
+//					btEnter.doClick();
+//				}
+//			}
+//		});
 	}
+
 }

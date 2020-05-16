@@ -11,8 +11,9 @@ import catchcatch.util.Protocol;
 // 소켓정보 + 타겟(run) + 식별자
 class SocketThread extends Thread {
 
+	private final static String TAG = "SocketThread : ";
+	
 	Socket socket;
-	String name;
 	BufferedReader br;
 	PrintWriter pw;
 	Vector<SocketThread> vc;
@@ -30,28 +31,35 @@ class SocketThread extends Thread {
 
 			String msg = "";
 			while ((msg = br.readLine()) != null) {
-				router(msg);
+//				router(msg);
+				System.out.println(TAG + "클라이언트 : " + msg);
+				for (SocketThread socketThread : vc) {
+					if (socketThread != this) {
+						socketThread.pw.write(msg + "\n");
+						socketThread.pw.flush();
+					}
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();			
 	}
 }
 	
-	public void router(String line) {
-		
-		String[] gubun = line.split(":");
-		String protocol = gubun[0];
-		if (protocol.equals(Protocol.CHAT)) {
-			String msg = gubun[1];
-			Chat(msg);
-		}
-	}
-	
-	public void Chat(String msg) {
-		System.out.println(msg + "ip : " + socket.getInetAddress());
-		for (SocketThread socketThread : vc) {
-			socketThread.pw.println(msg);
-		}
-	}
+//	public void router(String line) {
+//		
+//		String[] gubun = line.split(":");
+//		String protocol = gubun[0];
+//		if (protocol.equals(Protocol.CHAT)) {
+//			String msg = gubun[1];
+//			Chat(msg);
+//		}
+//	}
+//	
+//	public void Chat(String msg) {
+//		System.out.println(msg + "ip : " + socket.getInetAddress());
+//		for (SocketThread socketThread : vc) {
+//			socketThread.pw.println(msg);
+//		}
+//	}
 	
 }

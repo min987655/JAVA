@@ -8,29 +8,35 @@ import java.net.Socket;
 import java.util.Scanner;
 
 import catchcatch.gui.GameRoomFrame;
+import catchcatch.gui.LoginFrame;
 
 public class MainClient {
+	
+	private final static String TAG = "MainClient : ";
 
 	Socket socket;
 	BufferedReader br;
 	PrintWriter pw;
 	Scanner sc;
+	MainClient mainClient = this;
+	GameRoomFrame gameRoomFrame;
 	
 	public MainClient() {
 	
 		try {
+			gameRoomFrame = new GameRoomFrame(mainClient);
 			socket = new Socket("localhost", 8888);
 			SocketThread st = new SocketThread();
 			st.start();
 			
 			pw = new PrintWriter(socket.getOutputStream(), true);
-			sc = new Scanner(System.in);
+			sc = new Scanner((Readable) gameRoomFrame.tfChat);
+			
 			while (true) {
 				String msg = sc.nextLine();
+				System.out.println(TAG + "pw : " + msg);
 				pw.println();
 			}
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -39,12 +45,12 @@ public class MainClient {
 	class SocketThread extends Thread {
 		@Override
 		public void run() {
-
 			try {
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-				String line = null;
-				while ((line = br.readLine()) != null) {
-					System.out.println("from server : " + line);
+				String msg = null;
+				while ((msg = br.readLine()) != null) {
+					System.out.println(TAG + "br : " + msg);
+					gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
 				}
 			
 			} catch (Exception e) {
@@ -53,9 +59,8 @@ public class MainClient {
 		}
 	}
 	
-	
 	public static void main(String[] args) {
-		new GameRoomFrame();
+		new LoginFrame();
 	}
 
 }
