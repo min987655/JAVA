@@ -8,6 +8,11 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="parser"/>
+			<item value="line"/>
+			<item value="msg"/>
+			<item value="9999"/>
+			<item value="send"/>
 			<item value="중복확인"/>
 			<item value="UserList"/>
 			<item value="allUserList"/>
@@ -18,11 +23,6 @@
 			<item value="result"/>
 			<item value="waitUserList"/>
 			<item value="th"/>
-			<item value="Vector"/>
-			<item value="listModel"/>
-			<item value="userList"/>
-			<item value="Catch Mind"/>
-			<item value="roomtotalList"/>
 		</list>
 		<list key="replacehistory">
 			<item value="rpassword"/>

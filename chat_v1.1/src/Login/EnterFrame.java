@@ -74,7 +74,7 @@ public class EnterFrame extends JFrame implements ActionListener, KeyListener, R
 
 		loginC = new ImageIcon("img/loginButton.png");
 		loginL = new JLabel(loginC);
-
+		
 		JPanel p4 = new JPanel();
 		p4.add(loginL);
 

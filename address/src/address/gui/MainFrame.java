@@ -25,6 +25,7 @@ import address.utils.MyStringParser;
 public class MainFrame extends JFrame {
 	
 	private MemberService memberService = MemberService.getinstance();
+
 	private MainFrame mainFrame = this;
 	private Container backGroundPanel;
 	private JPanel topPanel, menuPanel, listPanel;
@@ -68,20 +69,6 @@ public class MainFrame extends JFrame {
 		for (Member member : members) {
 			listModel.addElement(member);
 		}
-		
-		//		for (int i = 1; i < 31; i++) {
-//		//  생성자를 갯수, 순서 상관없이 넣을 수 있음
-//		//  싱글톤 아님 계속 new 할 수 있음
-//			Member member = Member.builder() 
-//					.id(i)
-//					.phone("0000000")
-//					.name("홍길동")
-//					.address("부산시")
-//					.groupType(GroupType.친구)
-//					.build(); // new 해서 마무리
-//			listModel.addElement(member);
-//		}
-		
 	}
 
 	// 디자인
@@ -118,13 +105,51 @@ public class MainFrame extends JFrame {
 
 	// 리스너 등록
 	private void initListener() {
+		
+		frButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				notifyUserList(GroupType.친구);	
+			}
+		});
+		
+		coButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				notifyUserList(GroupType.회사);	
+			}
+		});
+		
+		scButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				notifyUserList(GroupType.학교);	
+			}
+		});
+		
+		faButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				notifyUserList(GroupType.가족);	
+			}
+		});
+		
+		homeButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				notifyUserList();	
+			}
+		});
+		
 		userList.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 //				System.out.println(userList.getSelectedValue()); // .getSelectedValue() 누구를 선택했는지 알려줌 
 //				System.out.println(userList.getSelectedIndex());
 				int memberId = MyStringParser.getId(userList.getSelectedValue().toString());
+				System.out.println("MainFrame : memberId :"+memberId);
 				new DetailFrame(mainFrame, memberId);
+				mainFrame.setVisible(false);
 			}
 		});
 		
@@ -132,18 +157,28 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new AddFrame(mainFrame);
-//				mainFrame.setEnabled(false); // 메인 프레임 동작 안되게 함
 				mainFrame.setVisible(false);
 			}
 		});
 	}
-	
+	// 전체 데이터 갱신
 	public void notifyUserList() {
 		// 1. listModel 비우고
 		listModel.clear();
 		// 2. select 해서 전체목록 가져오고, list<Member>에 담기
 		// 3. lsitModel 채워줌(userList 자동 갱신)
 		initData();		
+	}
+	// 그룹데이터 갱신
+	public void notifyUserList(GroupType groupType) {
+		// 1. listModel 비우고
+		listModel.clear();
+		// 2. select 해서 전체목록 가져오고, list<Member>에 담기
+		// 3. lsitModel 채워줌(userList 자동 갱신)
+		List<Member> members = memberService.그룹목록(groupType);
+		for (Member member : members) {
+			listModel.addElement(member);
+		}
 	}
 	
 }

@@ -1,7 +1,5 @@
 package catchcatch.gui;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,6 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import catchcatch.client.MainClient;
+import catchcatch.util.Protocol;
 
 public class GameRoomFrame extends JFrame {
 
@@ -95,9 +94,12 @@ public class GameRoomFrame extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println(TAG + "통신X 이벤트 : " + tfChat.getText());
-				taChat.append(tfChat.getText() + "\n");
+//				taChat.append(tfChat.getText() + "\n");
+				String msg = Protocol.CHAT + ":" + tfChat.getText();
 //				 taChat.setText(taChat.getText()+tfChat.getText()+ "\n");
-//				mainClient.send(tfChat.getText());
+				System.out.println(Protocol.CHAT + ":" + tfChat.getText());
+				System.out.println(msg);
+				mainClient.send(msg);
 				tfChat.setText("");
 			}
 		});

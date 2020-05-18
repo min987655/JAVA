@@ -1,9 +1,9 @@
 package catchcatch.client;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.Writer;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -16,10 +16,11 @@ public class MainClient {
 
 	Socket socket;
 	BufferedReader br;
-	PrintWriter pw;
-	Scanner sc;
+	BufferedWriter bw;
+//	Scanner sc;
 	MainClient mainClient = this;
 	GameRoomFrame gameRoomFrame;
+//	String msg = null;
 	
 	public MainClient() {
 	
@@ -29,27 +30,26 @@ public class MainClient {
 			SocketThread st = new SocketThread();
 			st.start();
 			
-			pw = new PrintWriter(socket.getOutputStream(), true);
-			sc = new Scanner((Readable) gameRoomFrame.tfChat);
-			
-			while (true) {
-				String msg = sc.nextLine();
-				System.out.println(TAG + "pw : " + msg);
-				pw.println();
-			}
+			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 		} catch (Exception e) {
+			System.out.println(TAG + e.getMessage());
 			e.printStackTrace();
 		} 
 	}
-//	
-//	public void send(String msg) {
-//		try {
-//			System.out.println(TAG + "send() : " + msg);
-//			pw.println(msg);			
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	} 
+	
+	public void send(String msg) {
+		try {
+			while (true) {
+				System.out.println(TAG + "send() : " + msg);
+				bw.write(msg);
+				bw.flush();				
+			}
+		} catch (Exception e) {
+			System.out.println(TAG + "send() : " + e.getMessage());
+			e.printStackTrace();
+		}
+	} 
 
 	class SocketThread extends Thread {
 		@Override
@@ -58,16 +58,29 @@ public class MainClient {
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 				String msg = null;
 				while ((msg = br.readLine()) != null) {
-					System.out.println(TAG + "br : " + msg);
 //					msg = br.readLine().split(":"); //
 					gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
+					
 				}
 			
 			} catch (Exception e) {
+				System.out.println(TAG + "br : " + e.getMessage());
 				e.printStackTrace();
 			} 
 		}
 	}
+	
+//	public void Read(String msg) {
+//		try {
+//			while((msg = br.readLine()) != null) {
+//				// ta뿌리기
+//				gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
+//			}
+//		} catch (Exception e) {
+//			System.out.println(TAG + "Read() : " + e.getMessage());			
+//			e.printStackTrace();
+//		}
+//	}
 	
 	public static void main(String[] args) {
 		new LoginFrame();
