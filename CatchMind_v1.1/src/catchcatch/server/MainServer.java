@@ -4,10 +4,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
 
+import catchcatch.server.MainServer.SocketThread;
 import catchcatch.util.Protocol;
 
 public class MainServer {
@@ -43,7 +45,7 @@ public class MainServer {
 
 		Socket socket;
 		BufferedReader br;
-		BufferedWriter bw;
+		PrintWriter pw;
 
 		public SocketThread(Socket socket) {
 			this.socket = socket;
@@ -54,39 +56,44 @@ public class MainServer {
 
 			try {
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-				bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
+				pw = new PrintWriter(socket.getOutputStream(), true);
 
-				String msg = null;
-				while ((msg = br.readLine()) != null) {
-					router(msg);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		public void router(String msg) {
-
-			String[] parsing = msg.split(":");
-			String protocol = parsing[0];
-			if (protocol.equals(Protocol.CHAT)) {
-				String chatMsg = parsing[1];
-				Chat(chatMsg);
-			}
-		}
-
-		public void Chat(String chatMsg) {
-			try {
-				for (SocketThread socketThread : vc) {
-					if (socketThread != this) {
-						socketThread.bw.write(chatMsg);
-						socketThread.bw.flush();
+				String msg = "";
+				while((msg = br.readLine()) != null) {
+					System.out.println(TAG + "클라이언트 : " + msg);
+					for (SocketThread socketThread : vc) {
+							socketThread.pw.println(msg + "\n");
+							socketThread.pw.flush();
 					}
 				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+
+//		public void router(String msg) {
+//
+//			String[] parsing = msg.split(":");
+//			String protocol = parsing[0];
+//			if (protocol.equals(Protocol.CHAT)) {
+//				String chatMsg = parsing[1];
+//				Chat(chatMsg);
+//			}
+//		}
+//
+//		public void Chat(String chatMsg) {
+//			try {
+//				for (SocketThread socketThread : vc) {
+//					if (socketThread != this) {
+//						socketThread.bw.write(chatMsg);
+//						socketThread.bw.flush();
+//					}
+//				}
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
 	}
 
 	public static void main(String[] args) {

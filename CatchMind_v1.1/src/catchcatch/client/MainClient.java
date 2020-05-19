@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -16,11 +17,10 @@ public class MainClient {
 
 	Socket socket;
 	BufferedReader br;
-	BufferedWriter bw;
-//	Scanner sc;
+	PrintWriter pw;
 	MainClient mainClient = this;
 	GameRoomFrame gameRoomFrame;
-//	String msg = null;
+	String msg = null;
 	
 	public MainClient() {
 	
@@ -30,37 +30,27 @@ public class MainClient {
 			SocketThread st = new SocketThread();
 			st.start();
 			
-			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
-			br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
+			pw = new PrintWriter(socket.getOutputStream(), true);
+			
+			while (true) {
+				String msg = gameRoomFrame.taChat.getText();
+				pw.println(msg);
+			}
+			
 		} catch (Exception e) {
 			System.out.println(TAG + e.getMessage());
 			e.printStackTrace();
 		} 
 	}
 	
-	public void send(String msg) {
-		try {
-			while (true) {
-				System.out.println(TAG + "send() : " + msg);
-				bw.write(msg);
-				bw.flush();				
-			}
-		} catch (Exception e) {
-			System.out.println(TAG + "send() : " + e.getMessage());
-			e.printStackTrace();
-		}
-	} 
-
 	class SocketThread extends Thread {
 		@Override
 		public void run() {
 			try {
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-				String msg = null;
 				while ((msg = br.readLine()) != null) {
-//					msg = br.readLine().split(":"); //
+					System.out.println(TAG + "사용자" + msg);
 					gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
-					
 				}
 			
 			} catch (Exception e) {
@@ -69,21 +59,9 @@ public class MainClient {
 			} 
 		}
 	}
-	
-//	public void Read(String msg) {
-//		try {
-//			while((msg = br.readLine()) != null) {
-//				// ta뿌리기
-//				gameRoomFrame.taChat.setText(gameRoomFrame.taChat.getText() + msg + "\n");
-//			}
-//		} catch (Exception e) {
-//			System.out.println(TAG + "Read() : " + e.getMessage());			
-//			e.printStackTrace();
-//		}
-//	}
-	
+		
 	public static void main(String[] args) {
-		new LoginFrame();
+		new MainClient();
 	}
 
 }

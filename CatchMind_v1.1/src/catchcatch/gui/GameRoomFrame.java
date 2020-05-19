@@ -11,7 +11,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import catchcatch.client.MainClient;
-import catchcatch.util.Protocol;
 
 public class GameRoomFrame extends JFrame {
 
@@ -93,13 +92,8 @@ public class GameRoomFrame extends JFrame {
 		btEnter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println(TAG + "통신X 이벤트 : " + tfChat.getText());
-//				taChat.append(tfChat.getText() + "\n");
-				String msg = Protocol.CHAT + ":" + tfChat.getText();
-//				 taChat.setText(taChat.getText()+tfChat.getText()+ "\n");
-				System.out.println(Protocol.CHAT + ":" + tfChat.getText());
-				System.out.println(msg);
-				mainClient.send(msg);
+				System.out.println(TAG + "btEnter 클릭 이벤트 : " + tfChat.getText());
+				taChat.append(tfChat.getText() + "\n");
 				tfChat.setText("");
 			}
 		});
