@@ -27,17 +27,21 @@ public class GameRoomFrame extends JFrame {
 	public JLabel LuserList;
 	public MainClient mainClient;
 	public JPanel Canvas, PDrawing;
-
-	public GameRoomFrame(MainClient mainClient) {
-		this.mainClient = mainClient;
+	private String username;
+	private JLabel laUsername;
+		
+	public GameRoomFrame(String username) {
+		this.username = username;
 		initObject();
 		initData();
 		initDesign();
 		initListener();
+		setVisible(true);
 	}
 
 	// 객체생성
 	public void initObject() {
+		mainClient = new MainClient(gameroomFrame);
 		btCard = new JButton("제시어");
 		btGstart = new JButton("게임시작");
 		tfCard = new JTextField();
@@ -59,7 +63,7 @@ public class GameRoomFrame extends JFrame {
 
 	// 데이터초기화
 	private void initData() {
-
+		
 	}
 
 	// 디자인
@@ -67,7 +71,7 @@ public class GameRoomFrame extends JFrame {
 		// 1. 기본세팅
 		setTitle("Game Room");
 		setBounds(100, 100, 962, 738);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
 		// 2. 패널세팅
@@ -109,6 +113,10 @@ public class GameRoomFrame extends JFrame {
 		Canvas.add(btEraser);
 		Canvas.add(btAlldel);
 		Canvas.add(PDrawing);
+		
+		laUsername = new JLabel(username);
+		laUsername.setBounds(40, 10, 57, 15);
+		getContentPane().add(laUsername);
 	}
 
 	// 리스너 등록
@@ -117,11 +125,20 @@ public class GameRoomFrame extends JFrame {
 		btEnter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("GameRoomFrame : 통신X 이벤트 : " + tfChat.getText());
 				taChat.append(tfChat.getText() + "\n");
 				String msgLine = Protocol.CHAT + ":" + tfChat.getText();
+				// Chat:안녕
 				mainClient.send(msgLine);
 				tfChat.setText("");
+			}
+		});
+		
+		btGstart.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// StartGame
+				String msgLine = Protocol.STARTGAME + ":" + "false";
+				mainClient.send(msgLine);
 			}
 		});
 	}

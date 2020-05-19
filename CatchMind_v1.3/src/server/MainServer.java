@@ -2,7 +2,6 @@ package server;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
@@ -17,15 +16,16 @@ public class MainServer {
 
 	ServerSocket serverSocket;
 	Vector<SocketThread> vc;
+	int turn = 0;
 
 	public MainServer() throws Exception {
 		vc = new Vector<>();
 		serverSocket = new ServerSocket(8892);
-		System.out.println("서버접속완료");
+		System.out.println(TAG + "서버접속완료");
 
 		while (true) {
 			Socket socket = serverSocket.accept();
-			System.out.println("요청이 들어왔습니다.");
+			System.out.println(TAG + "접속 요청이 들어왔습니다.");
 			SocketThread st = new SocketThread(socket);
 			Thread newWorker = new Thread(st);
 			newWorker.start();
@@ -51,14 +51,8 @@ public class MainServer {
 
 				String msg = "";
 				while ((msg = br.readLine()) != null) {
-					System.out.println("클라이언트 : " + msg);
+					System.out.println(TAG + "클라이언트 : " + msg);
 					router(msg);
-//					for (SocketThread socketThread : vc) {
-//						if (socketThread != this) {
-//							socketThread.bw.write(msg + "\n");
-//							socketThread.bw.flush();
-//						}
-//					}
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -72,6 +66,9 @@ public class MainServer {
 			if (protocol.equals(Protocol.CHAT)) {
 				String chatMsg = msg[1];
 				chattingMsg(chatMsg);
+			} else if (protocol.equals(Protocol.STARTGAME)) {
+				
+				startGame();
 			}
 		}
 
@@ -80,7 +77,7 @@ public class MainServer {
 			try {
 				for (SocketThread socketThread : vc) {
 					if (socketThread != this) {
-						socketThread.bw.write(chatMsg + "\n");
+						socketThread.bw.write(Protocol.CHAT + ":" + chatMsg + "\n");
 						socketThread.bw.flush();
 					}
 				}
@@ -88,6 +85,38 @@ public class MainServer {
 				e.printStackTrace();
 			}
 		}
+
+		// 제시어를 턴의 주인에게 뿌리기
+		public void startGame() {
+			System.out.println(TAG+"표시 1 : 성공");
+			Word 제시어 = new Word();
+			try {
+				for (int i = 0; i < vc.size(); i++) {
+					if (i == turn) {
+						// StartGame
+						System.out.println(TAG+"표시 2 : 성공");
+						System.out.println(TAG+"표시 2 : 메시지 프로토콜 : "+Protocol.STARTGAME + ":" + 제시어.getStr()+"\n");
+						vc.get(i).bw.write(Protocol.STARTGAME + ":" + 제시어.getStr()+"\n");
+						vc.get(i).bw.flush();
+					}else {
+						System.out.println(TAG+"표시 3 : 성공");
+						System.out.println(TAG+"표시 3 : 메시지 프로토콜 : "+Protocol.STARTGAME + ":" + "false"+"\n");
+						vc.get(i).bw.write(Protocol.STARTGAME + ":" + "false"+"\n");
+						vc.get(i).bw.flush();
+					}
+				}
+
+				turn++;
+				if (turn == vc.size()) { // 3
+					turn = 0;
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+
 	}
 
 	public static void main(String[] args) {
