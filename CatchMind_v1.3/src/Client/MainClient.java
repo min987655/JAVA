@@ -57,6 +57,14 @@ public class MainClient {
 		}
 	}
 	
+	public void userSend(ArrayList<String> userName) {
+		try {
+			bw.write(userName + "\n");
+			bw.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 
 	class ReadThread implements Runnable {
@@ -96,10 +104,12 @@ public class MainClient {
 					gameroomFrame.can.setEnabled(false);
 					gameroomFrame.tfChat.setEnabled(true);
 					gameroomFrame.tfCard.setText("");
+					gameroomFrame.can.getGraphics().clearRect(0, 0, 900, 900);
 				} else { // 제시어 턴의 주인
 					gameroomFrame.can.setEnabled(true);
 					gameroomFrame.tfChat.setEnabled(false);
 					gameroomFrame.tfCard.setText(chatMsg);
+					gameroomFrame.can.getGraphics().clearRect(0, 0, 900, 900);
 				}
 			} else if (protocol.equals(Protocol.DRAW)) {
 				String[] drawMsg = msg[1].split(",");
@@ -120,6 +130,9 @@ public class MainClient {
 		}
 
 	}
+
+
+
 
 
 
