@@ -1,5 +1,7 @@
 package server;
 
+import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -8,6 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
 
+import Paint.MyCanvas;
 import utils.Protocol;
 
 public class MainServer {
@@ -16,9 +19,10 @@ public class MainServer {
 
 	ServerSocket serverSocket;
 	Vector<SocketThread> vc;
-
+	String turnWord = null;
 	int turn = 0;
-	Word 제시어 = new Word();
+	public boolean 정답;
+	
 
 	public MainServer() throws Exception {
 		vc = new Vector<>();
@@ -41,7 +45,10 @@ public class MainServer {
 		BufferedReader br;
 		BufferedWriter bw;
 
-		String turnWord = 제시어.getStr();
+		public BufferedImage bi;
+		public MyCanvas myCanvas;
+		public int x;
+		public int y;
 
 		public SocketThread(Socket socket) {
 			this.socket = socket;
@@ -69,18 +76,39 @@ public class MainServer {
 			String protocol = msg[0];
 
 			if (protocol.equals(Protocol.CHAT)) {
-				String chatMsg = msg[1];
-				chattingMsg(chatMsg);
-				boolean 정답 = chatMsg.equals(turnWord);
-				System.out.println(TAG + "정답 : " + 정답);
-				nextTurn();
+				String username = msg[1];
+				String chatMsg = msg[2];
+				System.out.println(TAG+"현재 제시어 : "+turnWord);
+				System.out.println(TAG + "chatMsg : " + chatMsg);
+				if (chatMsg.equals(turnWord)) {
+					System.out.println(TAG + "정답 : " + chatMsg + "turnWord : " + turnWord);
+					chattingMsg(username+":"+chatMsg); // ta뿌리기, ta에 정답입니다 뿌리기
+					nextTurn();
+				}else {
+					System.out.println(TAG + "메시지 : " + chatMsg + "turnWord : " + turnWord);
+					chattingMsg(username+":"+chatMsg); // ta뿌리기
+				}
 			} else if (protocol.equals(Protocol.STARTGAME)) {
 				startGame();
+			} else if (protocol.equals(Protocol.DRAW)) {
+
+				// System.out.println(TAG + msg[1] + "DRAW 프로토콜 확인");
+				
+				// client에게 샌드해줘
+				try {
+					for (SocketThread socketThread : vc) {
+						if (socketThread != this) {
+							socketThread.bw.write(Protocol.DRAW + ":" + msg[1] + "\n");
+							socketThread.bw.flush();
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 
 		public void chattingMsg(String chatMsg) {
-			System.out.println(TAG + "채팅 : " + chatMsg + socket.getInetAddress());
 			try {
 				for (SocketThread socketThread : vc) {
 					if (socketThread != this) {
@@ -96,8 +124,10 @@ public class MainServer {
 		// 제시어를 턴의 주인에게 뿌리기
 		public void startGame() {
 			System.out.println(TAG + "표시 1 : 성공");
+			turnWord = new Word().getStr();
 			try {
 				for (int i = 0; i < vc.size(); i++) {
+					
 					if (i == turn) {
 						// StartGame
 						System.out.println(TAG + "표시 2 : 성공");
